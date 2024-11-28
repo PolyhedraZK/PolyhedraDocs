@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ExpanderCompilerCollection
+# Overview
 
 Expander is a proof generation backend for the Polyhedra Network. The ExpanderCompilerCollection is a component of the Expander proof system. It transforms circuits written in high-level languages into layered circuit. This layered circuit can later be used by the [Expander prover](https://github.com/PolyhedraZK/Expander) to generate proofs.
 
