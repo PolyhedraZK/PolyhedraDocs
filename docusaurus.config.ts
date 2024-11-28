@@ -5,8 +5,8 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
 const config: Config = {
-  title: "Polyhedra Network Document",
-  tagline: "Polyhedra Network Document",
+  title: "Polyhedra Network Documentation",
+  tagline: "Polyhedra Network Documentation",
   favicon: "img/favicon.png",
 
   // Set the production url of your site here
