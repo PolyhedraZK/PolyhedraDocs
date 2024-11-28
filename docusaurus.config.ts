@@ -85,33 +85,33 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Overview',
-              to: '/docs/overview',
-            },
-          ],
-        },
-        {
-          title: 'Expander',
-          items: [
-            {
-              label: 'Issues',
-              href: 'https://github.com/PolyhedraZK/Expander',
-            },
-          ],
-        },
-        {
-          title: 'Compiler',
-          items: [
-            {
-              label: 'Issues',
-              href: 'https://github.com/PolyhedraZK/ExpanderCompilerCollection',
-            },
-          ],
-        },
+        // {
+        //   title: 'Docs',
+        //   items: [
+        //     {
+        //       label: 'Overview',
+        //       to: '/docs/overview',
+        //     },
+        //   ],
+        // },
+        // {
+        //   title: 'Expander',
+        //   items: [
+        //     {
+        //       label: 'Issues',
+        //       href: 'https://github.com/PolyhedraZK/Expander',
+        //     },
+        //   ],
+        // },
+        // {
+        //   title: 'Compiler',
+        //   items: [
+        //     {
+        //       label: 'Issues',
+        //       href: 'https://github.com/PolyhedraZK/ExpanderCompilerCollection',
+        //     },
+        //   ],
+        // },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Polyhedra Network. Built with Docusaurus.`,
     },
