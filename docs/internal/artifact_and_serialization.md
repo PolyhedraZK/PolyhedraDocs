@@ -14,7 +14,6 @@ The layered circuit is a crucial component that represents the final structure o
 
 The layered circuits are structured according to the definitions provided in `layered/circuit.go`.
 
-
 #### Overview
 
 The entire circuit is known as `RootCircuit`, while individual layers are referred to as `Circuit`.

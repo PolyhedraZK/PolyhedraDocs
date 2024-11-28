@@ -94,6 +94,7 @@ pub struct Circuit<T> {
 The API is similar to `gnark`'s frontend API. `C` represents the configuration for the specified field.
 
 Currently, the `Config` and `Field` types are one-to-one:
+
 - Fields: `BN254`, `GF2`, `M31`
 - Configs: `BN254Config`, `GF2Config`, `M31Config`
 

@@ -3,6 +3,7 @@ sidebar_position: 1
 ---
 
 # LogUp
+
 A LogUp circuit verifies the query of a table, ensuring the result is correct, as illustrated below:
 
 ![lookup](../../static/img/lookup.png)
@@ -18,6 +19,7 @@ $$
 Thanks to the Schwartz–Zippel lemma, we can sample a random value $\alpha\in\mathbb{F}$ and conclude that the two polynomials are equal with high probability if they agree at $\alpha$.
 
 ## Concrete Definition
+
 In practice, things get a little more complex since the query key can be arbitrarily long, and there might be more than one values in the row of a table.
 
 ```rust
@@ -41,18 +43,21 @@ declare_circuit!(_LogUpCircuit {
 
 ```
 
-We fully parameterized this, allowing arbitrary ```key_len```, ```value_len```, ```n_table_rows```, and ```n_queries```.
+We fully parameterized this, allowing arbitrary `key_len`, `value_len`, `n_table_rows`, and `n_queries`.
 
 ## Circuit Structure: Short Explaination
-1. ```table_keys``` and ```table_values``` are concated in the second dimension.
-2. ```query_keys``` and ```query_values``` are concated in the second dimension.
+
+1. `table_keys` and `table_values` are concated in the second dimension.
+2. `query_keys` and `query_values` are concated in the second dimension.
 3. The second dimension will be reduced to a single value with randomness.
 4. At this point, we have a list of $t_i$ and $q_j$ now, and we proceed with the LogUp argument.
 
-Thanks to the [Expander](https://github.com/PolyhedraZK/Expander) prover, we're able to use random gate in the construction of the ciruict, whose value will be filled via fiat-shamir hash in proving. 
+Thanks to the [Expander](https://github.com/PolyhedraZK/Expander) prover, we're able to use random gate in the construction of the ciruict, whose value will be filled via fiat-shamir hash in proving.
 
 ## Test
+
 Below is a small test of the logup circuit:
+
 ```rust
 #[test]
 fn logup_test() {
@@ -69,4 +74,4 @@ fn logup_test() {
 }
 ```
 
-To see how ```circuit_test_helper``` is defined, please refer to our documentation of the [std library](../rust/std.md).
+To see how `circuit_test_helper` is defined, please refer to our documentation of the [std library](../rust/std.md).

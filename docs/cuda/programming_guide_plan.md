@@ -227,12 +227,12 @@ fn main() {
     let a = ctx.copy_from_host(vec![vec![1u32, 2u32], vec![3u32, 4u32], vec![5u32, 6u32]]);
     // Create 3 parallel instances, each with 1 element
     let b = ctx.copy_from_host(vec![3u32, 7u32, 11u32]);
-    
+
     let result = ctx.call_kernel(kernel_func, &[a, b]).unwrap();
-    
+
     // result's shape will be [3, 1], representing 3 parallel instances, each outputting 1 result
     assert_eq!(result.shape, vec![3, 1]);
-    
+
     let proof = ctx.get_proof();
 }
 ```

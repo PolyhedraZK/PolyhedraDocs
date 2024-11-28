@@ -39,6 +39,7 @@ We extend our gratitude to the following projects, whose prior work has been cru
 As a compiler collection, we will support more circuit frontend languages in near term.
 
 ## Features in progress
-* zkCuda: a CUDA-like programming experience
-* On-chain verifier generation
-* Extended in-circuit randomness generation
+
+- zkCuda: a CUDA-like programming experience
+- On-chain verifier generation
+- Extended in-circuit randomness generation
