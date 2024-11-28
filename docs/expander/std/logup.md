@@ -6,7 +6,7 @@ sidebar_position: 1
 
 A LogUp circuit verifies the query of a table, ensuring the result is correct, as illustrated below:
 
-![lookup](../../static/img/lookup.png)
+![lookup](../../../static/img/lookup.png)
 
 Let's say we have a table of $N$ values, denoted as $t_i, i\in [N]$, and we have $M$ queries of the table, whose results are denoted as $q_j, j\in [M]$. To check all the query results are correct, we'd like to prove the following relationship:
 

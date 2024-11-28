@@ -5,8 +5,8 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
 const config: Config = {
-  title: "Expander Compiler Collection",
-  tagline: "Circuit Compiler for Expander",
+  title: "Polyhedra Network Document",
+  tagline: "Polyhedra Network Document",
   favicon: "img/favicon.png",
 
   // Set the production url of your site here
@@ -63,7 +63,7 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "Expander Compiler Collection",
+      title: "Polyhefra Network Document",
       logo: {
         alt: "Polyhedra Network",
         src: "img/favicon.png",
@@ -75,11 +75,11 @@ const config: Config = {
           position: "left",
           label: "Docs",
         },
-        {
-          href: "https://github.com/PolyhedraZK/ExpanderCompilerCollection",
-          label: "GitHub",
-          position: "right",
-        },
+        // {
+        //   href: "https://github.com/PolyhedraZK/ExpanderCompilerCollection",
+        //   label: "GitHub",
+        //   position: "right",
+        // },
       ],
     },
     footer: {

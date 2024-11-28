@@ -53,4 +53,4 @@ where
 
 ## Supported Circuits
 
-[LogUp](../std/logup.md). A circuit attesting to the correctness of table look up.
+[LogUp](../std/logup). A circuit attesting to the correctness of table look up.
