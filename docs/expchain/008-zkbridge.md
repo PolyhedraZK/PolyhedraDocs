@@ -73,7 +73,7 @@ contract Demo is IZKBridgeReceiver {
 - Binance Smart Chain
   - chainId：3
   - Address：0xa8a4547Be2eCe6Dde2Dd91b4A5adFe4A043b21C7
-- EXP Chain
+- EXPchain
   - chainId：4
   - Address：0xa8a4547Be2eCe6Dde2Dd91b4A5adFe4A043b21C7
 
