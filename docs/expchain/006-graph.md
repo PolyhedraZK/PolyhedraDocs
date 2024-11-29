@@ -13,7 +13,7 @@ The Graph nodes provided by expchain is only a <mark>sandbox</mark>. The Graph a
 
 [An example deployed subgraph](https://thegraph-subgraphs-testnet.expchain.ai/subgraphs/name/blocklytics/exp-testnet-blocks/graphql) is available for block on expchain Testnet.
 
-## Deploying Subgraph
+## Deploying Subgraphs
 
 ### Install graph-cli
 
