@@ -1,9 +1,6 @@
 # zkBridge Cross-Chain Messaging
-
 You will need the [SendApi interface](#izkbridgesol) and [ReceiveApi interface](#izkbridgereceiversol).
-
 ## Send Chain
-
 To send a message, call the zkBridge send() function.
 here is an simple example
 
@@ -25,8 +22,7 @@ uint64 nonce = IZKBridge(zkBridgeAddress).send{value:msg.value}(dstChainId, dstA
 ```
 
 ## Estimating Message Fees
-
-You will note in the topmost example we call send() with `value: msg.value` this is because send() requires a bit of native gas token so the relayer can complete the message delivery on the destination chain. If you don't set this value you might get error when calling zkBridge.send()
+You will note in the topmost example we call send() with `value: msg.value` this is because send() requires a bit of  native gas token so the relayer can complete the message delivery on the destination chain. If you don't set this value you might get error when calling zkBridge.send()
 
 ```solidity
 function estimateFees(uint16 dstChainId) external view override returns (uint256 fee) {
@@ -35,7 +31,6 @@ function estimateFees(uint16 dstChainId) external view override returns (uint256
 ```
 
 ## Receive Chain
-
 Destination contracts must implement zkReceive() to handle incoming messages
 
 The code snippet explains how the message will be received.
@@ -64,23 +59,19 @@ contract Demo is IZKBridgeReceiver {
 ```
 
 # Contract Addresses
-
 ## Testnet
-
 - Sepolia
-  - chainId：2
+  - chainId：119
   - Address：0xa8a4547Be2eCe6Dde2Dd91b4A5adFe4A043b21C7
 - Binance Smart Chain
-  - chainId：3
+  - chainId：103
   - Address：0xa8a4547Be2eCe6Dde2Dd91b4A5adFe4A043b21C7
 - EXPchain
-  - chainId：4
+  - chainId：131
   - Address：0xa8a4547Be2eCe6Dde2Dd91b4A5adFe4A043b21C7
 
 # EVM (Solidity) Interfaces
-
 ## IZKBridge.sol
-
 ```solidity
 // SPDX-License-Identifier: MIT
 
@@ -101,7 +92,6 @@ interface IZKBridge {
 ```
 
 ## IZKBridgeReceiver.sol
-
 ```solidity
 // SPDX-License-Identifier: MIT
 
