@@ -63,7 +63,7 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "Polyhefra Network Document",
+      title: "Polyhedra Network Document",
       logo: {
         alt: "Polyhedra Network",
         src: "img/favicon.png",
