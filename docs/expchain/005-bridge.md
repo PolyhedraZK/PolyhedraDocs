@@ -8,7 +8,7 @@ ZKJ tokens were initially issued on Ethereum and BNB Chain. To facilitate transa
 
 How to obtain:
 
-- For the testnet, you can use the faucet to obtain test tokens. [EXPchain Testnet Faucet](https://expchain.ai/faucet)
+- For the testnet, you can use the faucet to obtain test tokens. [EXPchain Testnet Faucet](https://faucet.expchain.ai)
 - For the mainnet, you can withdraw tokens directly from a centralized exchange (CEX) which supports EXPchain network(e.g. OKX).
 
 **Step 2: Add the preferred network to your wallet**
@@ -17,7 +17,7 @@ You'll also need to add the desired chain's RPC endpoint to your wallet. Here we
 
 **Step 3: Initiate the deposit**
 
-Visit [https://expchain.ai/bridge](https://expchain.ai/bridge) and log in with your wallet. Ensure you are connected to the correct source network before initiating the cross-chain transfer.
+Visit [https://bridge.expchain.ai](https://bridge.expchain.ai) and log in with your wallet. Ensure you are connected to the correct source network before initiating the cross-chain transfer.
 
 - Select Network: Source network：Sepolia Testnet, BSC Testnet; Destination network：EXPchain Testnet
 - Enter the transfer amount.

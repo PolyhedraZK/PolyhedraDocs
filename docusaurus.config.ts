@@ -60,6 +60,7 @@ const config: Config = {
       logo: {
         alt: "Polyhedra Network",
         src: "img/group.png",
+        href: "/expander/",
       },
       items: [
         {
@@ -73,11 +74,6 @@ const config: Config = {
           sidebarId: "expchainSidebar",
           position: "left",
           label: "EXPchain",
-        },
-        {
-          href: "https://github.com/PolyhedraZK/ExpanderCompilerCollection",
-          label: "GitHub",
-          position: "right",
         },
       ],
     },

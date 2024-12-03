@@ -19,7 +19,7 @@ Here are some resources to help you get connected to the EXPchain network:
 
 EXP is the native utility token of EXPchain and is used to pay transaction fees.
 
-- [EXPchain Testnet Faucet](https://expchain.ai/faucet)
+- [EXPchain Testnet Faucet](https://faucet.expchain.ai)
 
 - For the mainnet, you can withdraw tokens directly from a centralized exchange (CEX) that supports the EXPchain network (e.g., OKX).
 
@@ -39,11 +39,11 @@ Interacting with EXPchain requires sending requests to specific JSON-RPC API met
 
 - Bridge
 
-  - Testnet: [EXPchain Testnet Bridge](https://expchain.ai/bridge)
+  - Testnet: [EXPchain Testnet Bridge](https://bridge.expchain.ai)
 
 - Faucet
 
-  - [EXPchain Testnet Faucet](https://expchain.ai/faucet)
+  - [EXPchain Testnet Faucet](https://faucet.expchain.ai)
 
 - SDK. If you are only using the SDK for Ethereum-compatible functions, then all Ethereum SDKs should work with EXPchain.
 
