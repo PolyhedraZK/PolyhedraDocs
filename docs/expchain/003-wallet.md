@@ -2,7 +2,7 @@
 
     Any Ethereum-compatible wallet can be used with the EXPchain. For example, the following section provides instructions on setting up MetaMask for EXPchain, which is the recommended wallet.
 
-## Testnet: 
+## Testnet:
 
 - Network Name: EXPchain Testnet
 - RPC URL:
@@ -18,7 +18,7 @@
 - tZKJ on Sepolia: 0x465C15e9e2F3837472B0B204e955c5205270CA9E
 - tZKJ on BSC Testnet: 0xbBF8F565995c3fDF890120e6AbC48c4f818b03c2
 
->🌟 tEXP is the native token on the EXPchain Testnet. tZKJ is the test token of ZKJ on the Ethereum Sepolia Testnet and BNB Chain Testnet. tZKJ and tEXP have a 1:1 exchange ratio. They exist in the form of tEXP on the EXPchain Testnet and in the form of tZKJ on the Ethereum Sepolia Testnet and BNB Chain Testnet. You can convert tZKJ on the Ethereum Sepolia Testnet and BNB Chain Testnet to tEXP on the EXPchain Testnet by zkBridge.
+> 🌟 tEXP is the native token on the EXPchain Testnet. tZKJ is the test token of ZKJ on the Ethereum Sepolia Testnet and BNB Chain Testnet. tZKJ and tEXP have a 1:1 exchange ratio. They exist in the form of tEXP on the EXPchain Testnet and in the form of tZKJ on the Ethereum Sepolia Testnet and BNB Chain Testnet. You can convert tZKJ on the Ethereum Sepolia Testnet and BNB Chain Testnet to tEXP on the EXPchain Testnet by zkBridge.
 
 ## Reference - How to configure Metamask
 
@@ -27,4 +27,3 @@ After you install the metamask in your browser, you can go to settings -> networ
 ![Configure](https://storage.googleapis.com/polyhedra-img/images/prod/Configure.png)
 
 Depending on your location and preference, you can choose from a variety of RPC endpoints for EXP Chain. For more information about the endpoints and their features, please refer to [the network information document](https://github.com/PolyhedraZK/chaindocs?tab=readme-ov-file#json-rpc) that we have prepared for you. To ensure the best performance and user experience, you can test the latency of each endpoint before you configure it with your wallet.
-

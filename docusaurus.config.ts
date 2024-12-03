@@ -7,7 +7,7 @@ import rehypeKatex from "rehype-katex";
 const config: Config = {
   title: "Polyhedra Network Documentation",
   tagline: "Polyhedra Network Documentation",
-  favicon: "img/favicon.png",
+  favicon: "img/group.png",
 
   // Set the production url of your site here
   url: "https://polyhedrazk.github.io",
@@ -36,6 +36,7 @@ const config: Config = {
       "classic",
       {
         docs: {
+          routeBasePath: "/",
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -46,6 +47,8 @@ const config: Config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
+        // blog: false,
+        // pages: false,
       } satisfies Preset.Options,
     ],
   ],
@@ -58,6 +61,19 @@ const config: Config = {
       crossorigin: "anonymous",
     },
   ],
+  // plugins: [
+  //   [
+  //     '@docusaurus/plugin-client-redirects',
+  //     {
+  //       redirects: [
+  //         {
+  //           from: '/',
+  //           to: '/expander',
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // ],
 
   themeConfig: {
     // Replace with your project's social card
@@ -66,15 +82,15 @@ const config: Config = {
       title: "Polyhedra Network Document",
       logo: {
         alt: "Polyhedra Network",
-        src: "img/favicon.png",
+        src: "img/group.png",
       },
       items: [
-        {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Docs",
-        },
+        // {
+        //   type: "docSidebar",
+        //   sidebarId: "tutorialSidebar",
+        //   position: "left",
+        //   label: "Docs",
+        // },
         // {
         //   href: "https://github.com/PolyhedraZK/ExpanderCompilerCollection",
         //   label: "GitHub",
