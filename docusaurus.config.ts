@@ -60,6 +60,7 @@ const config: Config = {
       logo: {
         alt: "Polyhedra Network",
         src: "img/group.png",
+        href: "/expander/",
       },
       items: [
         {
