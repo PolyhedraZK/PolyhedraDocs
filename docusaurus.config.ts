@@ -74,11 +74,6 @@ const config: Config = {
           position: "left",
           label: "EXPchain",
         },
-        {
-          href: "https://github.com/PolyhedraZK/ExpanderCompilerCollection",
-          label: "GitHub",
-          position: "right",
-        },
       ],
     },
     footer: {
