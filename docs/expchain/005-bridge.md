@@ -2,7 +2,7 @@
 
 Users can transfer their ZKJ tokens from Ethereum or BNB Chain to the EXPchain.
 
-ZKJ tokens were initially issued on Ethereum and BNB Chain. To facilitate transactions on the EXPchain, these tokens can be bridged over. The EXP token serves as the native currency for transaction fees on the EXPchain.
+ZKJ tokens were initially issued on Ethereum and BNB Chain. To facilitate transactions on the EXPchain, these tokens can be bridged over. The ZKJ token serves as the native currency for transaction fees on the EXPchain.
 
 **Step 1: Get some native tokens**
 
@@ -24,6 +24,6 @@ Visit [https://bridge.expchain.ai](https://bridge.expchain.ai) and log in with y
 - Confirm the recipient address.
 - Click "Approve" and then "Transfer"
 
-![Bridge](https://storage.googleapis.com/polyhedra-img/images/prod/Bridge_03.png)
+![Bridge](https://storage.googleapis.com/polyhedra-img/images/prod/Bridge02.png)
 
 > 🌟Please note that Sepolia Testnet transfers may take up to 9 minutes to complete, while BSC Testnet transfers from the sending chain are estimated to take 5 minutes.

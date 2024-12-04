@@ -17,7 +17,7 @@ Here are some resources to help you get connected to the EXPchain network:
 
 ## Obtain Testnet Tokens
 
-EXP is the native utility token of EXPchain and is used to pay transaction fees.
+ZKJ is the native utility token of EXPchain and is used to pay transaction fees.
 
 - [EXPchain Testnet Faucet](https://faucet.expchain.ai)
 
