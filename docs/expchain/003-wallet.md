@@ -9,16 +9,14 @@
   - [https://rpc0-testnet.expchain.ai](https://rpc0-testnet.expchain.ai/)
   - [https://rpc1-testnet.expchain.ai](https://rpc1-testnet.expchain.ai/)
 - ChainID: 18880
-- Symbol: tEXP
+- Symbol: tZKJ
 - Explorer: [https://blockscout-testnet.expchain.ai](https://blockscout-testnet.expchain.ai)
 - tendermint-sidechain: [https://tendermint-sidechain-testnet.expchain.ai](https://tendermint-sidechain-testnet.expchain.ai)
 - abci-sidechain: [https://abci-sidechain-testnet.expchain.ai](https://abci-sidechain-testnet.expchain.ai)
 - Multicall: 0x7406c4F36c0DCc3E3FC8cC1b1F9771DaFF3CE5d0
-- WEXP: 0x46F2038afa5CDD1a8CD444DB923279ADe1208a48
+- WZKJ: 0x46F2038afa5CDD1a8CD444DB923279ADe1208a48
 - tZKJ on Sepolia: 0x465C15e9e2F3837472B0B204e955c5205270CA9E
 - tZKJ on BSC Testnet: 0xbBF8F565995c3fDF890120e6AbC48c4f818b03c2
-
-> 🌟 tEXP is the native token on the EXPchain Testnet. tZKJ is the test token of ZKJ on the Ethereum Sepolia Testnet and BNB Chain Testnet. tZKJ and tEXP have a 1:1 exchange ratio. They exist in the form of tEXP on the EXPchain Testnet and in the form of tZKJ on the Ethereum Sepolia Testnet and BNB Chain Testnet. You can convert tZKJ on the Ethereum Sepolia Testnet and BNB Chain Testnet to tEXP on the EXPchain Testnet by zkBridge.
 
 ## Reference - How to configure Metamask
 
