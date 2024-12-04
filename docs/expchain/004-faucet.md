@@ -9,3 +9,4 @@ To get Test tokens on EXPchain Testnet, faucets are available on EXPchainTest, E
 
 ![Faucet](https://storage.googleapis.com/polyhedra-img/images/prod/Faucet02.jpg)
 
+> 🌟To use test tokens acquired from Sepolia or BSC Testnet, they must be bridged to the EXPchain Testnet.
