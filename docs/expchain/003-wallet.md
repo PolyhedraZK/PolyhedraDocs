@@ -17,6 +17,8 @@
 - tZKJ on Sepolia: 0x465C15e9e2F3837472B0B204e955c5205270CA9E
 - tZKJ on BSC Testnet: 0xbBF8F565995c3fDF890120e6AbC48c4f818b03c2
 
+> 🌟To use test tokens acquired from Sepolia or BSC Testnet, they must be bridged to the EXPchain Testnet.
+
 ## Reference - How to configure Metamask
 
 After you install the metamask in your browser, you can go to settings -> networks -> add network page. Select add manual network and enter the network information.
