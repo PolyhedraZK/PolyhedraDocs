@@ -14,7 +14,6 @@
 - tendermint-sidechain: [https://tendermint-sidechain-testnet.expchain.ai](https://tendermint-sidechain-testnet.expchain.ai)
 - abci-sidechain: [https://abci-sidechain-testnet.expchain.ai](https://abci-sidechain-testnet.expchain.ai)
 - Multicall: 0x7406c4F36c0DCc3E3FC8cC1b1F9771DaFF3CE5d0
-- WZKJ: 0x46F2038afa5CDD1a8CD444DB923279ADe1208a48
 - tZKJ on Sepolia: 0x465C15e9e2F3837472B0B204e955c5205270CA9E
 - tZKJ on BSC Testnet: 0xbBF8F565995c3fDF890120e6AbC48c4f818b03c2
 
