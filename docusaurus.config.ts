@@ -60,20 +60,20 @@ const config: Config = {
       logo: {
         alt: "Polyhedra Network",
         src: "img/group.png",
-        href: "/expander/",
+        href: "/",
       },
       items: [
-        {
-          type: "docSidebar",
-          sidebarId: "expanderSidebar",
-          position: "left",
-          label: "Expander",
-        },
         {
           type: "docSidebar",
           sidebarId: "expchainSidebar",
           position: "left",
           label: "EXPchain",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "expanderSidebar",
+          position: "left",
+          label: "Expander",
         },
       ],
     },

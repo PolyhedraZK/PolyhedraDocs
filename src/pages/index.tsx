@@ -1,11 +1,7 @@
 import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { Redirect } from "@docusaurus/router";
 
 export default function Home() {
-  if (typeof window !== "undefined") {
-    const url = useBaseUrl("/expander");
-    console.log(`url = ${url}`);
-    window.location.replace(url);
-  }
-  return null;
+  return <Redirect to={useBaseUrl("/expchain/")} />;
 }

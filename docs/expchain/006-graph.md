@@ -2,9 +2,9 @@
 
 ## Important Note
 
-The Graph nodes provided by expchain is only a <mark>sandbox</mark>. The Graph admin endpoint is made public to allow anyone to be able to use it for testing. Projects should run their own Graph instances in production and avoid exposing the admin endpoint.
+The Graph nodes provided by expchain is only a sandbox. The Graph admin endpoint is made public to allow anyone to be able to use it for testing. Projects should run their own Graph instances in production and avoid exposing the admin endpoint.
 
-## ExpChain Testnet <mark>Sandbox</mark>
+## ExpChain Testnet Sandbox
 
 - JSON-RPC Admin (Deploy subgraphs): https://thegraph-jsonrpc-testnet.expchain.ai
 - GraphQL HTTP Server (Query subgraphs): https://thegraph-subgraphs-testnet.expchain.ai
