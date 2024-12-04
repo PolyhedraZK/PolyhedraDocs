@@ -2,7 +2,7 @@
 
 Users can transfer their ZKJ tokens from Ethereum or BNB Chain to the EXPchain.
 
-ZKJ tokens were initially issued on Ethereum and BNB Chain. To facilitate transactions on the EXPchain, these tokens can be bridged over. The EXP token serves as the native currency for transaction fees on the EXPchain.
+ZKJ tokens were initially issued on Ethereum and BNB Chain. To facilitate transactions on the EXPchain, these tokens can be bridged over. The ZKJ token serves as the native currency for transaction fees on the EXPchain.
 
 **Step 1: Get some native tokens**
 
