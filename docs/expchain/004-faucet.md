@@ -7,5 +7,5 @@ To get Test tokens on EXPchain Testnet, faucets are available on EXPchainTest, E
 - 0.01 tZKJ per 24 hours on each network.
 - To apply for a significant allocation of test tokens, please submit a request to the DC administrator.
 
-![Faucet](https://storage.googleapis.com/polyhedra-img/images/prod/Faucet_03.png)
+![Faucet](https://storage.googleapis.com/polyhedra-img/images/prod/Faucet02.jpg)
 
