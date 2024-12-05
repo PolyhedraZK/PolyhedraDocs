@@ -2,16 +2,16 @@
 
 ## Important Note
 
-The Graph nodes provided by expchain is only a sandbox. The Graph admin endpoint is made public to allow anyone to be able to use it for testing. Projects should run their own Graph instances in production and avoid exposing the admin endpoint.
+The Graph nodes provided by EXPchain is only a sandbox. The Graph admin endpoint is made public to allow anyone to be able to use it for testing. Projects should run their own Graph instances in production and avoid exposing the admin endpoint.
 
-## ExpChain Testnet Sandbox
+## EXPchain Testnet Sandbox
 
 - JSON-RPC Admin (Deploy subgraphs): https://thegraph-jsonrpc-testnet.expchain.ai
 - GraphQL HTTP Server (Query subgraphs): https://thegraph-subgraphs-testnet.expchain.ai
 - Query Status(Subgraph indexing status): https://thegraph-index-testnet.expchain.ai
 - IPFS: https://thegraph-ipfs-testnet.expchain.ai
 
-[An example deployed subgraph](https://thegraph-subgraphs-testnet.expchain.ai/subgraphs/name/blocklytics/exp-testnet-blocks/graphql) is available for block on expchain Testnet.
+[An example deployed subgraph](https://thegraph-subgraphs-testnet.expchain.ai/subgraphs/name/blocklytics/exp-testnet-blocks/graphql) is available for block on EXPchain Testnet.
 
 ## Deploying Subgraphs
 
@@ -26,7 +26,7 @@ You can also use an example project like [v2-uniswap](https://github.com/Uniswap
 
 ### Upgrade the manifest
 
-Update the `network` properties in the `subgraph.yaml` manifest file. The network name for expchain is `expchain-testnet`.
+Update the `network` properties in the `subgraph.yaml` manifest file. The network name for EXPchain is `expchain-testnet`.
 
 ### Create your subgraph
 
