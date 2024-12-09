@@ -152,7 +152,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `<div>&#169; ${new Date().getFullYear()} Polyhedra Network<a href="#">Press Kit</a></div>`,
+      copyright: `<div>&#169; ${new Date().getFullYear()} Polyhedra Network<a href="https://drive.google.com/drive/folders/1ZXE__EVRMeeIHX0FpIWG3va1d_xmse7n">Press Kit</a></div>`,
     },
     prism: {
       theme: prismThemes.github,
