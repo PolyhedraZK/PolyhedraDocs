@@ -12,9 +12,9 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-heading-font-weight: 500;
-  --ifm-h1-font-size: 1.75rem;
-  --ifm-h2-font-size: 1.5rem;
-  --ifm-h3-font-size: 1.25rem;
+  --ifm-h1-font-size: 4rem;
+  --ifm-h2-font-size: 4.6rem;
+  --ifm-h3-font-size: 4rem;
   --ifm-font-family-base: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --doc-sidebar-width: 300px !important;
   --ifm-navbar-height: 80px;
@@ -30,7 +30,17 @@
   --navbar-logo-width: min(128px, 20vw);
   --navbar-font-size: clamp(0.8rem, 1.5vw, 1rem);
   --navbar-gap: clamp(1rem, 3vw, 4rem);
+  
+  /* Scroll padding for anchor links */
+  scroll-padding-top: 0vh;
+  scroll-behavior: smooth;
 }
+
+/* Add scroll margin to reference targets */
+[id^="ref"] {
+  scroll-margin-top: 50vh;
+}
+
 
 /* Add underline to markdown links by default */
 .markdown a {
@@ -219,7 +229,7 @@ article {
 
 /* Typography */
 article header h1 {
-  font-size: 24px !important;
+  font-size: 3rem !important;
   margin-bottom: 0.5rem !important;
   font-weight: 500 !important;
   line-height: 1.2 !important;
@@ -228,7 +238,7 @@ article header h1 {
 }
 
 article header h1 + p {
-  font-size: 14px !important;
+  font-size: 1rem !important;
   color: var(--ifm-menu-color) !important;
   opacity: 0.8;
   margin-bottom: 2rem !important;
@@ -236,7 +246,7 @@ article header h1 + p {
 }
 
 .markdown h2 {
-  font-size: 20px !important;
+  font-size: 2rem !important;
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: 500;
@@ -246,7 +256,7 @@ article header h1 + p {
 }
 
 .markdown h3 {
-  font-size: 16px !important;
+  font-size: 1.5rem !important;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
   font-weight: 500;

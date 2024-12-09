@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # EXPchain: Scaling Trust in the Age of Artificial Intelligence
 
-<span style={{fontSize: "smaller", color: "grey"}}>December 9, 2024 &nbsp;&nbsp;&nbsp;&nbsp; Polyhedra Research</span>
+<span style={{fontSize: "medium", color: "grey"}}>December 9, 2024 &nbsp;&nbsp;&nbsp;&nbsp; Polyhedra Network</span>
 
 ## Abstract
 
@@ -22,16 +22,16 @@ Built on a zk-native blockchain infrastructure, EXPchain supports seamless AI wo
 ### 1.1 The Importance of Trust in AI
 Artificial intelligence will make increasingly critical decisions across industries, influencing everyday interactions such as unlocking phones with facial recognition, applying for loans, or receiving AI-powered medical diagnoses. While these advancements offer immense potential, they also present critical challenges. How can we ensure AI systems operate fairly, accurately, and securely? Can privacy controls effectively safeguard sensitive data without compromising transparency or accountability? These challenges require proof of established trust in AI systems, and protection of sensitive information on all sides.
 
-Governments and institutions globally are working to regulate AI, visible in initiatives like the European Commission's AI Act and NIST's AI Risk Management Framework. Despite these efforts, traditional approaches often fall short as they require exposing proprietary models or sensitive data, resulting in trade-offs between security, privacy, and trust. Building from [foundational work](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)[1] on zero-knowledge proofs (ZKPs), zero-knowledge machine learning[2,35] (zkML) provides a breakthrough solution by enabling mathematical verification of AI systems while preserving data and model privacy.
+Governments and institutions globally are working to regulate AI, visible in initiatives like the European Commission's AI Act and NIST's AI Risk Management Framework. Despite these efforts, traditional approaches often fall short as they require exposing proprietary models or sensitive data, resulting in trade-offs between security, privacy, and trust. Building from [foundational work](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)[<a href="#ref1">1</a>], zero-knowledge machine learning[<a href="#ref2">2</a>,<a href="#ref35">35</a>] (zkML) provides a breakthrough solution by enabling mathematical verification of AI systems while preserving data and model privacy.
 
-Polyhedra Network proposes an interoperable solution optimized for zkML technology in EXPchain, applying years of advanced [research and implementation](https://www.polyhedra.network/research)[3, 13, 15-18, 21-24, 26, 27, 29-34] to enable the creation of applications that verify AI behavior and compliance without revealing proprietary information. This blockchain infrastructure ensures scalable, fast, and secure verification of AI behavior and compliance across diverse use cases.
+Polyhedra Network proposes an interoperable solution optimized for zkML technology in EXPchain, applying years of advanced [research and implementation](https://www.polyhedra.network/research)[<a href="#ref3">3</a>, <a href="#ref13">13</a>, <a href="#ref15">15</a>-<a href="#ref18">18</a>, <a href="#ref21">21</a>-<a href="#ref24">24</a>, <a href="#ref26">26</a>, <a href="#ref27">27</a>, <a href="#ref29">29</a>-<a href="#ref34">34</a>] to enable the creation of applications that verify AI behavior and compliance without revealing proprietary information. This blockchain infrastructure ensures scalable, fast, and secure verification of AI behavior and compliance across diverse use cases.
 
 ### 1.2 AI-Blockchain Convergence
-The global AI market is projected to contribute up to [\$15.7 trillion](https://www.pwc.com/hu/en/pressroom/2017/ai.html)[4] to the global economy by 2030, while blockchain's potential value is estimated at [\$3.1 trillion](https://medium.com/consensys-media/gartner-blockchain-will-deliver-3-1-trillion-dollars-in-value-by-2030-d32b79c4c560)[5] over the same period. The cost of AI failures due to errors, biases, or flawed implementations is equally staggering. 
+The global AI market is projected to contribute up to [\$15.7 trillion](https://www.pwc.com/hu/en/pressroom/2017/ai.html)[<a href="#ref4">4</a>] to the global economy by 2030, while blockchain's potential value is estimated at [\$3.1 trillion](https://medium.com/consensys-media/gartner-blockchain-will-deliver-3-1-trillion-dollars-in-value-by-2030-d32b79c4c560)[<a href="#ref5">5</a>] over the same period. The cost of AI failures due to errors, biases, or flawed implementations is equally staggering. 
 
-In 2022 it was estimated that the cost of poor software quality in the US had grown to [at least \$2.41 trillion](https://www.it-cisq.org/the-cost-of-poor-quality-software-in-the-us-a-2022-report/)[6], with AI failures further expanding the [categories of risk](https://www.raconteur.net/technology/cost-ai-failures)[7] with incorrect outputs, data breaches and cyber attacks. Beyond financial losses, these errors often result in [harm to individuals](https://medium.com/@experiential.ai/the-extreme-costs-of-faulty-ai-and-the-vital-role-humans-play-dba1fc0971ed)[8], whether through wrongful imprisonment, misdiagnosed medical conditions, or biased decision-making. From data inputs to model outputs, ensuring every element of AI-driven transactions are verifiable and accountable is no longer optional, it's essential to navigate these risks while unlocking AI's full potential.
+In 2022 it was estimated that the cost of poor software quality in the US had grown to [at least \$2.41 trillion](https://www.it-cisq.org/the-cost-of-poor-quality-software-in-the-us-a-2022-report/)[<a href="#ref6">6</a>], with AI failures further expanding the [categories of risk](https://www.raconteur.net/technology/cost-ai-failures)[<a href="#ref7">7</a>] with incorrect outputs, data breaches and cyber attacks. Beyond financial losses, these errors often result in [harm to individuals](https://medium.com/@experiential.ai/the-extreme-costs-of-faulty-ai-and-the-vital-role-humans-play-dba1fc0971ed)[<a href="#ref8">8</a>], whether through wrongful imprisonment, misdiagnosed medical conditions, or biased decision-making. From data inputs to model outputs, ensuring every element of AI-driven transactions are verifiable and accountable is no longer optional, it's essential to navigate these risks while unlocking AI's full potential.
 
-The convergence of AI and blockchain marks a paradigm shift in decentralized technology. While ZKPs like [Groth16](https://eprint.iacr.org/2016/260.pdf)[9] and [Plonk](https://eprint.iacr.org/2019/953)[10] have advanced scalability, practical deployment for complex AI systems remains challenging. Innovations such as the Expander proof system and [zkPyTorch](https://blog.polyhedra.network/scaling-trust-in-the-age-of-artificial-intelligence/)[11] build on these foundations, significantly enhancing computational efficiency to enable real-time AI verification. These developments redefine the [current value chain](https://www.fastcompany.com/91194971/decoding-the-ai-stack-and-how-to-succeed-in-the-ai-value-chain)[12], centered on training, inference, and verification, laying a foundation for secure, scalable AI workflows.
+The convergence of AI and blockchain marks a paradigm shift in decentralized technology. While ZKPs like [Groth16](https://eprint.iacr.org/2016/260.pdf)[<a href="#ref9">9</a>] and [Plonk](https://eprint.iacr.org/2019/953)[<a href="#ref10">10</a>] have advanced scalability, practical deployment for complex AI systems remains challenging. Innovations such as the Expander proof system and [zkPyTorch](https://blog.polyhedra.network/scaling-trust-in-the-age-of-artificial-intelligence/)[<a href="#ref11">11</a>] build on these foundations, significantly enhancing computational efficiency to enable real-time AI verification. These developments redefine the [current value chain](https://www.fastcompany.com/91194971/decoding-the-ai-stack-and-how-to-succeed-in-the-ai-value-chain)[<a href="#ref12">12</a>], centered on training, inference, and verification, laying a foundation for secure, scalable AI workflows.
 
 ### 1.3 Our Vision
 Polyhedra Network envisions a future where trust in AI and blockchain systems is inherent. We recognize this is not a small objective, however by lowering technical barriers for developers and leveraging powerful zk tools in EXPchain, we aim to establish a trusted ecosystem where developers can build privacy-preserving applications without needing specialized cryptographic expertise, making AI universally accessible, verifiable, and accountable.
@@ -51,16 +51,16 @@ Expander sets a new benchmark in performance for zkML, achieving [unprecedented 
 - 150 seconds/token for Llama-3 (8B parameters) on a single-thread CPU
 - Amortized, we can prove 0.8 million parameters per second, 4 orders of magnitude faster than any number previously reported.
 
-Polyhedra anticipates this to improve significantly over the next 12-24 months. We are actively building [hardware accelerations for our scheme](https://github.com/PolyhedraZK/blogs/blob/main/blogs/sumcheck_cuda.md)[14] and developing a [distributed prover infrastructure](https://eprint.iacr.org/2023/1271)[15, 16] where multiple nodes can collaboratively work on the same proofs. Through these innovations, we are moving steadily toward our goal of real-time proving, where proof generation matches inference speed, effectively eliminating latency in the user experience. These performance leaps enable the practical verification of AI models and computations with significantly reduced costs and latency to support a wide range of applications, from privacy-preserving inference to compliance-driven model audits.
+Polyhedra anticipates this to improve significantly over the next 12-24 months. We are actively building [hardware accelerations for our scheme](https://github.com/PolyhedraZK/blogs/blob/main/blogs/sumcheck_cuda.md)[<a href="#ref14">14</a>] and developing a [distributed prover infrastructure](https://eprint.iacr.org/2023/1271)[<a href="#ref15">15</a>, <a href="#ref16">16</a>] where multiple nodes can collaboratively work on the same proofs. Through these innovations, we are moving steadily toward our goal of real-time proving, where proof generation matches inference speed, effectively eliminating latency in the user experience. These performance leaps enable the practical verification of AI models and computations with significantly reduced costs and latency to support a wide range of applications, from privacy-preserving inference to compliance-driven model audits.
 
 ### 2.2 ExPoS: Expanded Proof of Stake for unified consensus
-Expanded Proof of Stake (ExPoS) forms the consensus backbone of ExpChain, leveraging [zkBridge technology](https://dl.acm.org/doi/pdf/10.1145/3548606.3560652)[16] to unify and connect staking mechanisms across all blockchains into a cohesive network. 
+Expanded Proof of Stake (ExPoS) forms the consensus backbone of ExpChain, leveraging [zkBridge technology](https://dl.acm.org/doi/pdf/10.1145/3548606.3560652)[<a href="#ref16">16</a>] to unify and connect staking mechanisms across all blockchains into a cohesive network. 
 
 By utilizing zero-knowledge proofs, ExPoS secures and transparently manages staking, allowing for omnichain staking and expanded use of liquid assets, anticipating a future where high throughput and seamless interoperability are crucial not just for AI applications but for all decentralized workflows. This consensus model provides users with boundless security, greater flexibility and seamless integration, regardless of underlying blockchain architecture.
 
 ### 2.3 zkPyTorch: Developer-Friendly Integration
 zkPyTorch bridges the gap between traditional AI development workflows and zero-knowledge machine learning (zkML) by automating the conversion of PyTorch operations into zk circuits. This integration allows developers to use familiar tools while significantly reducing the time and complexity of deploying zk-enabled AI applications, providing:
-- [Automated circuit generation](https://blog.polyhedra.network/scaling-trust-in-the-age-of-artificial-intelligence/)[11] and optimization for common AI tasks.
+- [Automated circuit generation](https://blog.polyhedra.network/scaling-trust-in-the-age-of-artificial-intelligence/)[<a href="#ref11">11</a>] and optimization for common AI tasks.
 - Reducing development time from months to days.
 - Compatibility with evolving machine learning models for future-proof deployments.
 - Reduction in proof generation times by 99.99%.
@@ -68,7 +68,7 @@ zkPyTorch bridges the gap between traditional AI development workflows and zero-
 ## 3. Technology Stack
 
 ### 3.1 Zero-Knowledge Machine Learning (zkML)
-zkML enables [cryptographic verification of AI models](https://blog.polyhedra.network/scaling-trust-in-the-age-of-artificial-intelligence/)[11] to achieve secure accuracy across the entire machine learning lifecycle:
+zkML enables [cryptographic verification of AI models](https://blog.polyhedra.network/scaling-trust-in-the-age-of-artificial-intelligence/)[<a href="#ref11">11</a>] to achieve secure accuracy across the entire machine learning lifecycle:
 - Verifiable inference: Prove AI outputs without exposing models or data.
 - Model audits: Verify performance against test sets for fairness and compliance.
 - Training verification: Ensure adherence to protocols without revealing sensitive inputs.
@@ -94,13 +94,13 @@ This technology allows developers to build systems that are both secure and ethi
 Proof of Intelligence (PoI) creates an immutable chain of trust for AI models, verifying their origin, authenticity, and ethical compliance. This framework protects intellectual property and ensures transparent accountability, cryptographically linking each AI model's provenance and performance to a verifiable on-chain record, offering unprecedented transparency in AI-driven ecosystems.
 
 ### 3.4 zkBridge
-Polyhedra's native [zkBridge](https://dl.acm.org/doi/pdf/10.1145/3548606.3560652)[16] support empowers developers to create secure, seamless cross-chain AI applications, ensuring that on-chain assets and data can be utilized across multiple blockchain ecosystems with minimal trust requirements. Leveraging ZKPs, zkBridge facilitates efficient, transparent, trust-minimized communication between chains, enhancing scalability and reducing vulnerabilities in decentralized workflows.
+Polyhedra's native [zkBridge](https://dl.acm.org/doi/pdf/10.1145/3548606.3560652)[<a href="#ref16">16</a>] support empowers developers to create secure, seamless cross-chain AI applications, ensuring that on-chain assets and data can be utilized across multiple blockchain ecosystems with minimal trust requirements. Leveraging ZKPs, zkBridge facilitates efficient, transparent, trust-minimized communication between chains, enhancing scalability and reducing vulnerabilities in decentralized workflows.
 
 ### 3.5 zkML Watermark for LLM Verification
-EXPchain's zkML Watermark allows [verification of Large Language Models](https://arxiv.org/pdf/2312.04828)[23] (LLMs) like Llama-3 8B, representing a milestone in AI transparency. Issuing a tamper-proof certificate that ensures any LLM processed through EXPchain is exactly as claimed, verified through zkML, ensures model authenticity while preserving intellectual property, reducing fraud and enabling responsible AI use. Utilizing this technology, organizations can validate LLMs on an open, secure platform. 
+EXPchain's zkML Watermark allows [verification of Large Language Models](https://arxiv.org/pdf/2312.04828)[<a href="#ref23">23</a>] (LLMs) like Llama-3 8B, representing a milestone in AI transparency. Issuing a tamper-proof certificate that ensures any LLM processed through EXPchain is exactly as claimed, verified through zkML, ensures model authenticity while preserving intellectual property, reducing fraud and enabling responsible AI use. Utilizing this technology, organizations can validate LLMs on an open, secure platform. 
 
 ### 3.6 Optimized Proof Systems
-Expander is the product of six-years unstopping research and development, merging the speed and efficiency. This powerful combination aligns with Vitalik Buterin's vision for the [ZK Endgame](https://vitalik.eth.limo/general/2021/12/06/endgame.html)[25], where centralized block production is reinforced by decentralized validation. By significantly reducing proving time and computational costs, Expander makes zero-knowledge solutions more practical and affordable, unlocking their potential for cost-sensitive industries.
+Expander is the product of six-years unstopping research and development, merging the speed and efficiency. This powerful combination aligns with Vitalik Buterin's vision for the [ZK Endgame](https://vitalik.eth.limo/general/2021/12/06/endgame.html)[<a href="#ref25">25</a>], where centralized block production is reinforced by decentralized validation. By significantly reducing proving time and computational costs, Expander makes zero-knowledge solutions more practical and affordable, unlocking their potential for cost-sensitive industries.
 
 ### 3.7 Single Slot Finality (SSF) for accelerating consensus finality
 Single Slot Finality (SSF) addresses scalability limits in traditional consensus mechanisms by introducing advanced ZKPs for enhanced signature schemes. This innovative approach enables batch verification of signatures, reducing confirmation times and improving efficiency across the finality process. By leveraging ZKPs, SSF achieves faster and more secure transaction finality, supporting the high demands of applications. 
@@ -116,13 +116,11 @@ Leveraging ZKPs for account management, zkLogin enables enhanced smart contract 
 
 ## 4. Building the future of Intelligence
 
-### POC applications with immediate use-cases include:
-
 ### 4.1 Finance
 Cryptographically secure systems have the potential to redefine trust in finance. Using zkML, we can enhance transparent verification for transactions, secure and private verification of credit scores during loan approvals, and algorithmic trading without revealing confidential data, promoting fairness and compliance simultaneously.
 
 ### 4.2 Healthcare
-ZKPs have become instrumental in enhancing the security and privacy of AI-powered diagnostics within the healthcare sector. By employing techniques akin to those discussed by [Ganescu and Passerat-Palmbach](https://arxiv.org/abs/2402.06414)[28], [Zero-Knowledge Machine Learning (zkML)](https://dl.acm.org/doi/pdf/10.1145/3372297.3417278)[29, 25] ensures that patient data remains confidential while enabling cryptographic verification of diagnostic models, fostering trust in sensitive medical applications.
+ZKPs have become instrumental in enhancing the security and privacy of AI-powered diagnostics within the healthcare sector. By employing techniques akin to those discussed by [Ganescu and Passerat-Palmbach](https://arxiv.org/abs/2402.06414)[<a href="#ref28">28</a>], [Zero-Knowledge Machine Learning (zkML)](https://dl.acm.org/doi/pdf/10.1145/3372297.3417278)[<a href="#ref29">29</a>, <a href="#ref25">25</a>] ensures that patient data remains confidential while enabling cryptographic verification of diagnostic models, fostering trust in sensitive medical applications.
 
 ### 4.3 Data and Compute Marketplaces
 EXPchain fosters trustless collaboration by enabling secure sharing of computational resources and datasets. Developers and organizations can confidently participate in AI innovation, leveraging zkML to verify contributions and outcomes without exposing proprietary assets or sensitive information.
@@ -132,8 +130,6 @@ In industries like food safety, pharmaceuticals, and luxury goods, trust in the 
 
 ### 4.5 AI-Driven Entertainment, Content and Memecoins
 From gaming to memecoins and content creation, zkML ensures fairness, transparency, and authentication of digital assets in AI-driven experiences. Verifiable computations enable creators to authenticate digital assets and personalize user experiences without compromising privacy or ownership.
-
-### POC applications with mid-term use-cases include:
 
 ### 4.6 Smart Cities
 For AI-driven decisions to work validly within urban infrastructure, they must be fair, ethical, and accountable. EXPchain's infrastructure fosters transparency in public resource allocation, traffic optimization, and energy management, allowing smart cities to operate with trust and integrity.
@@ -189,72 +185,72 @@ Our work bridges cutting-edge innovation with real-world applications, making th
 
 ## References
 
-[1] [The Knowledge Complexity of Interactive Proof Systems](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)
+<a id="ref1"></a>[1] [The Knowledge Complexity of Interactive Proof Systems](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)
 
-[2] [Zero Knowledge Proofs for Decision Tree Predictions and Accuracy](https://dl.acm.org/doi/pdf/10.1145/3372297.3417278)
+<a id="ref2"></a>[2] [Zero Knowledge Proofs for Decision Tree Predictions and Accuracy](https://dl.acm.org/doi/pdf/10.1145/3372297.3417278)
 
-[3] [Polyhedra Research - Zero knowledge, infinite innovation](https://www.polyhedra.network/research)
+<a id="ref3"></a>[3] [Polyhedra Research - Zero knowledge, infinite innovation](https://www.polyhedra.network/research)
 
-[4] [PwC's Global Artificial Intelligence Study - AI to drive GDP gains of $15.7 trillion with productivity, personalisation improvements](https://www.pwc.com/hu/en/pressroom/2017/ai.html)
+<a id="ref4"></a>[4] [PwC's Global Artificial Intelligence Study - AI to drive GDP gains of $15.7 trillion with productivity, personalisation improvements](https://www.pwc.com/hu/en/pressroom/2017/ai.html)
 
-[5] [Gartner: Blockchain Will Deliver $3.1 Trillion Dollars in Value by 2030](https://medium.com/consensys-media/gartner-blockchain-will-deliver-3-1-trillion-dollars-in-value-by-2030-d32b79c4c560)
+<a id="ref5"></a>[5] [Gartner: Blockchain Will Deliver $3.1 Trillion Dollars in Value by 2030](https://medium.com/consensys-media/gartner-blockchain-will-deliver-3-1-trillion-dollars-in-value-by-2030-d32b79c4c560)
 
-[6] [The cost of poor software quality in the US: a 2022 report](https://www.it-cisq.org/the-cost-of-poor-quality-software-in-the-us-a-2022-report/)
+<a id="ref6"></a>[6] [The cost of poor software quality in the US: a 2022 report](https://www.it-cisq.org/the-cost-of-poor-quality-software-in-the-us-a-2022-report/)
 
-[7] [Are firms ready for the cost of AI failures?](https://www.raconteur.net/technology/cost-ai-failures)
+<a id="ref7"></a>[7] [Are firms ready for the cost of AI failures?](https://www.raconteur.net/technology/cost-ai-failures)
 
-[8] [The Extreme Costs of Faulty AI and the Vital Role Humans Play](https://medium.com/@experiential.ai/the-extreme-costs-of-faulty-ai-and-the-vital-role-humans-play-dba1fc0971ed)
+<a id="ref8"></a>[8] [The Extreme Costs of Faulty AI and the Vital Role Humans Play](https://medium.com/@experiential.ai/the-extreme-costs-of-faulty-ai-and-the-vital-role-humans-play-dba1fc0971ed)
 
-[9] [On the Size of Pairing-based Non-interactive Arguments](https://eprint.iacr.org/2016/260.pdf)
+<a id="ref9"></a>[9] [On the Size of Pairing-based Non-interactive Arguments](https://eprint.iacr.org/2016/260.pdf)
 
-[10] [PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge](https://eprint.iacr.org/2019/953)
+<a id="ref10"></a>[10] [PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge](https://eprint.iacr.org/2019/953)
 
-[11] [Scaling Trust in the Age of Artificial Intelligence](https://blog.polyhedra.network/scaling-trust-in-the-age-of-artificial-intelligence/)
+<a id="ref11"></a>[11] [Scaling Trust in the Age of Artificial Intelligence](https://blog.polyhedra.network/scaling-trust-in-the-age-of-artificial-intelligence/)
 
-[12] [Decoding the AI stack and how to succeed in the AI value chain](https://www.fastcompany.com/91194971/decoding-the-ai-stack-and-how-to-succeed-in-the-ai-value-chain)
+<a id="ref12"></a>[12] [Decoding the AI stack and how to succeed in the AI value chain](https://www.fastcompany.com/91194971/decoding-the-ai-stack-and-how-to-succeed-in-the-ai-value-chain)
 
-[13] [Ligero++: A New Optimized Sublinear IOP (CCS 2020)](https://dl.acm.org/doi/10.1145/3372297.3417893)
+<a id="ref13"></a>[13] [Ligero++: A New Optimized Sublinear IOP (CCS 2020)](https://dl.acm.org/doi/10.1145/3372297.3417893)
 
-[14] [Accelerating Ethereum's Verge: Harnessing GPU Power for Zero-Knowledge Proofs](https://github.com/PolyhedraZK/blogs/blob/main/blogs/sumcheck_cuda.md)
+<a id="ref14"></a>[14] [Accelerating Ethereum's Verge: Harnessing GPU Power for Zero-Knowledge Proofs](https://github.com/PolyhedraZK/blogs/blob/main/blogs/sumcheck_cuda.md)
 
-[15] [Pianist: Scalable zkRollups via Fully Distributed Zero-Knowledge Proofs (S&P 2023)](https://eprint.iacr.org/2023/1271)
+<a id="ref15"></a>[15] [Pianist: Scalable zkRollups via Fully Distributed Zero-Knowledge Proofs (S&P 2023)](https://eprint.iacr.org/2023/1271)
 
-[16] [zkBridge: Trustless Cross-chain Bridges Made Practical (CCS 2022)](https://dl.acm.org/doi/pdf/10.1145/3548606.3560652)
+<a id="ref16"></a>[16] [zkBridge: Trustless Cross-chain Bridges Made Practical (CCS 2022)](https://dl.acm.org/doi/pdf/10.1145/3548606.3560652)
 
-[17] [Orion: Zero Knowledge Proof with Linear Prover Time (CRYPTO 2022)](https://eprint.iacr.org/2022/1010.pdf)
+<a id="ref17"></a>[17] [Orion: Zero Knowledge Proof with Linear Prover Time (CRYPTO 2022)](https://eprint.iacr.org/2022/1010.pdf)
 
-[18] [HyperPlonk: Plonk with Linear-Time Prover and High-Degree Custom Gates (Eurocrypt 2023)](https://eprint.iacr.org/2022/1355)
+<a id="ref18"></a>[18] [HyperPlonk: Plonk with Linear-Time Prover and High-Degree Custom Gates (Eurocrypt 2023)](https://eprint.iacr.org/2022/1355)
 
-[19] [Poseidon2: A Faster Version of the Poseidon Hash Function](https://eprint.iacr.org/2023/323)
+<a id="ref19"></a>[19] [Poseidon2: A Faster Version of the Poseidon Hash Function](https://eprint.iacr.org/2023/323)
 
-[20] [Hadamard Product Argument from Lagrange-Based Univariate Polynomials (ACISP 2024)](https://eprint.iacr.org/2024/613)
+<a id="ref20"></a>[20] [Hadamard Product Argument from Lagrange-Based Univariate Polynomials (ACISP 2024)](https://eprint.iacr.org/2024/613)
 
-[21] [Doubly Efficient Interactive Proofs for General Arithmetic Circuits with Linear Prover Time (CCS 2021)](https://eprint.iacr.org/2020/1247)
+<a id="ref21"></a>[21] [Doubly Efficient Interactive Proofs for General Arithmetic Circuits with Linear Prover Time (CCS 2021)](https://eprint.iacr.org/2020/1247)
 
-[22] [Transparent Polynomial Delegation and Its Applications to Zero Knowledge Proof (S&P 2020)](https://eprint.iacr.org/2019/1482.pdf)
+<a id="ref22"></a>[22] [Transparent Polynomial Delegation and Its Applications to Zero Knowledge Proof (S&P 2020)](https://eprint.iacr.org/2019/1482.pdf)
 
-[23] [Human-Readable Fingerprint for Large Language Models (NeurIPS 2024)](https://arxiv.org/pdf/2312.04828)
+<a id="ref23"></a>[23] [Human-Readable Fingerprint for Large Language Models (NeurIPS 2024)](https://arxiv.org/pdf/2312.04828)
 
-[24] [Libra: Succinct Zero-Knowledge Proofs with Optimal Prover Computation (CRYPTO 2019)](https://eprint.iacr.org/2019/317.pdf)
+<a id="ref24"></a>[24] [Libra: Succinct Zero-Knowledge Proofs with Optimal Prover Computation (CRYPTO 2019)](https://eprint.iacr.org/2019/317.pdf)
 
-[25] [ZK Endgame](https://vitalik.eth.limo/general/2021/12/06/endgame.html)
+<a id="ref25"></a>[25] [ZK Endgame](https://vitalik.eth.limo/general/2021/12/06/endgame.html)
 
-[26] [Gemini: Elastic SNARKs for Diverse Environments (Eurocrypt 2022)](https://eprint.iacr.org/2022/420)
+<a id="ref26"></a>[26] [Gemini: Elastic SNARKs for Diverse Environments (Eurocrypt 2022)](https://eprint.iacr.org/2022/420)
 
-[27] [Marlin: Preprocessing zkSNARKs with Universal and Updatable SRS (Eurocrypt 2020)](https://eprint.iacr.org/2019/1047)
+<a id="ref27"></a>[27] [Marlin: Preprocessing zkSNARKs with Universal and Updatable SRS (Eurocrypt 2020)](https://eprint.iacr.org/2019/1047)
 
-[28] [Trust the Process: Zero-Knowledge Machine Learning to Enhance Trust in Generative AI Interactions](https://arxiv.org/abs/2402.06414)
+<a id="ref28"></a>[28] [Trust the Process: Zero-Knowledge Machine Learning to Enhance Trust in Generative AI Interactions](https://arxiv.org/abs/2402.06414)
 
-[29] [Zero Knowledge Proofs for Decision Tree Predictions and Accuracy (CCS 2020)](https://dl.acm.org/doi/pdf/10.1145/3372297.3417278)
+<a id="ref29"></a>[29] [Zero Knowledge Proofs for Decision Tree Predictions and Accuracy (CCS 2020)](https://dl.acm.org/doi/pdf/10.1145/3372297.3417278)
 
-[30] [VERI-ZEXE: Decentralized Private Computation with Universal Setup (USENIX Security 2023)](https://eprint.iacr.org/2022/802)
+<a id="ref30"></a>[30] [VERI-ZEXE: Decentralized Private Computation with Universal Setup (USENIX Security 2023)](https://eprint.iacr.org/2022/802)
 
-[31] [Polynomial Commitment with a One-to-Many Prover and Applications (USENIX Security 2022)](https://www.usenix.org/system/files/sec22summer_zhang-jiaheng.pdf)
+<a id="ref31"></a>[31] [Polynomial Commitment with a One-to-Many Prover and Applications (USENIX Security 2022)](https://www.usenix.org/system/files/sec22summer_zhang-jiaheng.pdf)
 
-[32] [Ghostor: Toward a Secure Data-Sharing System from Decentralized Trust (NSDI 2020)](https://www.usenix.org/system/files/nsdi20-paper-hu-yuncong.pdf)
+<a id="ref32"></a>[32] [Ghostor: Toward a Secure Data-Sharing System from Decentralized Trust (NSDI 2020)](https://www.usenix.org/system/files/nsdi20-paper-hu-yuncong.pdf)
 
-[33] [Correlation Intractability and SNARGs from Sub-exponential DDH (CRYPTO 2023)](https://eprint.iacr.org/2022/1486.pdf)
+<a id="ref33"></a>[33] [Correlation Intractability and SNARGs from Sub-exponential DDH (CRYPTO 2023)](https://eprint.iacr.org/2022/1486.pdf)
 
-[34] [Ceno: Non-uniform, Segment and Parallel Zero-knowledge Virtual Machine (Journal of Cryptology 2024)](https://eprint.iacr.org/2024/387)
+<a id="ref34"></a>[34] [Ceno: Non-uniform, Segment and Parallel Zero-knowledge Virtual Machine (Journal of Cryptology 2024)](https://eprint.iacr.org/2024/387)
 
-[35] [zkCNN: Zero Knowledge Proofs for Convolutional Neural Network Predictions and Accuracy (CCS 2021)](https://eprint.iacr.org/2021/673)
+<a id="ref35"></a>[35] [zkCNN: Zero Knowledge Proofs for Convolutional Neural Network Predictions and Accuracy (CCS 2021)](https://eprint.iacr.org/2021/673)
