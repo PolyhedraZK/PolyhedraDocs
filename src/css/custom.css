@@ -32,6 +32,11 @@
   --navbar-gap: clamp(1rem, 3vw, 4rem);
 }
 
+/* Add underline to markdown links by default */
+.markdown a {
+  text-decoration: underline;
+}
+
 /* Layout */
 .navbar {
   height: var(--ifm-navbar-height);

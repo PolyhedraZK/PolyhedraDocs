@@ -37,7 +37,7 @@ The convergence of AI and blockchain marks a paradigm shift in decentralized tec
 Polyhedra Network envisions a future where trust in AI and blockchain systems is inherent. We recognize this is not a small objective, however by lowering technical barriers for developers and leveraging powerful zk tools in EXPchain, we aim to establish a trusted ecosystem where developers can build privacy-preserving applications without needing specialized cryptographic expertise, making AI universally accessible, verifiable, and accountable.
 
 <div className="expchain-diagram">
-  <video width="100%" autoPlay muted playsInline>
+  <video width="100%" autoPlay muted playsInline loop>
     <source src="/video/zkpytorch2.mp4" type="video/mp4" />
   </video>
   Figure 2: We anticipate a future where all AI is verifiable and personalized inference occurs without compromising on data privacy.
@@ -74,7 +74,7 @@ zkML enables [cryptographic verification of AI models](https://blog.polyhedra.ne
 - Training verification: Ensure adherence to protocols without revealing sensitive inputs.
 
 <div className="expchain-diagram">
-  <video width="100%" autoPlay muted playsInline>
+  <video width="100%" autoPlay muted playsInline loop>
     <source src="/video/zkpytorch1.mp4" type="video/mp4" />
   </video>
   Figure 3: zkML plays a critical role in building trust in AI systems and the humans that interact with them.
