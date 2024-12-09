@@ -55,6 +55,25 @@
   box-shadow: none !important;
 }
 
+/* Mobile menu button styling */
+button.navbar__toggle {
+  color: #000000 !important;
+}
+
+button.navbar__toggle svg {
+  stroke: #000000 !important;
+  fill: #000000 !important;
+}
+
+.navbar__toggle svg path {
+  stroke: #000000 !important;
+  fill: #000000 !important;
+}
+
+.clean-btn.navbar__toggle {
+  color: #000000 !important;
+}
+
 .navbar__inner {
   border: none !important;
   justify-content: flex-start;
