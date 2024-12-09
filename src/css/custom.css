@@ -1,6 +1,7 @@
 /* Custom styles that can't be configured through theme config */
 :root {
-  --ifm-color-primary: rgb(245, 245, 245);
+  --ifm-color-primary: #000;
+  --ifm-link-color: #000;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-spacing-horizontal: 1.5rem;
@@ -28,6 +29,7 @@
 
 .markdown a {
   text-decoration: underline;
+  color: var(--ifm-link-color);
 }
 
 .markdown > p {
@@ -402,4 +404,14 @@ html {
   color: #000 !important;
   opacity: 1 !important;
   background-color: rgb(245, 245, 245);
+}
+
+/* Force all links to be black */
+a {
+  color: var(--ifm-link-color) !important;
+}
+
+a:hover {
+  color: var(--ifm-link-color) !important;
+  opacity: 0.8;
 }
