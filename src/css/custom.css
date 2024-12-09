@@ -145,13 +145,33 @@ button.navbar__toggle svg {
 }
 
 /* Table of Contents */
-.table-of-contents {
-  display: block;
+@media (min-width: 997px) {
+  .theme-doc-toc-desktop {
+    display: block !important;
+    position: sticky;
+    top: calc(var(--ifm-navbar-height) + 1rem);
+    max-height: calc(100vh - var(--ifm-navbar-height) - 2rem);
+    overflow-y: auto;
+    padding-top: 1rem;
+  }
+
+  .table-of-contents {
+    display: block !important;
+    max-height: calc(100vh - var(--ifm-navbar-height) - 2rem);
+    overflow-y: auto;
+    position: sticky;
+    top: calc(var(--ifm-navbar-height) + 1rem);
+  }
 }
 
-/* Hide TOC on mobile using Docusaurus's built-in responsive class */
-.thin-scrollbar .table-of-contents {
-  display: none;
+@media (max-width: 996px) {
+  .theme-doc-toc-desktop {
+    display: none !important;
+  }
+  
+  .table-of-contents {
+    display: none !important;
+  }
 }
 
 /* Social Media Icons */
