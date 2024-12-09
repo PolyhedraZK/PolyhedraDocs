@@ -1,0 +1,9 @@
+{
+  "label": "Litepaper",
+  "position": 1,
+  "link": {
+    "type": "doc",
+    "id": "litepaper/index"
+  },
+  "className": "litepaper-category"
+}

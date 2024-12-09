@@ -7,7 +7,7 @@ import rehypeKatex from "rehype-katex";
 const config: Config = {
   title: "Polyhedra Network Documentation",
   tagline: "Polyhedra Network Documentation",
-  favicon: "img/group.png",
+  favicon: "img/group.svg",
 
   url: "https://polyhedrazk.github.io",
   baseUrl: "/",
@@ -30,10 +30,13 @@ const config: Config = {
         docs: {
           routeBasePath: "/",
           sidebarPath: "./sidebars.ts",
-          editUrl: "https://github.com/PolyhedraZK/PolyhedraDocs/tree/main/",
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
           path: "docs",
+          showLastUpdateTime: false,
+          showLastUpdateAuthor: false,
+          sidebarCollapsible: true,
+          breadcrumbs: true,
         },
         blog: false,
         theme: {
@@ -45,6 +48,10 @@ const config: Config = {
 
   stylesheets: [
     {
+      href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap",
+      type: "text/css",
+    },
+    {
       href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
       type: "text/css",
       integrity:
@@ -55,14 +62,28 @@ const config: Config = {
 
   themeConfig: {
     image: "img/docusaurus-social-card.jpg",
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
     navbar: {
-      title: "Polyhedra Network Document",
+      title: "",
       logo: {
         alt: "Polyhedra Network",
-        src: "img/group.png",
+        src: "img/group.svg",
         href: "/",
       },
+      style: 'primary',
+      hideOnScroll: false,
       items: [
+        {
+          type: "doc",
+          docId: "litepaper/index",
+          position: "left",
+          label: "Litepaper",
+        },
         {
           type: "docSidebar",
           sidebarId: "expchainSidebar",
@@ -75,16 +96,72 @@ const config: Config = {
           position: "left",
           label: "Expander",
         },
+        {
+          href: 'https://twitter.com/PolyhedraZK',
+          position: 'right',
+          className: 'header-twitter-link',
+          'aria-label': 'Twitter',
+        },
+        {
+          href: 'https://t.me/PolyhedraGroup',
+          position: 'right',
+          className: 'header-discord-link',
+          'aria-label': 'Discord',
+        },
+        {
+          href: 'https://t.me/PolyhedraZK',
+          position: 'right',
+          className: 'header-telegram-link',
+          'aria-label': 'Telegram',
+        }
       ],
     },
     footer: {
-      style: "dark",
-      links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} Polyhedra Network. Built with Docusaurus.`,
+      style: 'light',
+      links: [
+        {
+          items: [
+            {
+              label: 'Bridge',
+              to: 'https://bridge.expchain.ai/bridge',
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              label: 'Faucet',
+              to: 'https://faucet.expchain.ai/',
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              label: 'Explorer',
+              to: 'https://blockscout-testnet.expchain.ai/',
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              label: 'Developers',
+              to: 'https://github.com/PolyhedraZK',
+            },
+          ],
+        },
+      ],
+      copyright: `<div>&#169; ${new Date().getFullYear()} Polyhedra Network<a href="#">Press Kit</a></div>`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
     },
   } satisfies Preset.ThemeConfig,
 };
