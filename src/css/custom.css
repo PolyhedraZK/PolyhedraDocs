@@ -127,7 +127,12 @@
 
 /* Table of Contents */
 .table-of-contents {
-  display: block; /* Ensure it's visible by default (desktop) */
+  display: block;
+}
+
+/* Hide TOC on mobile using Docusaurus's built-in responsive class */
+.thin-scrollbar .table-of-contents {
+  display: none;
 }
 
 /* Social Media Icons */
@@ -415,20 +420,6 @@ article header h1 + p {
 
   .theme-doc-sidebar-container.sidebar-shown {
     transform: translateX(0);
-  }
-
-  /* Hide table of contents on mobile */
-  .table-of-contents {
-    display: none !important;
-  }
-
-  .theme-doc-toc-mobile {
-    display: block;
-    margin: 1rem;
-  }
-
-  .theme-doc-toc-mobile .table-of-contents__title {
-    display: none;
   }
 
   article {
