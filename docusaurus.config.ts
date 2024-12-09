@@ -75,7 +75,6 @@ const config: Config = {
         src: "img/group.svg",
         href: "/",
       },
-      style: 'primary',
       hideOnScroll: false,
       items: [
         {
@@ -117,7 +116,6 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'light',
       links: [
         {
           items: [
@@ -156,12 +154,16 @@ const config: Config = {
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
     },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
       respectPrefersColorScheme: false,
+    },
+    // Theme configuration
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 3,
     },
   } satisfies Preset.ThemeConfig,
 };
