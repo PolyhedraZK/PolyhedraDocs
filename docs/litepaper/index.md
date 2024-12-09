@@ -10,7 +10,7 @@ sidebar_position: 1
 
 [EXPchain](https://expchain.ai/) is a decentralized blockchain protocol designed for scalable, verifiable, and privacy-preserving AI applications. Established as the "Everything Chain for AI", EXPchain integrates zero-knowledge machine learning (zkML) and a novel Proof of Intelligence (PoI) framework, addressing the growing need for trust and accountability in artificial intelligence systems. Key innovations include the [Expander](https://expander.polyhedra.network/) proof system, a high-performance zk prover, and [zkPyTorch](https://blog.polyhedra.network/scaling-trust-in-the-age-of-artificial-intelligence/), a developer-friendly toolkit for integrating zkML into traditional AI workflows. Together, these tools enhance computational efficiency, enabling practical AI verification while safeguarding sensitive data and intellectual property.
 
-Built on a zk-native blockchain infrastructure, EXPchain supports seamless AI workflows through advanced features like zkBridge for cross-chain interoperability, EXProllup scalability, and zkML watermarking for large language models (LLMs). The platform prioritizes transparency, security, and scalability, fostering trust in critical industries such as finance, healthcare, and software development. Through its modular architecture and commitment to ethical AI, EXPchain sets the foundations for the future of decentralized, privacy-conscious, and accountable AI systems.
+Built on a zk-native blockchain infrastructure, EXPchain supports seamless AI workflows through advanced features like zkBridge for cross-chain interoperability, native zkRollup scalability, and zkML watermarking for large language models (LLMs). The platform prioritizes transparency, security, and scalability, fostering trust in critical industries such as finance, healthcare, and software development. Through its modular architecture and commitment to ethical AI, EXPchain sets the foundations for the future of decentralized, privacy-conscious, and accountable AI systems.
 
 <div className="expchain-diagram">
   <img src="/img/EXPchain Platform@2x.png" width="100%" />
@@ -85,7 +85,7 @@ This technology makes it possible to build systems that are both secure and ethi
 ### 3.2 zkNative Blockchain for AI
 Our blockchain infrastructure is purpose-built for AI applications, offering:
 - Single-slot finality for faster confirmations.
-- Native zk support enabling scalability via EXP appchains and EXProllups
+- Native zk support enabling scalability via EXP appchains and zkRollups
 - Seamless integration of AI and blockchain workflows for real-world applications.
 
 This technology allows developers to build systems that are both secure and ethically aligned, with transparent AI-driven decisions that reinforce trust between developers, users, and stakeholders. zkML can enable applications such as watermarking for LLMs, model audits for compliance verification critical for financial institutions, and secure multiparty computations in privacy-sensitive industries.

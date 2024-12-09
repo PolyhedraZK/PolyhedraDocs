@@ -41,7 +41,6 @@
   scroll-margin-top: 50vh;
 }
 
-
 /* Add underline to markdown links by default */
 .markdown a {
   text-decoration: underline;
@@ -64,6 +63,19 @@
 
 .navbar-sidebar {
   border: none !important;
+  background-color: rgb(241, 241, 241) !important;
+}
+
+.navbar-sidebar__item {
+  color: #000000 !important;
+}
+
+.navbar-sidebar__back {
+  color: #000000 !important;
+}
+
+.menu__link {
+  color: #000000 !important;
 }
 
 .navbar__title {
@@ -378,6 +390,14 @@ article header h1 + p {
     padding: 0 1rem;
   }
 
+  .navbar__items .navbar__link {
+    display: none !important;
+  }
+
+  .navbar__items--right {
+    display: none !important;
+  }
+
   .theme-doc-sidebar-container {
     position: fixed;
     top: 0;
@@ -399,6 +419,10 @@ article header h1 + p {
   .theme-doc-toc-mobile {
     display: block;
     margin: 1rem;
+  }
+
+  .theme-doc-toc-mobile .table-of-contents__title {
+    display: none;
   }
 
   article {
