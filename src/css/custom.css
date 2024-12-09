@@ -1,17 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
+/* Custom styles that can't be configured through theme config */
 :root {
   --ifm-color-primary: rgb(245, 245, 245);
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-heading-font-weight: 500;
-  --ifm-h1-font-size: 3rem;
-  --ifm-h2-font-size: 2rem;
-  --ifm-h3-font-size: 1.5rem;
-  --ifm-font-family-base: 'Poppins', system-ui, sans-serif;
+  --ifm-spacing-horizontal: 1.5rem;
   --doc-sidebar-width: 300px !important;
   --ifm-navbar-height: 80px;
-  --ifm-spacing-horizontal: 1.5rem;
   --ifm-background-color: rgb(245, 245, 245);
   --ifm-background-surface-color: rgb(245, 245, 245);
   --ifm-menu-color: #000;
@@ -20,11 +14,6 @@
   --navbar-font-size: clamp(0.8rem, 1.5vw, 1rem);
   --navbar-gap: clamp(1rem, 3vw, 4rem);
   scroll-behavior: smooth;
-}
-
-/* Set global background color */
-body {
-  background-color: rgb(245, 245, 245);
 }
 
 [id^="ref"] {
@@ -113,20 +102,6 @@ body {
 .navbar-sidebar {
   background: rgb(245, 245, 245);
   border: 0;
-}
-
-.navbar-sidebar__item,
-.navbar-sidebar__back,
-.menu__link,
-.navbar__link,
-.navbar__brand {
-  color: #000;
-}
-
-.navbar__toggle {
-  color: var(--ifm-menu-color);
-  stroke: var(--ifm-menu-color);
-  fill: var(--ifm-menu-color);
 }
 
 .header-social-link {
