@@ -125,6 +125,11 @@
   white-space: nowrap;
 }
 
+/* Table of Contents */
+.table-of-contents {
+  display: block; /* Ensure it's visible by default (desktop) */
+}
+
 /* Social Media Icons */
 .header-twitter-link,
 .header-discord-link,
@@ -412,8 +417,9 @@ article header h1 + p {
     transform: translateX(0);
   }
 
+  /* Hide table of contents on mobile */
   .table-of-contents {
-    display: none;
+    display: none !important;
   }
 
   .theme-doc-toc-mobile {
