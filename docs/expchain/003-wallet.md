@@ -25,4 +25,4 @@ After you install the metamask in your browser, you can go to settings -> networ
 
 ![Configure](https://storage.googleapis.com/polyhedra-img/images/prod/Configure.png)
 
-Depending on your location and preference, you can choose from a variety of RPC endpoints for EXP Chain. For more information about the endpoints and their features, please refer to [the network information document](https://github.com/PolyhedraZK/chaindocs?tab=readme-ov-file#json-rpc) that we have prepared for you. To ensure the best performance and user experience, you can test the latency of each endpoint before you configure it with your wallet.
+Depending on your location and preference, you can choose from a variety of RPC endpoints for EXP Chain. For more information about the endpoints and their features, please refer to [the network information document](002-rpc.md) that we have prepared for you. To ensure the best performance and user experience, you can test the latency of each endpoint before you configure it with your wallet.
