@@ -20,6 +20,8 @@
     "@docusaurus/preset-classic": "3.5.2",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "docusaurus-plugin-sass": "^0.2.6",
+    "modern-normalize": "^3.0.1",
     "prettier": "^3.4.1",
     "prism-react-renderer": "^2.4.0",
     "react": "^18.0.0",
@@ -27,7 +29,9 @@
     "rehype-katex": "^7.0.1",
     "remark-gfm": "^4.0.0",
     "remark-math": "^6.0.0",
-    "yarn": "^1.22.22"
+    "sass": "^1.44.0",
+    "yarn": "^1.22.22",
+    "semver": "^7.3.5"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.5.2",

@@ -1,18 +1,18 @@
-import CodeColor from '@components/page/theming/CodeColor';
-import React, { useEffect, useRef, useState } from 'react';
+import CodeColor from "@site/src/components/page/theming/CodeColor";
+import React, { useEffect, useRef, useState } from "react";
 
-import styles from './styles.module.scss';
-import ColorDot from '../ColorDot';
+import styles from "./styles.module.scss";
+import ColorDot from "../ColorDot";
 
-import InputWrapper from '../InputWrapper';
+import InputWrapper from "../InputWrapper";
 
-import { useColorMode } from '@docusaurus/theme-common';
-import clsx from 'clsx';
+import { useColorMode } from "@docusaurus/theme-common";
+import clsx from "clsx";
 
 export default function LayeredColorsSelect({ ...props }) {
   const { colorMode } = useColorMode();
 
-  const [color, setColor] = useState('primary');
+  const [color, setColor] = useState("primary");
   const el = useRef<HTMLDivElement>(null);
 
   const [variations, setVariations] = useState([]);
@@ -21,41 +21,54 @@ export default function LayeredColorsSelect({ ...props }) {
     setVariations([
       {
         property: `--ion-color-${color}`,
-        name: 'Base',
-        description: 'The main color that all variations are derived from',
-        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}`),
+        name: "Base",
+        description: "The main color that all variations are derived from",
+        value: getComputedStyle(el.current).getPropertyValue(
+          `--ion-color-${color}`
+        ),
       },
       {
         property: `--ion-color-${color}-rgb`,
-        name: 'Base (rgb)',
+        name: "Base (rgb)",
         rgb: true,
-        description: 'The base color in red, green, blue format',
-        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-rgb`),
+        description: "The base color in red, green, blue format",
+        value: getComputedStyle(el.current).getPropertyValue(
+          `--ion-color-${color}-rgb`
+        ),
       },
       {
         property: `--ion-color-${color}-contrast`,
-        name: 'Contrast',
-        description: 'The opposite of the base color, should be visible against the base color',
-        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-contrast`),
+        name: "Contrast",
+        description:
+          "The opposite of the base color, should be visible against the base color",
+        value: getComputedStyle(el.current).getPropertyValue(
+          `--ion-color-${color}-contrast`
+        ),
       },
       {
         property: `--ion-color-${color}-contrast-rgb`,
-        name: 'Contrast (rgb)',
+        name: "Contrast (rgb)",
         rgb: true,
-        description: 'The contrast color in red, green, blue format',
-        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-contrast-rgb`),
+        description: "The contrast color in red, green, blue format",
+        value: getComputedStyle(el.current).getPropertyValue(
+          `--ion-color-${color}-contrast-rgb`
+        ),
       },
       {
         property: `--ion-color-${color}-shade`,
-        name: 'Shade',
-        description: 'A slightly darker version of the base color',
-        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-shade`),
+        name: "Shade",
+        description: "A slightly darker version of the base color",
+        value: getComputedStyle(el.current).getPropertyValue(
+          `--ion-color-${color}-shade`
+        ),
       },
       {
         property: `--ion-color-${color}-tint`,
-        name: 'Tint',
-        description: 'A slightly lighter version of the base color',
-        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-tint`),
+        name: "Tint",
+        description: "A slightly lighter version of the base color",
+        value: getComputedStyle(el.current).getPropertyValue(
+          `--ion-color-${color}-tint`
+        ),
       },
     ]);
   }, [color]);
@@ -66,13 +79,16 @@ export default function LayeredColorsSelect({ ...props }) {
       ref={el}
       className={clsx(
         styles.layeredColorsSelect,
-        styles[`layeredColorsSelect${colorMode === 'dark' ? 'Dark' : 'Light'}`]
+        styles[`layeredColorsSelect${colorMode === "dark" ? "Dark" : "Light"}`]
       )}
     >
       <div className={styles.selectRow}>
         <ColorDot color={`var(--ion-color-${color})`} />
         <InputWrapper>
-          <select value={color} onChange={(ev) => setColor((ev.target as HTMLSelectElement).value)}>
+          <select
+            value={color}
+            onChange={(ev) => setColor((ev.target as HTMLSelectElement).value)}
+          >
             <option value="primary">Primary</option>
             <option value="secondary">Secondary</option>
             <option value="tertiary">Tertiary</option>
@@ -96,7 +112,9 @@ export default function LayeredColorsSelect({ ...props }) {
         </thead>
         <tbody>
           {variations.map((variation) => {
-            const codeColor = variation.rgb ? `rgb(${variation.value})` : `${variation.value}`;
+            const codeColor = variation.rgb
+              ? `rgb(${variation.value})`
+              : `${variation.value}`;
 
             return (
               <tr key={variation.name}>
@@ -107,7 +125,9 @@ export default function LayeredColorsSelect({ ...props }) {
                 <td className={styles.colorValue}>
                   <CodeColor color={codeColor}>{variation.value}</CodeColor>
                 </td>
-                <td className={styles.colorDescription}>{variation.description}</td>
+                <td className={styles.colorDescription}>
+                  {variation.description}
+                </td>
               </tr>
             );
           })}

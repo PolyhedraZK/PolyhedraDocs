@@ -1,81 +1,87 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import path from "path";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+
+const BASE_URL = "";
 
 const config: Config = {
   title: "Polyhedra Network Documentation",
   tagline: "Polyhedra Network Documentation",
-  favicon: "img/group.svg",
-
-  url: "https://polyhedrazk.github.io",
-  baseUrl: "/",
-
-  organizationName: "facebook",
-  projectName: "docusaurus",
-
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-
+  url: "https://polyhedra.network",
+  baseUrl: `${BASE_URL}/`,
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
   },
-
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/meta/favicon-96x96.png",
+  organizationName: "Polyhedra-Network",
+  projectName: "polyhedra-docs",
   presets: [
     [
-      "classic",
+      "@docusaurus/preset-classic",
       {
         docs: {
+          path: "docs",
           routeBasePath: "/",
-          sidebarPath: "./sidebars.ts",
+          sidebarPath: require.resolve("./sidebars.js"),
+          exclude: ["README.md"],
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-          path: "docs",
-          showLastUpdateTime: false,
-          showLastUpdateAuthor: false,
-          sidebarCollapsible: true,
-          breadcrumbs: true,
         },
-        blog: false,
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: [
+            require.resolve(
+              "./node_modules/modern-normalize/modern-normalize.css"
+            ),
+            require.resolve("./src/styles/custom.scss"),
+          ],
         },
       } satisfies Preset.Options,
     ],
   ],
-
-  stylesheets: [
-    {
-      href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap",
-      type: "text/css",
-    },
-    {
-      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
-      type: "text/css",
-      integrity:
-        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
-      crossorigin: "anonymous",
-    },
-  ],
-
   themeConfig: {
-    image: "img/docusaurus-social-card.jpg",
-    docs: {
-      sidebar: {
-        hideable: true,
-        autoCollapseCategories: true,
+    metadata: [
+      {
+        name: "og:image",
+        content: "https://ionicframework.com/docs/img/meta/open-graph.png",
       },
+      {
+        name: "twitter:image",
+        content: "https://ionicframework.com/docs/img/meta/open-graph.png",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+
+      {
+        name: "og:type",
+        content: "website",
+      },
+      {
+        name: "og:site_name",
+        content: "1`11",
+      },
+    ],
+    colorMode: {
+      defaultMode: "light",
     },
     navbar: {
-      title: "",
+      hideOnScroll: true,
       logo: {
-        alt: "Polyhedra Network",
-        src: "img/group.svg",
+        alt: "Site Logo",
+        src: `/logos/ionic-text-docs-dark.svg`,
+        srcDark: `/logos/ionic-text-docs-light.svg`,
         href: "/",
+        target: "_self",
+        width: 139,
+        height: 28,
       },
-      hideOnScroll: false,
       items: [
         {
           type: "doc",
@@ -96,76 +102,127 @@ const config: Config = {
           label: "Expander",
         },
         {
-          href: 'https://twitter.com/PolyhedraZK',
-          position: 'right',
-          className: 'header-twitter-link',
-          'aria-label': 'Twitter',
+          label: "Community",
+          position: "right",
+          items: [
+            {
+              href: "https://ionicframework.com/community",
+              label: "Community Hub",
+              target: "_blank",
+              rel: null,
+            },
+            {
+              href: "https://forum.ionicframework.com/",
+              label: "Forum",
+              target: "_blank",
+              rel: null,
+            },
+            {
+              href: "https://www.meetup.com/topics/ionic-framework/",
+              label: "Meetups",
+              target: "_blank",
+              rel: null,
+            },
+            {
+              href: "https://blog.ionicframework.com/",
+              label: "Blog",
+              target: "_blank",
+              rel: null,
+            },
+            {
+              href: "https://twitter.com/ionicframework",
+              label: "Twitter",
+              target: "_blank",
+              rel: null,
+            },
+          ],
+          className: "navbar__link--community",
         },
         {
-          href: 'https://t.me/PolyhedraGroup',
-          position: 'right',
-          className: 'header-discord-link',
-          'aria-label': 'Discord',
+          label: "Support",
+          position: "right",
+          items: [
+            {
+              href: "https://ionicframework.com/support",
+              label: "Help Center",
+              target: "_blank",
+              rel: null,
+            },
+            {
+              href: "https://ionic.zendesk.com/",
+              label: "Customer Support",
+              target: "_blank",
+              rel: null,
+            },
+            {
+              href: "https://ionicframework.com/advisory",
+              label: "Enterprise Advisory",
+              target: "_blank",
+              rel: null,
+            },
+          ],
+          className: "navbar__link--support",
         },
         {
-          href: 'https://t.me/PolyhedraZK',
-          position: 'right',
-          className: 'header-telegram-link',
-          'aria-label': 'Telegram',
-        }
+          type: "html",
+          position: "right",
+          value: '<div class="separator" aria-hidden></div>',
+        },
+        {
+          type: "localeDropdown",
+          position: "right",
+          dropdownItemsBefore: [],
+          dropdownItemsAfter: [
+            {
+              href: "https://ionicframework.com/translate",
+              label: "Translate",
+              target: "_blank",
+              rel: null,
+            },
+          ],
+          className: "icon-link language navbar__item",
+        },
+        {
+          href: "https://twitter.com/Ionicframework",
+          position: "right",
+          className: "icon-link icon-link-mask icon-link-twitter",
+          "aria-label": "Twitter",
+          target: "_blank",
+        },
+        {
+          href: "https://ionic.link/discord",
+          position: "right",
+          className: "icon-link icon-link-mask icon-link-discord",
+          "aria-label": "Discord",
+          target: "_blank",
+        },
+        {
+          href: "https://github.com/ionic-team/ionic-framework",
+          position: "right",
+          className: "icon-link icon-link-mask icon-link-github",
+          "aria-label": "GitHub repository",
+          target: "_blank",
+        },
       ],
-    },
-    footer: {
-      links: [
-        {
-          items: [
-            {
-              label: 'Bridge',
-              to: 'https://bridge.expchain.ai/bridge',
-            },
-          ],
-        },
-        {
-          items: [
-            {
-              label: 'Faucet',
-              to: 'https://faucet.expchain.ai/',
-            },
-          ],
-        },
-        {
-          items: [
-            {
-              label: 'Explorer',
-              to: 'https://blockscout-testnet.expchain.ai/',
-            },
-          ],
-        },
-        {
-          items: [
-            {
-              label: 'Developers',
-              to: 'https://github.com/PolyhedraZK',
-            },
-          ],
-        },
-      ],
-      copyright: `<div>&#169; ${new Date().getFullYear()} Polyhedra Network<a href="https://drive.google.com/drive/folders/1ZXE__EVRMeeIHX0FpIWG3va1d_xmse7n">Press Kit</a></div>`,
     },
     prism: {
-      theme: prismThemes.github,
+      theme: { plain: {}, styles: [] },
+      additionalLanguages: ["shell-session", "http"],
     },
-    colorMode: {
-      defaultMode: 'light',
-      disableSwitch: true,
-      respectPrefersColorScheme: false,
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
     },
-    // Theme configuration
     tableOfContents: {
       minHeadingLevel: 2,
       maxHeadingLevel: 3,
     },
   } satisfies Preset.ThemeConfig,
+  plugins: ["docusaurus-plugin-sass"],
+  customFields: {},
+  themes: [],
 };
 
 export default config;

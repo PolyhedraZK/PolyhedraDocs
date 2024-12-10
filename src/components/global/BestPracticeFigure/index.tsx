@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import './best-practice-figure.css';
+import "./best-practice-figure.css";
 
 /**
  Usage:
 
- import BestPracticeFigure from '@components/global/BestPracticeFigure';
+ import BestPracticeFigure from '@site/src/components/global/BestPracticeFigure';
 
  <BestPracticeFigure
    text="..."
