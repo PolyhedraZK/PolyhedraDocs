@@ -1,3 +1,7 @@
+---
+slug: /contract
+---
+
 # Usage Example: Deploy ERC20 using Remix
 
 ## Step 1: Prepare the ERC20 Smart Contract Code
