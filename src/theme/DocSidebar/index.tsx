@@ -5,13 +5,13 @@
  * - Add a logo to the top of the sidebar
  */
 
-import React from 'react';
-import DocSidebar from '@theme-original/DocSidebar';
-import type { Props } from '@theme/DocSidebar';
+import React from "react";
+import DocSidebar from "@theme-original/DocSidebar";
+import type { Props } from "@theme/DocSidebar";
 
-import Logo from '@theme-original/Logo';
+import Logo from "@theme-original/Logo";
 
-export default function DocSidebarWrapper(props: Props): JSX.Element {
+export default function DocSidebarWrapper(props: Props) {
   return (
     <>
       <Logo />

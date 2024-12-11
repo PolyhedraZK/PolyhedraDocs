@@ -30,8 +30,8 @@
     "remark-gfm": "^4.0.0",
     "remark-math": "^6.0.0",
     "sass": "^1.44.0",
-    "yarn": "^1.22.22",
-    "semver": "^7.3.5"
+    "semver": "^7.3.5",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.5.2",

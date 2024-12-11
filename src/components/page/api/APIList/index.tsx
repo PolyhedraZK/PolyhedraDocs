@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import sidebars from '@site/sidebars';
-import clsx from 'clsx';
+import sidebars from "@site/sidebars";
+import clsx from "clsx";
 
-function APIList({ sidebar, ...props }): JSX.Element {
+function APIList({ sidebar, ...props }) {
   return (
-    <div {...props} className={clsx(props.className, 'api-list')}>
+    <div {...props} className={clsx(props.className, "api-list")}>
       {sidebars.api.map((section) => {
-        if (typeof section !== 'object') return;
+        if (typeof section !== "object") return;
 
         return (
           <>
@@ -18,7 +18,7 @@ function APIList({ sidebar, ...props }): JSX.Element {
                   item &&
                   item.replace && (
                     <li>
-                      <a href={item}>{item.replace('api/', '')}</a>
+                      <a href={item}>{item.replace("api/", "")}</a>
                     </li>
                   )
                 );

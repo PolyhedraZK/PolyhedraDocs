@@ -1,11 +1,11 @@
 {
-  "name": "Ionic Documentation",
-  "short_name": "Ionic Docs",
-  "start_url": "/docs/",
+  "name": "Polyhedra Documentation",
+  "short_name": "Polyhedra Docs",
+  "start_url": "/",
   "display": "standalone",
   "icons": [
     {
-      "src": "/docs/assets/img/meta/icon.svg",
+      "src": "/img/meta/icon.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     }

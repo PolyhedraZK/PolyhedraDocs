@@ -18,7 +18,7 @@ const config: Config = {
   },
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/meta/favicon-96x96.png",
+  favicon: "img/meta/favicon.ico",
   organizationName: "Polyhedra-Network",
   projectName: "polyhedra-docs",
   presets: [
@@ -38,6 +38,7 @@ const config: Config = {
             require.resolve(
               "./node_modules/modern-normalize/modern-normalize.css"
             ),
+            require.resolve("./src/styles/tokens.css"),
             require.resolve("./src/styles/custom.scss"),
           ],
         },

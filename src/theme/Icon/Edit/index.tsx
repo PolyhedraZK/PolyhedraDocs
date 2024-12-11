@@ -6,12 +6,12 @@
  * - Changed the icon to be the GitHub icon since the icon is used on the `Edit this page` link, which links to the GitHub repo.
  */
 
-import React from 'react';
-import clsx from 'clsx';
-import type { Props } from '@theme/Icon/Edit';
-import styles from '@docusaurus/theme-classic/src/theme/Icon/Edit/styles.module.css';
+import React from "react";
+import clsx from "clsx";
+import type { Props } from "@theme/Icon/Edit";
+import styles from "@docusaurus/theme-classic/src/theme/Icon/Edit/styles.module.css";
 
-export default function IconEdit({ className, ...restProps }: Props): JSX.Element {
+export default function IconEdit({ className, ...restProps }: Props) {
   return (
     <svg
       fill="none"

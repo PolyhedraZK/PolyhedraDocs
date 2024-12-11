@@ -9,7 +9,7 @@
 import React from "react";
 import clsx from "clsx";
 import { useWindowSize } from "@docusaurus/theme-common";
-import { useDoc } from "@docusaurus/theme-common/internal";
+import { useDoc } from "@docusaurus/plugin-content-docs/client";
 import DocItemPaginator from "@theme/DocItem/Paginator";
 import DocVersionBanner from "@theme/DocVersionBanner";
 import DocVersionBadge from "@theme/DocVersionBadge";
@@ -62,10 +62,7 @@ function useDocDemo() {
 }
 // CUSTOM CODE END
 
-export default function DocItemLayout({
-  children,
-  ...props
-}: Props): JSX.Element {
+export default function DocItemLayout({ children, ...props }: Props) {
   const docTOC = useDocTOC();
   // CUSTOM CODE
   const { demoUrl, demoSourceUrl } = useDocDemo();
