@@ -78,12 +78,12 @@ const config: Config = {
       hideOnScroll: false,
       logo: {
         alt: "Site Logo",
-        src: `/logos/ionic-text-docs-dark.svg`,
-        srcDark: `/logos/ionic-text-docs-light.svg`,
+        src: `/logos/polyhedra-docs-light.svg`,
+        srcDark: `/logos/polyhedra-docs-light.svg`,
         href: "/",
         target: "_self",
-        width: 139,
-        height: 28,
+        width: 179,
+        height: 30,
       },
       items: [
         {
