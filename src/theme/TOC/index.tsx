@@ -20,7 +20,6 @@ interface TOCProps extends Props {
 }
 
 export default function TOCWrapper(props: TOCProps) {
-  const location = useLocation();
   const { metadata } = useDoc();
 
   const isEmpty = props.toc.length <= 0;

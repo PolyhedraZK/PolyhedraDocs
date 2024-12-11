@@ -161,9 +161,9 @@ html[data-theme="dark"] {
             }
           }
 
-          &-twitter {
+          &-x {
             &::before {
-              mask-image: url("../../static/logos/twitter.svg");
+              mask-image: url("../../static/logos/x.svg");
               width: 19px;
             }
           }
@@ -200,7 +200,7 @@ html[data-theme="dark"] {
         }
 
         //twitter icon
-        .icon-link-twitter {
+        .icon-link-x {
           order: 5;
         }
 

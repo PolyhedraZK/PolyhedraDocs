@@ -32,6 +32,7 @@ const config: Config = {
           exclude: ["README.md"],
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
+          editUrl: "https://github.com/PolyhedraZK/PolyhedraDocs/edit/main/",
         },
         theme: {
           customCss: [
@@ -49,31 +50,30 @@ const config: Config = {
     metadata: [
       {
         name: "og:image",
-        content: "https://ionicframework.com/docs/img/meta/open-graph.png",
+        content: "/img/meta/seo.png",
       },
       {
         name: "twitter:image",
-        content: "https://ionicframework.com/docs/img/meta/open-graph.png",
+        content: "/img/meta/seo.png",
       },
       {
         name: "twitter:card",
         content: "summary_large_image",
       },
-
       {
         name: "og:type",
         content: "website",
       },
       {
         name: "og:site_name",
-        content: "1`11",
+        content: "Polyhedra Network Documentation",
       },
     ],
     colorMode: {
       defaultMode: "light",
     },
     navbar: {
-      hideOnScroll: true,
+      hideOnScroll: false,
       logo: {
         alt: "Site Logo",
         src: `/logos/ionic-text-docs-dark.svg`,
@@ -102,103 +102,27 @@ const config: Config = {
           position: "left",
           label: "Expander",
         },
+        // {
+        //   type: "html",
+        //   position: "right",
+        //   value: '<div class="separator" aria-hidden></div>',
+        // },
         {
-          label: "Community",
+          href: "https://x.com/PolyhedraZK",
           position: "right",
-          items: [
-            {
-              href: "https://ionicframework.com/community",
-              label: "Community Hub",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://forum.ionicframework.com/",
-              label: "Forum",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://www.meetup.com/topics/ionic-framework/",
-              label: "Meetups",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://blog.ionicframework.com/",
-              label: "Blog",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://twitter.com/ionicframework",
-              label: "Twitter",
-              target: "_blank",
-              rel: null,
-            },
-          ],
-          className: "navbar__link--community",
-        },
-        {
-          label: "Support",
-          position: "right",
-          items: [
-            {
-              href: "https://ionicframework.com/support",
-              label: "Help Center",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://ionic.zendesk.com/",
-              label: "Customer Support",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://ionicframework.com/advisory",
-              label: "Enterprise Advisory",
-              target: "_blank",
-              rel: null,
-            },
-          ],
-          className: "navbar__link--support",
-        },
-        {
-          type: "html",
-          position: "right",
-          value: '<div class="separator" aria-hidden></div>',
-        },
-        {
-          type: "localeDropdown",
-          position: "right",
-          dropdownItemsBefore: [],
-          dropdownItemsAfter: [
-            {
-              href: "https://ionicframework.com/translate",
-              label: "Translate",
-              target: "_blank",
-              rel: null,
-            },
-          ],
-          className: "icon-link language navbar__item",
-        },
-        {
-          href: "https://twitter.com/Ionicframework",
-          position: "right",
-          className: "icon-link icon-link-mask icon-link-twitter",
-          "aria-label": "Twitter",
+          className: "icon-link icon-link-mask icon-link-x",
+          "aria-label": "X",
           target: "_blank",
         },
         {
-          href: "https://ionic.link/discord",
+          href: "https://discord.com/invite/polyhedra-network",
           position: "right",
           className: "icon-link icon-link-mask icon-link-discord",
           "aria-label": "Discord",
           target: "_blank",
         },
         {
-          href: "https://github.com/ionic-team/ionic-framework",
+          href: "https://github.com/PolyhedraZK",
           position: "right",
           className: "icon-link icon-link-mask icon-link-github",
           "aria-label": "GitHub repository",
