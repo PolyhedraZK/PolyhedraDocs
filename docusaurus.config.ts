@@ -27,7 +27,7 @@ const config: Config = {
       {
         docs: {
           path: "docs",
-          routeBasePath: "/",
+          routeBasePath: "",
           sidebarPath: require.resolve("./sidebars.js"),
           exclude: ["README.md"],
           remarkPlugins: [remarkMath],
@@ -135,20 +135,7 @@ const config: Config = {
       additionalLanguages: ["shell-session", "http"],
     },
   } satisfies Preset.ThemeConfig,
-  plugins: [
-    "docusaurus-plugin-sass",
-    [
-      "@docusaurus/plugin-client-redirects",
-      {
-        redirects: [
-          {
-            from: "/", // 从根路径
-            to: "/expchain", // 重定向到 EXPchain 页面
-          },
-        ],
-      },
-    ],
-  ],
+  plugins: ["docusaurus-plugin-sass"],
   customFields: {},
   themes: [],
 };
