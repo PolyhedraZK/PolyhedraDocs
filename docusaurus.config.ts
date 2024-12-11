@@ -211,7 +211,20 @@ const config: Config = {
       additionalLanguages: ["shell-session", "http"],
     },
   } satisfies Preset.ThemeConfig,
-  plugins: ["docusaurus-plugin-sass"],
+  plugins: [
+    "docusaurus-plugin-sass",
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            from: "/", // 从根路径
+            to: "/expchain", // 重定向到 EXPchain 页面
+          },
+        ],
+      },
+    ],
+  ],
   customFields: {},
   themes: [],
 };
