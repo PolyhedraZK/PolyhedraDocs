@@ -14,7 +14,9 @@ toc_max_heading_level: 2
 Built on a zk-native blockchain infrastructure, EXPchain supports seamless AI workflows through advanced features like zkBridge for cross-chain interoperability, EXProllup scalability, and zkML watermarking for large language models (LLMs). The platform prioritizes transparency, security, and scalability, fostering trust in critical industries such as finance, healthcare, and software development. Through its modular architecture and commitment to ethical AI, EXPchain sets the foundations for the future of decentralized, privacy-conscious, and accountable AI systems.
 
 <div className="expchain-diagram">
-  <img src="/img/EXPchain Platform@2x.png" width="100%" />
+  <video width="100%" autoPlay muted playsInline loop>
+    <source src="./EXPchain Platform.mp4" type="video/mp4" />
+  </video>
   Figure 1: EXPchain establishes foundations for the future of decentralized, privacy-conscious, and accountable AI systems.
 </div>
 
@@ -39,7 +41,7 @@ Polyhedra Network envisions a future where trust in AI and blockchain systems is
 
 <div className="expchain-diagram">
   <video width="100%" autoPlay muted playsInline loop>
-    <source src="/video/zkpytorch2.mp4" type="video/mp4" />
+    <source src="./2.mp4" type="video/mp4" />
   </video>
   Figure 2: We anticipate a future where all AI is verifiable and personalized inference occurs without compromising on data privacy.
 </div>
@@ -76,7 +78,7 @@ zkML enables [cryptographic verification of AI models](https://blog.polyhedra.ne
 
 <div className="expchain-diagram">
   <video width="100%" autoPlay muted playsInline loop>
-    <source src="/video/zkpytorch1.mp4" type="video/mp4" />
+    <source src="./1.mp4" type="video/mp4" />
   </video>
   Figure 3: zkML plays a critical role in building trust in AI systems and the humans that interact with them.
 </div>
@@ -179,7 +181,7 @@ Polyhedra Network is dedicated to pushing the boundaries of zkML and blockchain 
 These advancements position zkML at the forefront of verifiable AI, shaping a future where trust is integral to every interaction.
 
 <div className="expchain-diagram">
-  <img src="/img/Roadmap@2x.png" width="100%" alt="Table 1: Two-year roadmap for EXPchain" />
+  <img src="./Roadmap@2x.jpg" width="100%" alt="Table 1: Two-year roadmap for EXPchain" />
   Table 1: Two-year roadmap for EXPchain
 </div>
 
