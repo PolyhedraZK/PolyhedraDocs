@@ -70,7 +70,9 @@ const config: Config = {
       },
     ],
     colorMode: {
+      disableSwitch: true,
       defaultMode: "light",
+      respectPrefersColorScheme: false,
     },
     navbar: {
       hideOnScroll: false,
