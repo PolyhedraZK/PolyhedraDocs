@@ -28,7 +28,7 @@ export default function TOCWrapper(props: TOCProps) {
 
   return (
     <div className="toc-wrapper">
-      <h2>Contents</h2>
+      <h2>Index</h2>
       <TOC {...props} />
       <EditThisPage editUrl={metadata.editUrl} />
     </div>

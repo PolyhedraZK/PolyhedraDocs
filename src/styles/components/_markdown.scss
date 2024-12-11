@@ -1,11 +1,14 @@
-html[data-theme='light'] {
+html[data-theme="light"] {
   --markdown-toc-title-c: var(--c-indigo-60);
   --markdown-toc-list-item-c: var(--c-indigo-70);
   --markdown-text-intro-c: var(--c-carbon-80);
   --markdown-bold-c: var(--c-carbon-100);
+  --markdown-link-c: rgba(20, 20, 19, 0.8);
+  --markdown-text-c: rgba(20, 20, 19, 0.8);
+  --markdown-link-hover-c: rgba(20, 20, 19, 1);
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --markdown-toc-title-c: #fff;
   --markdown-toc-list-item-c: #fff;
   --markdown-text-intro-c: var(--c-indigo-40);
@@ -18,9 +21,9 @@ html[data-theme='dark'] {
   --ifm-h2-vertical-rhythm-top: 2.75;
   --ifm-h3-vertical-rhythm-top: 2.25;
 
-  --ifm-h2-font-size: 2rem;
-  --ifm-h3-font-size: 1.5rem;
-  --ifm-h4-font-size: 1.25rem;
+  --ifm-h2-font-size: 1.75rem;
+  --ifm-h3-font-size: 1.25rem;
+  --ifm-h4-font-size: 1rem;
   --ifm-h5-font-size: 1rem;
   --ifm-h6-font-size: 0.875rem;
 
@@ -52,6 +55,7 @@ html[data-theme='dark'] {
   td,
   tr {
     font-size: 1rem;
+    color: var(--markdown-text-c);
     // letter-spacing: var(--letter-spacing-tight);
   }
 
@@ -88,7 +92,13 @@ html[data-theme='dark'] {
   h5 + h6 {
     margin-block-start: 1rem;
   }
-
+  p > a {
+    text-decoration: underline;
+    color: var(--markdown-link-c);
+    &:hover {
+      color: var(--markdown-link-hover-c);
+    }
+  }
   //intro paragraphs
   > header + p {
     color: var(--markdown-text-intro-c);
@@ -142,4 +152,8 @@ html[data-theme='dark'] {
       }
     }
   }
+}
+
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.5rem;
 }

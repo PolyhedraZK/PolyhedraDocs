@@ -1,8 +1,10 @@
-html[data-theme='light'] {
+html[data-theme="light"] {
+  --ifm-color-primary: #141413;
+  --ifm-toc-link-color: rgba(20, 20, 19, 0.6) !important;
   --ifm-table-border-color: var(--c-indigo-30);
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --ifm-table-border-color: var(--c-gray-90);
 }
 
@@ -12,6 +14,23 @@ html[data-theme='dark'] {
 
 .table-wrapper {
   overflow-x: auto;
+}
+.table-of-contents {
+  margin: 0px !important;
+  border: none;
+  li {
+    margin: 0px;
+    width: 240px;
+    a {
+      padding: 8px 14px;
+      font-weight: 400;
+    }
+  }
+}
+.table-of-contents__link--active {
+  background-color: rgba(20, 20, 19, 0.06);
+  border-radius: 4px !important;
+  padding: 8px 14px;
 }
 
 table,

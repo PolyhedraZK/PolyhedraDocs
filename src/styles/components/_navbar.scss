@@ -1,5 +1,5 @@
 html[data-theme="light"] {
-  --navbar-link-c: var(--c-indigo-80);
+  --navbar-link-c: rgba(20, 20, 19, 0.6);
 
   --navbar-separator-bg-c: var(--c-indigo-40);
 
@@ -40,13 +40,14 @@ html[data-theme="dark"] {
         }
         :not(.cta) {
           &.navbar__link {
-            align-self: stretch;
-            align-items: center;
-            position: relative;
-
             @media (min-width: 996px) {
               display: flex;
             }
+
+            align-self: stretch;
+            align-items: center;
+
+            position: relative;
 
             &::after {
               content: "";

@@ -1,11 +1,11 @@
 :root {
-  --doc-item-container-width: 42rem;
+  --doc-item-container-width: 46.875rem;
 }
 
 //overrides
 #__docusaurus {
   //#region ------------ DocItem -------------
-  [class*='docItemCol_'] {
+  [class*="docItemCol_"] {
     max-width: initial;
     min-width: 0;
 
@@ -14,13 +14,13 @@
     }
   }
 
-  [class*='docItemContainer_'] {
+  [class*="docItemContainer_"] {
     max-width: var(--doc-item-container-width);
     flex-grow: 1;
     min-width: 0;
   }
 
-  [class*='docMainContainer_'] {
+  [class*="docMainContainer_"] {
     .doc-demo-wrapper {
       @media (max-width: 1364px) {
         display: none;
@@ -70,7 +70,7 @@
     }
   }
 
-  [class^='docItemCol_'] {
+  [class^="docItemCol_"] {
     margin-inline-start: auto;
     margin-inline-end: auto;
   }

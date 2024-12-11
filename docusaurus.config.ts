@@ -102,6 +102,7 @@ const config: Config = {
           position: "left",
           label: "Expander",
         },
+        // 分割线
         // {
         //   type: "html",
         //   position: "right",

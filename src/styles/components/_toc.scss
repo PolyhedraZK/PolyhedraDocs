@@ -1,9 +1,9 @@
-html[data-theme='light'] {
+html[data-theme="light"] {
   --toc-separator-c: var(--c-indigo-20);
   --ifm-toc-link-color: var(--c-indigo-80);
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --toc-separator-c: var(--c-carbon-90);
   --ifm-toc-link-color: var(--c-carbon-0);
 }
@@ -13,16 +13,16 @@ html[data-theme='dark'] {
 
 //overrides
 #__docusaurus {
-  [class^='tableOfContents_'] {
+  [class^="tableOfContents_"] {
     position: static;
     top: initial;
     overflow: hidden;
 
     max-height: initial;
 
-    padding-block-end: 1.25rem;
+    // padding-block-end: 1.25rem;
 
-    border-block-end: 1px solid var(--toc-separator-c);
+    // border-block-end: 1px solid var(--toc-separator-c);
 
     line-height: 1.4;
   }
@@ -38,11 +38,15 @@ html[data-theme='dark'] {
     padding-block-end: 2rem;
 
     h2 {
-      font-size: 0.625rem;
-      line-height: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--c-indigo-60);
+      color: #141413;
+      font-family: Poppins;
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 18px; /* 128.571% */
+      letter-spacing: -0.14px;
+      padding: 8px 14px;
+      margin: 0px;
     }
 
     .table-of-contents {
@@ -61,9 +65,10 @@ html[data-theme='dark'] {
 
     .theme-edit-this-page {
       --edit-this-page-c: var(--ifm-heading-color);
-
+      padding-inline: 14px;
       font-weight: 600;
       font-size: 0.875rem;
+      margin-top: 16px;
     }
   }
 
@@ -85,7 +90,7 @@ html[data-theme='dark'] {
     }
   }
 
-  [class^='tocCollapsible_'] {
+  [class^="tocCollapsible_"] {
     @media (max-width: 996px) {
       display: none;
     }
