@@ -210,16 +210,6 @@ const config: Config = {
       theme: { plain: {}, styles: [] },
       additionalLanguages: ["shell-session", "http"],
     },
-    docs: {
-      sidebar: {
-        hideable: true,
-        autoCollapseCategories: true,
-      },
-    },
-    tableOfContents: {
-      minHeadingLevel: 2,
-      maxHeadingLevel: 3,
-    },
   } satisfies Preset.ThemeConfig,
   plugins: ["docusaurus-plugin-sass"],
   customFields: {},
