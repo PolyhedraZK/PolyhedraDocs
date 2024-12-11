@@ -94,6 +94,7 @@ html[data-theme="dark"] {
   h5 + h6 {
     margin-block-start: 1rem;
   }
+  li > a,
   p > a {
     text-decoration: underline;
     color: var(--markdown-link-c);
