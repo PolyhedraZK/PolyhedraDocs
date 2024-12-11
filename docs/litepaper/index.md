@@ -41,7 +41,7 @@ Polyhedra Network envisions a future where trust in AI and blockchain systems is
 
 <div className="expchain-diagram">
   <video width="100%" autoPlay muted playsInline loop>
-    <source src="/video/2.mp4" type="video/mp4" />
+    <source src="/video/zkpytorch2.mp4" type="video/mp4" />
   </video>
   Figure 2: We anticipate a future where all AI is verifiable and personalized inference occurs without compromising on data privacy.
 </div>
@@ -78,7 +78,7 @@ zkML enables [cryptographic verification of AI models](https://blog.polyhedra.ne
 
 <div className="expchain-diagram">
   <video width="100%" autoPlay muted playsInline loop>
-    <source src="/video/1.mp4" type="video/mp4" />
+    <source src="/video/zkpytorch1.mp4" type="video/mp4" />
   </video>
   Figure 3: zkML plays a critical role in building trust in AI systems and the humans that interact with them.
 </div>
