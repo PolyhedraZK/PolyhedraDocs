@@ -70,7 +70,9 @@ html[data-theme="dark"] {
     --ifm-h1-font-size: clamp(2.5rem, 8vw, 3.5rem);
     font-size: var(--ifm-h1-font-size);
   }
-
+  > header + p {
+    font-size: 1rem !important;
+  }
   h1,
   h2,
   h3,
@@ -83,7 +85,7 @@ html[data-theme="dark"] {
   }
 
   h1 {
-    margin-block-start: 5rem;
+    margin-block-start: 4.375rem;
   }
 
   h2 + h3,

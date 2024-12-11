@@ -1,6 +1,6 @@
 //overrides
 #__docusaurus {
-  [class^='docMainContainer_'] {
+  [class^="docMainContainer_"] {
     max-width: initial;
 
     > .container {
@@ -10,9 +10,12 @@
         flex-wrap: nowrap;
       }
     }
+    > .padding-top--md {
+      padding-top: 0px !important;
+    }
   }
 
-  [class^='docRoot_'] {
+  [class^="docRoot_"] {
     > div {
       flex-grow: 1;
       min-width: 0;
