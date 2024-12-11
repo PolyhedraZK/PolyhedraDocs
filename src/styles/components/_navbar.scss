@@ -1,6 +1,7 @@
 html[data-theme="light"] {
   --token-primary-c: rgba(20, 20, 19);
-  --navbar-link-c: rgba(20, 20, 19, 0.6);
+  --navbar-link-c: rgba(20, 20, 19, 0.7);
+  --navbar-link-hover-c: rgba(20, 20, 19);
 
   --navbar-separator-bg-c: var(--c-indigo-40);
 
@@ -24,6 +25,7 @@ html[data-theme="dark"] {
 //overrides
 #__docusaurus {
   .navbar {
+    border-bottom: 1px solid rgba(20, 20, 19, 0.1);
     &__inner {
       width: initial;
       flex-grow: 1;
@@ -35,6 +37,7 @@ html[data-theme="dark"] {
       align-self: stretch;
       align-items: center;
       position: relative;
+      gap: 1rem;
 
       &:not(.navbar__items--right) {
         .navbar__link {
@@ -105,7 +108,7 @@ html[data-theme="dark"] {
 
         &:hover,
         &:active {
-          opacity: 0.8;
+          opacity: 1;
         }
 
         &::after {
@@ -150,33 +153,40 @@ html[data-theme="dark"] {
           &-mask {
             &::before {
               content: "";
-              height: 17px;
+              width: 24px;
+              height: 24px;
               display: flex;
-              background-color: currentColor;
+              background-color: var(--navbar-link-hover-c);
               mask-repeat: no-repeat;
               mask-position: center;
               mask-size: 100% 100%;
+            }
+            &:hover {
+              opacity: 0.7; // hover时降低透明度
             }
           }
 
           &-github {
             &::before {
               mask-image: url("../../static/logos/github.svg");
-              width: 20px;
+            }
+          }
+
+          &-telegram {
+            &::before {
+              mask-image: url("../../static/logos/telegram.svg");
             }
           }
 
           &-x {
             &::before {
               mask-image: url("../../static/logos/x.svg");
-              width: 19px;
             }
           }
 
           &-discord {
             &::before {
               mask-image: url("../../static/logos/discord.svg");
-              width: 20px;
             }
           }
         }
@@ -213,10 +223,13 @@ html[data-theme="dark"] {
         .icon-link-discord {
           order: 6;
         }
+        .icon-link-telegram {
+          order: 7;
+        }
 
         //github icon
         .icon-link-github {
-          order: 7;
+          order: 8;
         }
       }
     }
@@ -261,7 +274,7 @@ html[data-theme="dark"] {
       &:not(.navbar__link--active) {
         &.navbar__link {
           &:hover {
-            opacity: 0.8;
+            color: var(--navbar-link-hover-c);
           }
         }
       }

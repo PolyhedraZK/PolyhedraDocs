@@ -3,9 +3,8 @@ html[data-theme="light"] {
   --markdown-toc-list-item-c: var(--c-indigo-70);
   --markdown-text-intro-c: var(--c-carbon-80);
   --markdown-bold-c: var(--c-carbon-100);
-  --markdown-link-c: rgba(20, 20, 19, 0.8);
+  --markdown-link-c: rgba(20, 20, 19, 1);
   --markdown-text-c: rgba(20, 20, 19, 0.8);
-  --markdown-link-hover-c: rgba(20, 20, 19, 1);
 }
 
 html[data-theme="dark"] {
@@ -64,6 +63,9 @@ html[data-theme="dark"] {
   .tabs-container {
     line-height: 200%;
   }
+  p {
+    font-size: 1rem !important;
+  }
 
   // have to override style coming from .h1Heading_node_modules-\@docusaurus-theme-classic-lib-next-theme-Heading-styles-module
   header > h1 {
@@ -79,13 +81,14 @@ html[data-theme="dark"] {
   h4,
   h5,
   h6 {
+    font-weight: 500;
     > a {
       color: inherit;
     }
   }
 
   h1 {
-    margin-block-start: 4.375rem;
+    margin-block-start: 3.75rem;
   }
 
   h2 + h3,
@@ -98,9 +101,6 @@ html[data-theme="dark"] {
   p > a {
     text-decoration: underline;
     color: var(--markdown-link-c);
-    &:hover {
-      color: var(--markdown-link-hover-c);
-    }
   }
   //intro paragraphs
   > header + p {

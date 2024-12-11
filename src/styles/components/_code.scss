@@ -9,11 +9,11 @@
   --ifm-code-background: var(--c-indigo-10);
 }
 
-html[data-theme='light'] {
-  --code-block-bg-c: var(--c-indigo-10);
+html[data-theme="light"] {
+  --code-block-bg-c: rgba(20, 20, 19, 0.06);
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --code-block-bg-c: var(--token-secondary-bg-c);
 }
 
@@ -50,7 +50,7 @@ code {
 
 // Overrides
 #__docusaurus {
-  [class*='codeBlockContainer_'] {
+  [class*="codeBlockContainer_"] {
     box-shadow: none;
   }
 }
@@ -61,8 +61,8 @@ code {
  * @author Lea Verou
  */
 
-code[class*='language-'],
-pre[class*='language-'] {
+code[class*="language-"],
+pre[class*="language-"] {
   background: var(--code-block-bg-c);
   white-space: pre;
   word-spacing: normal;
@@ -81,7 +81,7 @@ pre[class*='language-'] {
 }
 
 /* Code blocks */
-pre[class*='language-'] {
+pre[class*="language-"] {
   padding: 1em;
   margin: 0 0;
   overflow: auto;
@@ -91,7 +91,7 @@ pre[class*='language-'] {
 }
 
 /* Inline code */
-:not(pre) > code[class*='language-'] {
+:not(pre) > code[class*="language-"] {
   padding: 0.15em 0.2em 0.05em;
   border-radius: 0.3em;
   border: 0.13em solid hsl(30, 20%, 40%);
@@ -121,7 +121,7 @@ pre[class*='language-'] {
 
 .token.tag.punctuation,
 .token.tag.class-name,
-.token.tag.punctuation + .token.tag:not(.attr-value):not([class*='language-']) {
+.token.tag.punctuation + .token.tag:not(.attr-value):not([class*="language-"]) {
   color: #2b90ff;
 }
 

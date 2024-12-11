@@ -125,6 +125,13 @@ const config: Config = {
           target: "_blank",
         },
         {
+          href: "https://t.me/PolyhedraGroup",
+          position: "right",
+          className: "icon-link icon-link-mask icon-link-telegram",
+          "aria-label": "telegram",
+          target: "_blank",
+        },
+        {
           href: "https://github.com/PolyhedraZK",
           position: "right",
           className: "icon-link icon-link-mask icon-link-github",

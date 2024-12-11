@@ -16,12 +16,12 @@
   --playground-tab-btn-border-color: transparent;
 
   --playground-console-item-separator-color: var(--c-carbon-80);
-  --playground-console-warning-background: #332B00;
+  --playground-console-warning-background: #332b00;
   --playground-console-warning-color: var(--c-yellow-80);
   --playground-console-warning-separator-color: #665500;
   --playground-console-error-background: #290000;
   --playground-console-error-color: var(--c-red-40);
-  --playground-console-error-separator-color: #5C0000;
+  --playground-console-error-separator-color: #5c0000;
 }
 
 .playground {
@@ -58,7 +58,7 @@
 
   --playground-console-item-separator-color: var(--c-indigo-20);
   --playground-console-warning-background: var(--c-yellow-10);
-  --playground-console-warning-color: #5C3C00;
+  --playground-console-warning-color: #5c3c00;
   --playground-console-warning-separator-color: var(--c-yellow-30);
   --playground-console-error-background: var(--c-red-10);
   --playground-console-error-color: var(--c-red-90);
@@ -116,7 +116,8 @@
 }
 
 /** Vertical divider between control groups */
-.playground__control-group + .playground__control-group:not(.playground__control-group--end) {
+.playground__control-group
+  + .playground__control-group:not(.playground__control-group--end) {
   /* Only show the vertical divider when there is a control group after it */
   border-left: 1px solid var(--playground-separator-color);
 }
@@ -147,7 +148,9 @@
 
   appearance: none;
   cursor: pointer;
-  transition: background-color .2s, color .2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .playground__control-button:disabled {
@@ -198,7 +201,7 @@
 
   cursor: pointer;
   appearance: none;
-  transition: background .2s;
+  transition: background 0.2s;
 }
 
 .playground__icon-button--disabled {
@@ -220,7 +223,7 @@
 }
 
 /* overwrite existing Docusaurus style */
-.playground__code-block pre[class*='language-'] {
+.playground__code-block pre[class*="language-"] {
   background-color: var(--playground-code-background);
 }
 
@@ -267,7 +270,8 @@
   position: relative;
 }
 
-.playground__console-header, .playground__console-item {
+.playground__console-header,
+.playground__console-item {
   padding: 3px 3px 3px 28px;
 }
 
@@ -394,7 +398,6 @@
 .tippy-box[data-theme="playground"] .tippy-content {
   padding: 6px 10px;
 }
-
 
 /* Loading Screen */
 .playground .playground__loading {
