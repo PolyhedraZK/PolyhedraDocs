@@ -2,7 +2,7 @@ html[data-theme="light"] {
   --sidebar-category-c: var(--c-gray-100);
   --sidebar-border-c: var(--c-gray-0);
 
-  --ifm-menu-color-background-active: rgba(20, 20, 19, 0.08);
+  --ifm-menu-color-background-active: rgba(20, 20, 19, 0.05);
   --ifm-menu-color: rgba(20, 20, 19, 0.6);
 }
 
@@ -191,6 +191,14 @@ html[data-theme="dark"] {
         font-size: 0.938rem;
         line-height: 100%;
       }
+    }
+  }
+  .theme-doc-sidebar-item-link-level-1 {
+    .menu__link {
+      color: var(--sidebar-category-c);
+      font-weight: 600;
+      font-size: 0.938rem;
+      line-height: 100%;
     }
   }
 }
