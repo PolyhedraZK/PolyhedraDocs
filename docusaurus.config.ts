@@ -85,8 +85,8 @@ const config: Config = {
       },
       items: [
         {
-          type: "doc",
-          docId: "litepaper/index",
+          type: "docSidebar",
+          sidebarId: "litepaperSidebar",
           position: "left",
           label: "Litepaper",
         },
