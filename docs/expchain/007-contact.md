@@ -1,3 +1,7 @@
+---
+slug: /contract
+---
+
 # Usage Example: Deploy ERC20 using Remix
 
 ## Step 1: Prepare the ERC20 Smart Contract Code
@@ -36,7 +40,7 @@ contract MyToken is ERC20 {
 1. Once compiled, go to the “Deploy & Run Transactions” tab (third icon in the sidebar).
 2. Select the contract MyToken.
 3. In the initialSupply field, enter the token’s initial supply (e.g., 1000000 for 1 million tokens).
-4. Choose the environment: Injected Web3: connects to your browser wallet (like MetaMask) to deploy to a EXPchain testnet.
+4. Choose the environment: Injected Web3: connects to your browser wallet (like MetaMask) to deploy to a EXPchain Testnet.
 5. Click Deploy to deploy the contract.
 
 ## Step 4: Test Your Token

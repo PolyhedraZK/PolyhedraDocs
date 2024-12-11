@@ -12,8 +12,8 @@ Since EXPchain is EVM-compatible, your existing Ethereum contract skills will se
 
 Here are some resources to help you get connected to the EXPchain network:
 
-- [Network Information and RPC Providers](https://github.com/PolyhedraZK/chaindocs?tab=readme-ov-file#json-rpc)
-- [Wallet Configuration](https://github.com/PolyhedraZK/chaindocs?tab=readme-ov-file#wallet-configuration)
+- [Network Information and RPC Providers](002-rpc.md)
+- [Wallet Configuration](003-wallet.md)
 
 ## Obtain Testnet Tokens
 
@@ -25,7 +25,7 @@ ZKJ is the native utility token of EXPchain and is used to pay transaction fees.
 
 ## JSON-RPC API
 
-Interacting with EXPchain requires sending requests to specific JSON-RPC API methods. EXPchain’s APIs are compatible with Geth. - [JSON-RPC API](https://github.com/PolyhedraZK/chaindocs?tab=readme-ov-file#json-rpc)
+Interacting with EXPchain requires sending requests to specific JSON-RPC API methods. EXPchain’s APIs are compatible with Geth. - [JSON-RPC API](002-rpc.md)
 
 ## Developer Tools
 

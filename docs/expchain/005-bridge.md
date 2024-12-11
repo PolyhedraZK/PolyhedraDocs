@@ -13,13 +13,13 @@ How to obtain:
 
 **Step 2: Add the preferred network to your wallet**
 
-You'll also need to add the desired chain's RPC endpoint to your wallet. Here we provide [an example](https://github.com/PolyhedraZK/chaindocs?tab=readme-ov-file#wallet-configuration) for doing this using MetaMask.
+You'll also need to add the desired chain's RPC endpoint to your wallet. Here we provide [an example](003-wallet.md) for doing this using MetaMask.
 
 **Step 3: Initiate the deposit**
 
 Visit [https://bridge.expchain.ai](https://bridge.expchain.ai) and log in with your wallet. Ensure you are connected to the correct source network before initiating the cross-chain transfer.
 
-- Select Network: Source network：Sepolia Testnet, BSC Testnet; Destination network：EXPchain Testnet
+- Select Network: Source network:Sepolia Testnet, BSC Testnet; Destination network:EXPchain Testnet
 - Enter the transfer amount.
 - Confirm the recipient address.
 - Click "Approve" and then "Transfer"
