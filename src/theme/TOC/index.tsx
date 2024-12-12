@@ -30,7 +30,7 @@ export default function TOCWrapper(props: TOCProps) {
     <div className="toc-wrapper">
       <h2>Index</h2>
       <TOC {...props} />
-      <EditThisPage editUrl={metadata.editUrl} />
+      {/* <EditThisPage editUrl={metadata.editUrl} /> */}
     </div>
   );
 }
