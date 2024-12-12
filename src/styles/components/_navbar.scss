@@ -38,7 +38,6 @@ html[data-theme="dark"] {
       align-items: center;
       position: relative;
       gap: 1rem;
-
       &:not(.navbar__items--right) {
         .navbar__link {
           @media (max-width: 996px) {
