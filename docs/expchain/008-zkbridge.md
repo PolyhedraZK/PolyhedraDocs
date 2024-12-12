@@ -68,14 +68,14 @@ contract Demo is IZKBridgeReceiver {
 ## Testnet
 
 - Sepolia
-  - chainId：119
-  - Address：0xa8a4547Be2eCe6Dde2Dd91b4A5adFe4A043b21C7
+  - chainId:119
+  - Address:0xa8a4547Be2eCe6Dde2Dd91b4A5adFe4A043b21C7
 - Binance Smart Chain
-  - chainId：103
-  - Address：0xa8a4547Be2eCe6Dde2Dd91b4A5adFe4A043b21C7
+  - chainId:103
+  - Address:0xa8a4547Be2eCe6Dde2Dd91b4A5adFe4A043b21C7
 - EXPchain
-  - chainId：131
-  - Address：0xa8a4547Be2eCe6Dde2Dd91b4A5adFe4A043b21C7
+  - chainId:131
+  - Address:0xa8a4547Be2eCe6Dde2Dd91b4A5adFe4A043b21C7
 
 # EVM (Solidity) Interfaces
 

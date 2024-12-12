@@ -1,0 +1,15 @@
+{
+  "name": "Polyhedra Documentation",
+  "short_name": "Polyhedra Docs",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/img/meta/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}
