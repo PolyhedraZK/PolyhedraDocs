@@ -14,9 +14,7 @@ toc_max_heading_level: 2
 Built on a zk-native blockchain infrastructure, EXPchain supports seamless AI workflows through advanced features like zkBridge for cross-chain interoperability, native zkRollup scalability, and zkML watermarking for large language models (LLMs). The platform prioritizes transparency, security, and scalability, fostering trust in critical industries such as finance, healthcare, and software development. Through its modular architecture and commitment to ethical AI, EXPchain sets the foundations for the future of decentralized, privacy-conscious, and accountable AI systems.
 
 <div className="expchain-diagram">
-  <video width="100%" autoPlay muted playsInline loop>
-    <source src="/video/EXPchain Platform.mp4" type="video/mp4" />
-  </video>
+  <img src="/img/Figure 1@2x.jpg" width="100%" alt="Figure 1: EXPchain establishes foundations for the future of decentralized, privacy-conscious, and accountable AI systems." />
   Figure 1: EXPchain establishes foundations for the future of decentralized, privacy-conscious, and accountable AI systems.
 </div>
 
@@ -40,9 +38,7 @@ The convergence of AI and blockchain marks a paradigm shift in decentralized tec
 Polyhedra Network envisions a future where trust in AI and blockchain systems is inherent. We recognize this is not a small objective, however by lowering technical barriers for developers and leveraging powerful zk tools in EXPchain, we aim to establish a trusted ecosystem where developers can build privacy-preserving applications without needing specialized cryptographic expertise, making AI universally accessible, verifiable, and accountable.
 
 <div className="expchain-diagram">
-  <video width="100%" autoPlay muted playsInline loop>
-    <source src="/video/zkpytorch2.mp4" type="video/mp4" />
-  </video>
+  <img src="/img/Figure 2@2x.jpg" width="100%" alt="Figure 2: We anticipate a future where all AI is verifiable and personalized inference occurs without compromising on data privacy." />
   Figure 2: We anticipate a future where all AI is verifiable and personalized inference occurs without compromising on data privacy.
 </div>
 
@@ -77,9 +73,7 @@ zkML enables [cryptographic verification of AI models](https://blog.polyhedra.ne
 - Training verification: Ensure adherence to protocols without revealing sensitive inputs.
 
 <div className="expchain-diagram">
-  <video width="100%" autoPlay muted playsInline loop>
-    <source src="/video/zkpytorch1.mp4" type="video/mp4" />
-  </video>
+  <img src="/img/Figure 3@2x.jpg" width="100%" alt="Figure 3: zkML plays a critical role in building trust in AI systems and the humans that interact with them." />
   Figure 3: zkML plays a critical role in building trust in AI systems and the humans that interact with them.
 </div>
 
@@ -181,7 +175,7 @@ Polyhedra Network is dedicated to pushing the boundaries of zkML and blockchain 
 These advancements position zkML at the forefront of verifiable AI, shaping a future where trust is integral to every interaction.
 
 <div className="expchain-diagram">
-  <img src="/img/Roadmap@2x.jpg" width="100%" alt="Table 1: Two-year roadmap for EXPchain" />
+  <img src="/img/Table 1@2x.jpg" width="100%" alt="Table 1: Two-year roadmap for EXPchain" />
   Table 1: Two-year roadmap for EXPchain
 </div>
 
