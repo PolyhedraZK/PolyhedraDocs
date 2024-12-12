@@ -104,7 +104,7 @@ html[data-theme="dark"] {
   }
   //intro paragraphs
   > header + p {
-    color: var(--markdown-text-intro-c);
+    color: var(--markdown-text-c);
     font-size: 1.25rem;
 
     > strong,
@@ -113,7 +113,7 @@ html[data-theme="dark"] {
     }
 
     + p {
-      color: var(--markdown-text-intro-c);
+      color: var(--markdown-text-c);
       font-size: 1.25rem;
 
       > strong,

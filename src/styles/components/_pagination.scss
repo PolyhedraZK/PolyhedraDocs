@@ -2,14 +2,10 @@
 #__docusaurus {
   .pagination-nav {
     &__link {
-      border: none;
-
       transition: color 0.2s ease-out;
 
       //Previous item
       &--prev {
-        padding-inline-start: 0;
-
         .pagination-nav__label {
           font-weight: 500;
           &::before {
@@ -23,8 +19,6 @@
 
       //Next item
       &--next {
-        padding-inline-end: 0;
-
         .pagination-nav__label {
           font-weight: 500;
           &::after {
