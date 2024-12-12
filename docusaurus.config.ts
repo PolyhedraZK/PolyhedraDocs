@@ -49,24 +49,22 @@ const config: Config = {
   themeConfig: {
     metadata: [
       {
-        name: "og:image",
-        content: "/img/meta/seo.png",
+        name: "og:site_name",
+        content: "Polyhedra Network Documentation",
       },
-      {
-        name: "twitter:image",
-        content: "/img/meta/seo.png",
-      },
+
       {
         name: "twitter:card",
         content: "summary_large_image",
       },
       {
-        name: "og:type",
-        content: "website",
+        name: "twitter:site",
+        content: "@PolyhedraZK",
       },
       {
-        name: "og:site_name",
-        content: "Polyhedra Network Documentation",
+        name: "robots",
+        content:
+          "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
       },
     ],
     colorMode: {
