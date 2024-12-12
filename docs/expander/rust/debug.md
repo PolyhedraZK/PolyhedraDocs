@@ -1,4 +1,8 @@
-## Debug
+---
+sidebar_position: 7
+---
+
+# Debug
 
 Currently, ExpanderCompilerCollection also supports debugging circuits. To use this feature, you need to make a few adjustments to your circuit definition:
 

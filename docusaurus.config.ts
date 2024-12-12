@@ -1,68 +1,97 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import path from "path";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+
+import "dotenv/config";
+
+const SITE_URL = process.env.SITE_URL || "https://docs.polyhedra.network";
 
 const config: Config = {
   title: "Polyhedra Network Documentation",
   tagline: "Polyhedra Network Documentation",
-  favicon: "img/group.png",
-
-  url: "https://polyhedrazk.github.io",
+  url: SITE_URL,
   baseUrl: "/",
-
-  organizationName: "facebook",
-  projectName: "docusaurus",
-
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
   },
-
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "/img/meta/favicon.ico",
+  organizationName: "Polyhedra-Network",
+  projectName: "polyhedra-docs",
   presets: [
     [
-      "classic",
+      "@docusaurus/preset-classic",
       {
         docs: {
-          routeBasePath: "/",
-          sidebarPath: "./sidebars.ts",
-          editUrl: "https://github.com/PolyhedraZK/PolyhedraDocs/tree/main/",
+          path: "docs",
+          routeBasePath: "",
+          sidebarPath: require.resolve("./sidebars.js"),
+          exclude: ["README.md"],
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-          path: "docs",
+          // editUrl: "https://github.com/PolyhedraZK/PolyhedraDocs/edit/main/",
         },
-        blog: false,
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: [
+            require.resolve(
+              "./node_modules/modern-normalize/modern-normalize.css"
+            ),
+            require.resolve("./src/styles/tokens.css"),
+            require.resolve("./src/styles/custom.scss"),
+          ],
         },
       } satisfies Preset.Options,
     ],
   ],
-
-  stylesheets: [
-    {
-      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
-      type: "text/css",
-      integrity:
-        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
-      crossorigin: "anonymous",
-    },
-  ],
-
   themeConfig: {
-    image: "img/docusaurus-social-card.jpg",
+    metadata: [
+      {
+        name: "og:site_name",
+        content: "Polyhedra Network Documentation",
+      },
+
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:site",
+        content: "@PolyhedraZK",
+      },
+      {
+        name: "robots",
+        content:
+          "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
+    ],
+    colorMode: {
+      disableSwitch: true,
+      defaultMode: "light",
+      respectPrefersColorScheme: false,
+    },
     navbar: {
-      title: "Polyhedra Network Document",
+      hideOnScroll: false,
       logo: {
-        alt: "Polyhedra Network",
-        src: "img/group.png",
+        alt: "Site Logo",
+        src: `/logos/polyhedra-docs-light.svg`,
+        srcDark: `/logos/polyhedra-docs-light.svg`,
         href: "/",
+        target: "_self",
+        width: 179,
+        height: 30,
       },
       items: [
+        {
+          type: "docSidebar",
+          sidebarId: "litepaperSidebar",
+          position: "left",
+          label: "Litepaper",
+        },
         {
           type: "docSidebar",
           sidebarId: "expchainSidebar",
@@ -75,18 +104,50 @@ const config: Config = {
           position: "left",
           label: "Expander",
         },
+        // 分割线
+        // {
+        //   type: "html",
+        //   position: "right",
+        //   value: '<div class="separator" aria-hidden></div>',
+        // },
+        {
+          href: "https://x.com/PolyhedraZK",
+          position: "right",
+          className: "icon-link icon-link-mask icon-link-x",
+          "aria-label": "X",
+          target: "_blank",
+        },
+        {
+          href: "https://discord.com/invite/polyhedra-network",
+          position: "right",
+          className: "icon-link icon-link-mask icon-link-discord",
+          "aria-label": "Discord",
+          target: "_blank",
+        },
+        {
+          href: "https://t.me/PolyhedraGroup",
+          position: "right",
+          className: "icon-link icon-link-mask icon-link-telegram",
+          "aria-label": "telegram",
+          target: "_blank",
+        },
+        {
+          href: "https://github.com/PolyhedraZK",
+          position: "right",
+          className: "icon-link icon-link-mask icon-link-github",
+          "aria-label": "GitHub repository",
+          target: "_blank",
+        },
       ],
     },
-    footer: {
-      style: "dark",
-      links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} Polyhedra Network. Built with Docusaurus.`,
-    },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: { plain: {}, styles: [] },
+      additionalLanguages: ["shell-session", "http"],
     },
   } satisfies Preset.ThemeConfig,
+  plugins: ["docusaurus-plugin-sass"],
+  customFields: {},
+  themes: [],
 };
 
 export default config;

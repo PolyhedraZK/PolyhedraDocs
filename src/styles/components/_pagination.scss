@@ -1,0 +1,42 @@
+//overrides
+#__docusaurus {
+  .pagination-nav {
+    &__link {
+      transition: color 0.2s ease-out;
+
+      //Previous item
+      &--prev {
+        .pagination-nav__label {
+          font-weight: 500;
+          &::before {
+            padding-inline-end: var(--icon-padding);
+            background-color: var(--ifm-background-color);
+            transform: translateX(calc(var(--icon-padding) * -1));
+            content: "←";
+          }
+        }
+      }
+
+      //Next item
+      &--next {
+        .pagination-nav__label {
+          font-weight: 500;
+          &::after {
+            padding-inline-start: var(--icon-padding);
+            background-color: var(--ifm-background-color);
+            transform: translateX(calc(-100% + var(--icon-padding)));
+            content: "→";
+          }
+        }
+      }
+    }
+
+    &__label {
+      --icon-padding: 0.25rem;
+    }
+
+    &__sublabel {
+      margin-block-end: 1rem;
+    }
+  }
+}

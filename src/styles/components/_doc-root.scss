@@ -1,0 +1,35 @@
+//overrides
+#__docusaurus {
+  [class^="docMainContainer_"] {
+    max-width: initial;
+
+    > .container {
+      max-width: initial;
+
+      > .row {
+        flex-wrap: nowrap;
+      }
+    }
+    > .padding-top--md {
+      padding-top: 0px !important;
+    }
+  }
+
+  [class^="docRoot_"] {
+    > div {
+      flex-grow: 1;
+      min-width: 0;
+    }
+  }
+
+  .logo {
+    display: none;
+    position: absolute;
+    top: 0.85rem;
+    z-index: 999;
+    left: 3.625rem;
+    @media (max-width: 996px) {
+      display: block;
+    }
+  }
+}

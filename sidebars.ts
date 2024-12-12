@@ -15,6 +15,13 @@ const sidebars: SidebarsConfig = {
       dirName: "expchain",
     },
   ],
+  litepaperSidebar: [
+    {
+      type: "doc",
+      id: "litepaper/index",
+      className: "hidden-sidebar-item",
+    },
+  ],
 };
 
 export default sidebars;
