@@ -4,9 +4,9 @@ To get Test tokens on EXPchain Testnet, faucets are available on EXPchain Testne
 
 - Select a Network: Choose from EXPchain Testnet, ETH Sepolia, or BSC Testnet.
 - Input your address to claim the test token.
-- 0.01 tZKJ per 24 hours on each network.
+- 0.01 tZKJ per 10 minutes on each network.
 - To apply for a significant allocation of test tokens, please submit a request to the DC administrator.
 
-![Faucet](https://storage.googleapis.com/polyhedra-img/images/prod/Faucet02.jpg)
+![](https://github.com/user-attachments/assets/105c8346-5fd0-4e29-8131-114b47aa23f4)
 
 > 🌟To use test tokens acquired from Sepolia or BSC Testnet, they must be bridged to the EXPchain Testnet.
