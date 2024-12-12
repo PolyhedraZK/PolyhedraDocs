@@ -9,10 +9,12 @@ import React from "react";
 import Main from "@theme-original/DocRoot/Layout/Main";
 import Navbar from "@theme/Navbar";
 import type { Props } from "@theme/DocRoot/Layout/Main";
+import Logo from "@theme-original/Logo";
 
 export default function MainWrapper(props: Props) {
   return (
     <div>
+      <Logo className="logo" />
       <Navbar />
       <Main {...props} />
     </div>

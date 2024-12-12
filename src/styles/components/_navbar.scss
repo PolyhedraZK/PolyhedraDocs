@@ -188,6 +188,9 @@ html[data-theme="dark"] {
               mask-image: url("../../static/logos/discord.svg");
             }
           }
+          @media (max-width: 996px) {
+            display: none;
+          }
         }
 
         div {
