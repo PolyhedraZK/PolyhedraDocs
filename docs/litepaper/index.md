@@ -5,13 +5,13 @@ toc_max_heading_level: 2
 
 # EXPchain: Scaling Trust in the Age of Artificial Intelligence
 
-<!-- <span style={{fontSize: "medium", color: "grey"}}>December 9, 2024 &nbsp;&nbsp;&nbsp;&nbsp; Polyhedra Network</span> -->
+<span style={{fontSize: "medium", color: "grey"}}>December 9, 2024 &nbsp;&nbsp;&nbsp;&nbsp; Polyhedra Network</span>
 
 ## Abstract
 
 [EXPchain](https://expchain.ai/) is a decentralized blockchain protocol designed for scalable, verifiable, and privacy-preserving AI applications. Established as the "Everything Chain for AI", EXPchain integrates zero-knowledge machine learning (zkML) and a novel Proof of Intelligence (PoI) framework, addressing the growing need for trust and accountability in artificial intelligence systems. Key innovations include the [Expander](https://expander.polyhedra.network/) proof system, a high-performance zk prover, and [zkPyTorch](https://blog.polyhedra.network/scaling-trust-in-the-age-of-artificial-intelligence/), a developer-friendly toolkit for integrating zkML into traditional AI workflows. Together, these tools enhance computational efficiency, enabling practical AI verification while safeguarding sensitive data and intellectual property.
 
-Built on a zk-native blockchain infrastructure, EXPchain supports seamless AI workflows through advanced features like zkBridge for cross-chain interoperability, EXProllup scalability, and zkML watermarking for large language models (LLMs). The platform prioritizes transparency, security, and scalability, fostering trust in critical industries such as finance, healthcare, and software development. Through its modular architecture and commitment to ethical AI, EXPchain sets the foundations for the future of decentralized, privacy-conscious, and accountable AI systems.
+Built on a zk-native blockchain infrastructure, EXPchain supports seamless AI workflows through advanced features like zkBridge for cross-chain interoperability, native zkRollup scalability, and zkML watermarking for large language models (LLMs). The platform prioritizes transparency, security, and scalability, fostering trust in critical industries such as finance, healthcare, and software development. Through its modular architecture and commitment to ethical AI, EXPchain sets the foundations for the future of decentralized, privacy-conscious, and accountable AI systems.
 
 <div className="expchain-diagram">
   <video width="100%" autoPlay muted playsInline loop>
@@ -25,7 +25,7 @@ Built on a zk-native blockchain infrastructure, EXPchain supports seamless AI wo
 ### 1.1 The Importance of Trust in AI
 Artificial intelligence will make increasingly critical decisions across industries, influencing everyday interactions such as unlocking phones with facial recognition, applying for loans, or receiving AI-powered medical diagnoses. While these advancements offer immense potential, they also present critical challenges. How can we ensure AI systems operate fairly, accurately, and securely? Can privacy controls effectively safeguard sensitive data without compromising transparency or accountability? These challenges require proof of established trust in AI systems, and protection of sensitive information on all sides.
 
-Governments and institutions globally are working to regulate AI, visible in initiatives like the European Commission’s AI Act and NIST’s AI Risk Management Framework. Despite these efforts, traditional approaches often fall short as they require exposing proprietary models or sensitive data, resulting in trade-offs between security, privacy, and trust. Building from [foundational work](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)[<a href="#ref1">1</a>] on zero-knowledge proofs (ZKPs), zero-knowledge machine learning[<a href="#ref2">2</a>,<a href="#ref35">35</a>] (zkML) provides a breakthrough solution by enabling mathematical verification of AI systems while preserving data and model privacy.
+Governments and institutions globally are working to regulate AI, visible in initiatives like the European Commission's AI Act and NIST's AI Risk Management Framework. Despite these efforts, traditional approaches often fall short as they require exposing proprietary models or sensitive data, resulting in trade-offs between security, privacy, and trust. Building from [foundational work](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)[<a href="#ref1">1</a>], zero-knowledge machine learning[<a href="#ref2">2</a>,<a href="#ref35">35</a>] (zkML) provides a breakthrough solution by enabling mathematical verification of AI systems while preserving data and model privacy.
 
 Polyhedra Network proposes an interoperable solution optimized for zkML technology in EXPchain, applying years of advanced [research and implementation](https://www.polyhedra.network/research)[<a href="#ref3">3</a>, <a href="#ref13">13</a>, <a href="#ref15">15</a>-<a href="#ref18">18</a>, <a href="#ref21">21</a>-<a href="#ref24">24</a>, <a href="#ref26">26</a>, <a href="#ref27">27</a>, <a href="#ref29">29</a>-<a href="#ref34">34</a>] to enable the creation of applications that verify AI behavior and compliance without revealing proprietary information. This blockchain infrastructure ensures scalable, fast, and secure verification of AI behavior and compliance across diverse use cases.
 
@@ -88,7 +88,7 @@ This technology makes it possible to build systems that are both secure and ethi
 ### 3.2 zkNative Blockchain for AI
 Our blockchain infrastructure is purpose-built for AI applications, offering:
 - Single-slot finality for faster confirmations.
-- Native zk support enabling scalability via EXP appchains and EXProllups.
+- Native zk support enabling scalability via EXP appchains and zkRollups
 - Seamless integration of AI and blockchain workflows for real-world applications.
 
 This technology allows developers to build systems that are both secure and ethically aligned, with transparent AI-driven decisions that reinforce trust between developers, users, and stakeholders. zkML can enable applications such as watermarking for LLMs, model audits for compliance verification critical for financial institutions, and secure multiparty computations in privacy-sensitive industries.
