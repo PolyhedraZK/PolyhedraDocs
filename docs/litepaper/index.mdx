@@ -77,7 +77,7 @@ Expander sets a new benchmark in performance for zkML, achieving [unprecedented 
 
 - 2.2 seconds/image for VGG-16 on a single-thread CPU
 - 150 seconds/token for Llama-3.1 8B on a single-thread CPU
-- Amortized, we can prove 0.8 million parameters per second, 4 orders of magnitude faster than any number previously reported.
+- 4 orders of magnitude faster than any number previously reported.
 
 Polyhedra anticipates this to improve significantly over the next 12-24 months. We are actively building [hardware accelerations for our scheme](https://github.com/PolyhedraZK/blogs/blob/main/blogs/sumcheck_cuda.md)[<a href="#ref14">14</a>] and developing a [distributed prover infrastructure](https://eprint.iacr.org/2023/1271)[<a href="#ref15">15</a>, <a href="#ref16">16</a>] where multiple nodes can collaboratively work on the same proofs. Through these innovations, we are moving steadily toward our goal of real-time proving, where proof generation matches inference speed, effectively eliminating latency in the user experience. These performance leaps enable the practical verification of AI models and computations with significantly reduced costs and latency to support a wide range of applications, from privacy-preserving inference to compliance-driven model audits.
 
@@ -138,7 +138,7 @@ Polyhedra's native [zkBridge](https://dl.acm.org/doi/pdf/10.1145/3548606.3560652
 
 ### 3.5 zkML Watermark for LLM Verification
 
-EXPchain's zkML Watermark allows [verification of Large Language Models](https://arxiv.org/pdf/2312.04828)[<a href="#ref23">23</a>] (LLMs) like Llama-3 8B, representing a milestone in AI transparency. Issuing a tamper-proof certificate that ensures any LLM processed through EXPchain is exactly as claimed, verified through zkML, ensures model authenticity while preserving intellectual property, reducing fraud and enabling responsible AI use. Utilizing this technology, organizations can validate LLMs on an open, secure platform.
+EXPchain's zkML Watermark allows [verification of Large Language Models](https://arxiv.org/pdf/2312.04828)[<a href="#ref23">23</a>] (LLMs) like Llama-3.1 8B, representing a milestone in AI transparency. Issuing a tamper-proof certificate that ensures any LLM processed through EXPchain is exactly as claimed, verified through zkML, ensures model authenticity while preserving intellectual property, reducing fraud and enabling responsible AI use. Utilizing this technology, organizations can validate LLMs on an open, secure platform.
 
 ### 3.6 Optimized Proof Systems
 
