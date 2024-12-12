@@ -56,9 +56,9 @@ The zkCUDA programming model closely resembles CUDA due to the nature of GKR cir
 
 1. Memory Copy:
 
-a. Host to Device: This operation copies data from host memory to device memory using polynomial commitment. Each memory copy generates a commitment to the data array.
+    a. Host to Device: This operation copies data from host memory to device memory using polynomial commitment. Each memory copy generates a commitment to the data array.
 
-b. Device to Host: This operation copies data from device memory to host memory by opening the polynomial commitment (single or batched) and outputting the polynomial evaluation to the host.
+    b. Device to Host: This operation copies data from device memory to host memory by opening the polynomial commitment (single or batched) and outputting the polynomial evaluation to the host.
 
 2. zkSM: A concept describing log-space uniformity of the circuit. Data parallelism is achieved by running multiple instances of the same circuit concurrently.
 

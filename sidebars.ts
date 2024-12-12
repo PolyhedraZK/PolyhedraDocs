@@ -19,7 +19,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "doc",
       id: "litepaper/index",
-      label: "Overview",
+      className: "hidden-sidebar-item",
     },
   ],
 };

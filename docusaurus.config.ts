@@ -32,7 +32,7 @@ const config: Config = {
           exclude: ["README.md"],
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-          editUrl: "https://github.com/PolyhedraZK/PolyhedraDocs/edit/main/",
+          // editUrl: "https://github.com/PolyhedraZK/PolyhedraDocs/edit/main/",
         },
         theme: {
           customCss: [

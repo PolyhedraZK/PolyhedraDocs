@@ -38,7 +38,6 @@ html[data-theme="dark"] {
       align-items: center;
       position: relative;
       gap: 1rem;
-
       &:not(.navbar__items--right) {
         .navbar__link {
           @media (max-width: 996px) {
@@ -48,7 +47,6 @@ html[data-theme="dark"] {
 
         :not(.cta) {
           &.navbar__link {
-            display: flex;
             align-self: stretch;
             align-items: center;
             position: relative;
@@ -188,6 +186,9 @@ html[data-theme="dark"] {
             &::before {
               mask-image: url("../../static/logos/discord.svg");
             }
+          }
+          @media (max-width: 996px) {
+            display: none;
           }
         }
 
