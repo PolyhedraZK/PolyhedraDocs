@@ -5,7 +5,7 @@ toc_max_heading_level: 2
 
 # EXPchain: Scaling Trust in the Age of Artificial Intelligence
 
-<span style={{fontSize: "medium", color: "grey"}}>December 9, 2024 &nbsp;&nbsp;&nbsp;&nbsp; Polyhedra Network</span>
+<span style={{fontSize: "medium", color: "grey"}}>December 12, 2024 &nbsp;&nbsp;&nbsp;&nbsp; Polyhedra Network</span>
 
 ## Abstract
 
