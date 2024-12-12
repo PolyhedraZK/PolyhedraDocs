@@ -91,7 +91,7 @@ export default function DocItemLayout({ children, ...props }: Props) {
         </div>
       )}
       {/* ------- CUSTOM CODE END -------- */}
-      {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
+      <div className="col col--3">{docTOC.desktop && docTOC.desktop}</div>
     </div>
   );
 }
