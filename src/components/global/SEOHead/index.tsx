@@ -1,7 +1,10 @@
 import React from "react";
 import Head from "@docusaurus/Head";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 export default function SEOHead({ title, description, image, url, siteName }) {
+  const imageUrl = useBaseUrl(image, { absolute: true }); // 这会自动添加 siteConfig.url
+  console.log(`imageUrl = ${imageUrl}`);
   return (
     <Head
       prioritizeSeoTags={false}
@@ -32,7 +35,7 @@ export default function SEOHead({ title, description, image, url, siteName }) {
         },
         {
           property: "og:image",
-          content: image,
+          content: imageUrl,
         },
         {
           property: "og:image:width",
@@ -48,7 +51,7 @@ export default function SEOHead({ title, description, image, url, siteName }) {
         },
         {
           name: "twitter:image",
-          content: image,
+          content: imageUrl,
         },
       ]}
     >

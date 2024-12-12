@@ -36,6 +36,8 @@
     "@docusaurus/module-type-aliases": "3.5.2",
     "@docusaurus/tsconfig": "3.5.2",
     "@docusaurus/types": "3.5.2",
+    "dotenv": "^16.4.7",
+    "dotenv-cli": "^7.4.4",
     "typescript": "~5.5.2"
   },
   "browserslist": {

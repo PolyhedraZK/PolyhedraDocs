@@ -5,20 +5,22 @@ import path from "path";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
-const BASE_URL = "";
+import "dotenv/config";
+
+const SITE_URL = process.env.SITE_URL || "https://docs.polyhedra.network";
 
 const config: Config = {
   title: "Polyhedra Network Documentation",
   tagline: "Polyhedra Network Documentation",
-  url: "https://polyhedra.network",
-  baseUrl: `${BASE_URL}/`,
+  url: SITE_URL,
+  baseUrl: "/",
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
   },
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/meta/favicon.ico",
+  favicon: "/img/meta/favicon.ico",
   organizationName: "Polyhedra-Network",
   projectName: "polyhedra-docs",
   presets: [
