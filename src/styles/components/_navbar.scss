@@ -38,6 +38,9 @@ html[data-theme="dark"] {
       align-items: center;
       position: relative;
       gap: 1rem;
+      @media (max-width: 996px) {
+        gap: 0px;
+      }
       &:not(.navbar__items--right) {
         .navbar__link {
           @media (max-width: 996px) {
@@ -188,7 +191,12 @@ html[data-theme="dark"] {
             }
           }
           @media (max-width: 996px) {
-            display: none;
+            &-mask {
+              &::before {
+                width: 22px;
+                height: 22px;
+              }
+            }
           }
         }
 
