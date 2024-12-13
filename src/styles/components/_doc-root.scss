@@ -30,6 +30,9 @@
     left: 3.625rem;
     @media (max-width: 996px) {
       display: block;
+      img {
+        width: 85%;
+      }
     }
   }
 }
