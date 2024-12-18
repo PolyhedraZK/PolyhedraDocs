@@ -22,7 +22,6 @@ The verifier follows a similar workflow except that in the 4-th step, it constru
 
 $$
 Open((I_1, I_2), r_A) = (1 - {r_A}_{[n]}) \cdot Open(I_1, {r_A}_{[:n]}) + {r_A}_{[n]}\cdot Open(I_2, {r_A}_{[:n]})
-
 $$
 
 ## A more general definition
@@ -38,4 +37,4 @@ The prover would take the description of this chunking, along with the commitmen
 ## Use the output of other circuits 
 In the proving of a groups of circuits, it may also happen that the output of a circuit, either public or private, is used as the input of many following circuits. 
 
-We can adopt a similar approach as described above by commiting the output first and use that as the signature of all following usage.
+We can adopt a similar approach as described above by commiting the output first and then use that as the signature of all following usages.
