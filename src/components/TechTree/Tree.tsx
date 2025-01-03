@@ -19,7 +19,7 @@ interface NodePosition {
 const BASE_WIDTH = 200
 const BASE_HEIGHT = 120
 const LEVEL_WIDTH = 62  // Horizontal spacing between eras
-const CURVE_WIDTH = 30
+const CURVE_WIDTH = 80  // Increased for more balanced spacing
 const INITIAL_OFFSET = { x: -15, y: 0 }  // Add 32px left margin
 
 const TechTree: React.FC = () => {
@@ -235,10 +235,11 @@ const TechTree: React.FC = () => {
         // Calculate midpoint for elbow
         const midY = startY + (endY - startY) / 2
 
-        // Create elbow path
+        // Create elbow path with fixed spacing
+        const horizontalOffset = 40  // Fixed distance from nodes
         const path = `M ${startX} ${startY} 
-                     L ${startX + CURVE_WIDTH} ${startY}
-                     L ${startX + CURVE_WIDTH} ${endY}
+                     L ${startX + horizontalOffset} ${startY}
+                     L ${startX + horizontalOffset} ${endY}
                      L ${endX} ${endY}`
 
         // Create arrow at the end
