@@ -1,6 +1,6 @@
 import React, { useRef, useCallback, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { TechData, TechStatus } from '../../types'
+import { TechData, TechStatus } from '../types'
 import './TechNode.scss'
 
 interface TechNodeProps {

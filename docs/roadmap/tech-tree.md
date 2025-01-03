@@ -1,6 +1,6 @@
 # Technology Tree
 
-The Polyhedra Network technology tree represents our development roadmap organized into distinct phases, showing the progression and dependencies of various technologies and features.
+The Polyhedra Network technology tree represents our development roadmap organized into distinct phases, showing the progression and dependencies of various technologies and features. For an interactive version of this technology tree, please visit the [Interactive Technology Tree](./interactive-tech-tree.md).
 
 ## Acient Era
 

@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
-import TechNode from '../TechNode'
-import { TechData, TechStatus } from '../../types'
-import { techTreeData } from '../../data/techTreeData'
-import './TechTree.scss'
+import TechNode from './TechNode'
+import EraYear from './EraYear'
+import EraDescription from './EraDescription'
+import { TechData, TechStatus } from './types'
+import { techTreeData } from './data/techTreeData'
+import './styles.scss'
 
 interface NodePosition {
   id: string
@@ -18,7 +20,7 @@ const BASE_WIDTH = 200
 const BASE_HEIGHT = 120
 const LEVEL_WIDTH = 62  // Horizontal spacing between eras
 const CURVE_WIDTH = 30
-const INITIAL_OFFSET = { x: 50, y: 100 }  // Adjusted for better initial view
+const INITIAL_OFFSET = { x: 0, y: 100 }  // Removed left spacing
 
 const TechTree: React.FC = () => {
   const [techStatuses, setTechStatuses] = useState<Record<string, TechStatus>>({
@@ -98,24 +100,6 @@ const TechTree: React.FC = () => {
     }
   }, [handleWheel])
 
-  const handleZoomIn = useCallback(() => {
-    requestAnimationFrame(() => {
-      setScale(prev => Math.min(prev + 0.1, 2))
-    })
-  }, [])
-
-  const handleZoomOut = useCallback(() => {
-    requestAnimationFrame(() => {
-      setScale(prev => Math.max(prev - 0.1, 0.15))
-    })
-  }, [])
-
-  const handleReset = useCallback(() => {
-    requestAnimationFrame(() => {
-      setScale(1)
-      setPosition(INITIAL_OFFSET)
-    })
-  }, [])
 
   const calculateNodeSize = useCallback((tech: TechData) => {
     const contentLength = (
@@ -234,22 +218,30 @@ const TechTree: React.FC = () => {
   }, [techStatuses])
 
   const renderEraLabels = useMemo(() => {
-    return Object.entries(eraPositions).map(([era, yPosition]) => (
-      <div
-        key={era}
-        className="era-label"
-        style={{
-          left: yPosition,
-          top: -35,
-          transform: 'translateX(-50%)',
-          whiteSpace: 'nowrap',
-          color: '#141413',
-          fontSize: '14px'
-        }}
-      >
-        {era}
-      </div>
-    ))
+    return Object.entries(eraPositions).map(([era, yPosition]) => {
+      const parts = era.split(', ')
+      const isDateEra = parts.length > 1
+      
+      return (
+        <div
+          key={era}
+          style={{
+            position: 'absolute',
+            left: yPosition,
+            top: -85,
+            transform: 'translateX(-50%)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            whiteSpace: 'nowrap',
+            zIndex: 5
+          }}
+        >
+          <EraYear text={isDateEra ? parts[0] : "Before 2025"} />
+          <EraDescription text={isDateEra ? parts[1] : era} />
+        </div>
+      )
+    })
   }, [eraPositions])
 
   const getConnectedNodes = useCallback((techId: string): string[] => {
@@ -287,13 +279,11 @@ const TechTree: React.FC = () => {
         // Calculate midpoint for elbow
         const midY = startY + (endY - startY) / 2
 
-        // Create curved path
-        const controlPoint1X = startX + CURVE_WIDTH
-        const controlPoint2X = endX - CURVE_WIDTH
+        // Create elbow path
         const path = `M ${startX} ${startY} 
-                     C ${controlPoint1X} ${startY},
-                       ${controlPoint2X} ${endY},
-                       ${endX} ${endY}`
+                     L ${startX + CURVE_WIDTH} ${startY}
+                     L ${startX + CURVE_WIDTH} ${endY}
+                     L ${endX} ${endY}`
 
         // Create arrow at the end
         const arrowSize = 5
@@ -379,11 +369,6 @@ const TechTree: React.FC = () => {
             )
           })}
         </div>
-      </div>
-      <div className="zoom-controls">
-        <button onClick={handleZoomIn} title="Zoom In">+</button>
-        <button onClick={handleReset} title="Reset View">⟲</button>
-        <button onClick={handleZoomOut} title="Zoom Out">−</button>
       </div>
     </>
   )
