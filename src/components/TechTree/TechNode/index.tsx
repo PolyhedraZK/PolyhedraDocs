@@ -76,8 +76,12 @@ const TechNode: React.FC<TechNodeProps> = React.memo(({
       update();
 
       const handleScroll = () => requestAnimationFrame(updateDetailsPosition);
-      const handleResize = () => requestAnimationFrame(updateDetailsPosition);
-      const handleVisualViewportChange = () => requestAnimationFrame(updateDetailsPosition);
+      const handleResize = () => {
+        setShowDetails(false); // Hide details when resizing/zooming
+      };
+      const handleVisualViewportChange = () => {
+        setShowDetails(false); // Hide details when viewport changes (zoom)
+      };
       
       window.addEventListener('scroll', handleScroll, true);
       window.addEventListener('resize', handleResize);
@@ -100,9 +104,9 @@ const TechNode: React.FC<TechNodeProps> = React.memo(({
 
   const handleMouseLeave = (e: React.MouseEvent) => {
     const detailsEl = detailsRef.current;
-    const relatedTarget = e.relatedTarget as HTMLElement;
+    const relatedTarget = e.relatedTarget;
     
-    if (detailsEl && detailsEl.contains(relatedTarget)) {
+    if (detailsEl && relatedTarget instanceof Node && detailsEl.contains(relatedTarget)) {
       return;
     }
     
@@ -112,9 +116,9 @@ const TechNode: React.FC<TechNodeProps> = React.memo(({
 
   const handleDetailsMouseLeave = (e: React.MouseEvent) => {
     const nodeEl = nodeRef.current;
-    const relatedTarget = e.relatedTarget as HTMLElement;
+    const relatedTarget = e.relatedTarget;
     
-    if (nodeEl && nodeEl.contains(relatedTarget)) {
+    if (nodeEl && relatedTarget instanceof Node && nodeEl.contains(relatedTarget)) {
       return;
     }
     

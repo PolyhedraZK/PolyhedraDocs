@@ -20,7 +20,7 @@ const BASE_WIDTH = 200
 const BASE_HEIGHT = 120
 const LEVEL_WIDTH = 62  // Horizontal spacing between eras
 const CURVE_WIDTH = 30
-const INITIAL_OFFSET = { x: 0, y: 100 }  // Removed left spacing
+const INITIAL_OFFSET = { x: -15, y: 0 }  // Add 32px left margin
 
 const TechTree: React.FC = () => {
   const [techStatuses, setTechStatuses] = useState<Record<string, TechStatus>>({
@@ -51,54 +51,11 @@ const TechTree: React.FC = () => {
   })
   const [nodePositions, setNodePositions] = useState<NodePosition[]>([])
   const [eraPositions, setEraPositions] = useState<Record<string, number>>({})
-  const [scale, setScale] = useState(1)
-  const [position, setPosition] = useState(INITIAL_OFFSET)
+  const scale = 1  // Fixed scale, no zooming
   const [svgSize, setSvgSize] = useState({ width: 0, height: 0 })
-  const [isDragging, setIsDragging] = useState(false)
-  const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
   const [hoveredTech, setHoveredTech] = useState<string | null>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-
-  const handleWheel = useCallback((e: WheelEvent) => {
-    // Only handle wheel events that aren't from tech nodes
-    if (!(e.target as HTMLElement).closest('.tech-content')) {
-      e.preventDefault()
-      const delta = e.deltaY
-      requestAnimationFrame(() => {
-        setScale(prev => Math.min(Math.max(0.15, prev - delta * 0.001), 2))
-      })
-    }
-  }, [])
-
-  const handleMouseDown = useCallback((e: React.MouseEvent) => {
-    setIsDragging(true)
-    setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y })
-  }, [position])
-
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    if (!isDragging) return
-    requestAnimationFrame(() => {
-      setPosition({
-        x: e.clientX - dragStart.x,
-        y: e.clientY - dragStart.y
-      })
-    })
-  }, [isDragging, dragStart])
-
-  const handleMouseUp = useCallback(() => {
-    setIsDragging(false)
-  }, [])
-
-  useEffect(() => {
-    const container = containerRef.current
-    if (!container) return
-
-    container.addEventListener('wheel', handleWheel, { passive: false })
-    return () => {
-      container.removeEventListener('wheel', handleWheel)
-    }
-  }, [handleWheel])
 
 
   const calculateNodeSize = useCallback((tech: TechData) => {
@@ -199,19 +156,6 @@ const TechTree: React.FC = () => {
     setSvgSize({ width, height })
   }, [calculateNodeSize])
 
-  const handleTechClick = useCallback((techId: string) => {
-    setTechStatuses(prev => {
-      const current = prev[techId]
-      const newStatus: TechStatus = !current ? 'Researched' : 
-                       current === 'Researched' ? 'Developing' :
-                       current === 'Developing' ? 'Pending' : 'Researched'
-      return {
-        ...prev,
-        [techId]: newStatus
-      }
-    })
-  }, [])
-
   const isAvailable = useCallback((tech: TechData): boolean => {
     if (!tech.prerequisites?.length) return true
     return tech.prerequisites.every(prereq => techStatuses[prereq] === 'Researched')
@@ -228,13 +172,14 @@ const TechTree: React.FC = () => {
           style={{
             position: 'absolute',
             left: yPosition,
-            top: -85,
+            top: -120,  // Increased to prevent overlap with cards
             transform: 'translateX(-50%)',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             whiteSpace: 'nowrap',
-            zIndex: 5
+            zIndex: 5,
+            pointerEvents: 'none'  // Prevent interaction with title during zoom
           }}
         >
           <EraYear text={isDateEra ? parts[0] : "Before 2025"} />
@@ -248,14 +193,24 @@ const TechTree: React.FC = () => {
     const allTechs = Object.values(techTreeData).flat()
     const connectedNodes = new Set<string>()
     
-    // Add prerequisites
-    const tech = allTechs.find(t => t.id === techId)
-    if (tech?.prerequisites) {
-      tech.prerequisites.forEach(id => connectedNodes.add(id))
+    // Helper function to recursively add prerequisites
+    const addPrerequisites = (id: string) => {
+      const tech = allTechs.find(t => t.id === id)
+      if (tech?.prerequisites) {
+        tech.prerequisites.forEach(prereqId => {
+          if (!connectedNodes.has(prereqId)) {
+            connectedNodes.add(prereqId)
+            addPrerequisites(prereqId)
+          }
+        })
+      }
     }
     
     // Add the hovered node itself
     connectedNodes.add(techId)
+    
+    // Add all prerequisites recursively
+    addPrerequisites(techId)
     
     return Array.from(connectedNodes)
   }, [])
@@ -273,8 +228,9 @@ const TechTree: React.FC = () => {
         const endX = endNode.x
         const endY = endNode.y + endNode.height / 2
 
-        // Only show edge if the target node is hovered (showing its prerequisites)
-        const isVisible = hoveredTech === tech.id
+        // Show edge if both nodes are in the prerequisite chain
+        const isVisible = hoveredTech !== null && 
+          getConnectedNodes(hoveredTech).includes(tech.id)
 
         // Calculate midpoint for elbow
         const midY = startY + (endY - startY) / 2
@@ -308,22 +264,17 @@ const TechTree: React.FC = () => {
   }, [nodePositions, hoveredTech])
 
   const containerStyle = useMemo(() => ({
-    transform: `translate3d(${position.x}px, ${position.y}px, 0) scale(${scale})`,
-    transition: isDragging ? 'none' : 'transform 0.1s ease',
+    transform: `translate3d(${INITIAL_OFFSET.x}px, ${INITIAL_OFFSET.y}px, 0)`,
     width: svgSize.width,
     height: svgSize.height,
-    willChange: 'transform'
-  }), [position.x, position.y, scale, isDragging, svgSize.width, svgSize.height])
+    padding: '32px'
+  }), [svgSize.width, svgSize.height])
 
   return (
     <>
       <div 
         ref={containerRef}
         className="tech-tree"
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
       >
         <div
           className="tech-container"
@@ -361,7 +312,7 @@ const TechTree: React.FC = () => {
                   status={techStatuses[tech.id]}
                   isAvailable={isAvailable(tech)}
                   faded={hoveredTech !== null && !getConnectedNodes(hoveredTech).includes(tech.id)}
-                  onClick={() => handleTechClick(tech.id)}
+                  onClick={() => {}}
                   onMouseEnter={() => setHoveredTech(tech.id)}
                   onMouseLeave={() => setHoveredTech(null)}
                 />
