@@ -1,16 +1,12 @@
 import React from 'react'
 import TechTree from './components/TechTree'
-import './components/TechTree/TechTree.scss'
+import './styles/index.scss'
 
 const App: React.FC = () => {
   return (
-    <div className="app">
-      <header className="app-header">
-        <h1>Polyhedra Network Technology Tree</h1>
-      </header>
-      <main className="app-content">
-        <TechTree />
-      </main>
+    <div>
+      <h1 className="main-title">Polyhedra Network Technology Tree</h1>
+      <TechTree />
     </div>
   )
 }

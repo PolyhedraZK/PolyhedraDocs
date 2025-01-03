@@ -14,13 +14,12 @@ interface NodePosition {
   height: number
 }
 
-const BASE_WIDTH = 600
-const BASE_HEIGHT = 500
-const LEVEL_HEIGHT = 300
-const COLUMN_WIDTH = 600
-const PADDING = 150
-const CURVE_HEIGHT = 100
-const INITIAL_OFFSET = { x: 200, y: 50 }
+const BASE_WIDTH = 200
+const BASE_HEIGHT = 120
+const LEVEL_HEIGHT = 100
+const PADDING = 50
+const CURVE_HEIGHT = 30
+const INITIAL_OFFSET = { x: 150, y: 100 }
 
 const TechTree: React.FC = () => {
   const [techStatuses, setTechStatuses] = useState<Record<string, TechStatus>>({
@@ -51,7 +50,7 @@ const TechTree: React.FC = () => {
   })
   const [nodePositions, setNodePositions] = useState<NodePosition[]>([])
   const [eraPositions, setEraPositions] = useState<Record<string, number>>({})
-  const [scale, setScale] = useState(0.2)
+  const [scale, setScale] = useState(1)
   const [position, setPosition] = useState(INITIAL_OFFSET)
   const [svgSize, setSvgSize] = useState({ width: 0, height: 0 })
   const [isDragging, setIsDragging] = useState(false)
@@ -114,7 +113,7 @@ const TechTree: React.FC = () => {
 
   const handleReset = useCallback(() => {
     requestAnimationFrame(() => {
-      setScale(0.2)
+      setScale(1)
       setPosition(INITIAL_OFFSET)
     })
   }, [])
@@ -127,8 +126,8 @@ const TechTree: React.FC = () => {
       (tech.prerequisites?.join('').length || 0)
     );
     
-    const widthScale = Math.min(Math.max(1, contentLength / 100), 1.5);
-    const heightScale = Math.min(Math.max(1, contentLength / 150), 1.5);
+    const widthScale = Math.min(Math.max(1, contentLength / 200), 1.2);
+    const heightScale = Math.min(Math.max(1, contentLength / 300), 1.2);
     
     return {
       width: BASE_WIDTH * widthScale,
@@ -141,7 +140,7 @@ const TechTree: React.FC = () => {
     const eraYPositions: Record<string, number> = {}
     let maxColumnWidths: number[] = []
     
-    Object.entries(techTreeData).forEach(([era, techs]) => {
+    Object.entries(techTreeData).forEach(([_, techs]) => {
       techs.forEach(tech => {
         const { width } = calculateNodeSize(tech)
         const column = tech.position
@@ -204,12 +203,9 @@ const TechTree: React.FC = () => {
         key={era}
         className="era-label"
         style={{
-          left: -PADDING * 2.5,
-          top: yPosition - 30,
-          position: 'absolute',
-          transform: 'translateY(-50%)',
-          whiteSpace: 'nowrap',
-          zIndex: 5
+          left: -120,
+          top: yPosition + 10,
+          transform: 'translateY(-50%)'
         }}
       >
         {era}
@@ -217,8 +213,25 @@ const TechTree: React.FC = () => {
     ))
   }, [eraPositions])
 
+  const getConnectedNodes = useCallback((techId: string): string[] => {
+    const allTechs = Object.values(techTreeData).flat()
+    const connectedNodes = new Set<string>()
+    
+    // Add prerequisites
+    const tech = allTechs.find(t => t.id === techId)
+    if (tech?.prerequisites) {
+      tech.prerequisites.forEach(id => connectedNodes.add(id))
+    }
+    
+    // Add the hovered node itself
+    connectedNodes.add(techId)
+    
+    return Array.from(connectedNodes)
+  }, [])
+
   const renderConnections = useMemo(() => {
-    return Object.values(techTreeData).flat().map(tech => {
+    const allTechs = Object.values(techTreeData).flat()
+    return allTechs.map(tech => {
       return tech.prerequisites.map(prereqId => {
         const startNode = nodePositions.find(p => p.id === prereqId)
         const endNode = nodePositions.find(p => p.id === tech.id)
@@ -229,53 +242,39 @@ const TechTree: React.FC = () => {
         const endX = endNode.x + endNode.width / 2
         const endY = endNode.y + endNode.height / 2
 
-        const status = techStatuses[tech.id]
-        const className = `${status === 'Researched' ? 'completed' : 
-                          status === 'Developing' ? 'active' : ''} 
-                          ${tech.id === hoveredTech ? 'connected' : ''}`
+        // Only show edge if the target node is hovered (showing its prerequisites)
+        const isVisible = hoveredTech === tech.id
 
-        const deltaX = endX - startX
-        const deltaY = endY - startY
-        const isUpward = endY < startY
-        
-        const controlPoint1X = startX + deltaX * 0.3
-        const controlPoint1Y = startY + (isUpward ? -CURVE_HEIGHT/3 : CURVE_HEIGHT/3)
-        const controlPoint2X = startX + deltaX * 0.7
-        const controlPoint2Y = endY + (isUpward ? -CURVE_HEIGHT/3 : CURVE_HEIGHT/3)
+        // Calculate midpoint for elbow
+        const midX = startX + (endX - startX) / 2
 
-        const arrowAngle = Math.atan2(endY - controlPoint2Y, endX - controlPoint2X)
-        const arrowLength = 12
-        const arrowX1 = endX - arrowLength * Math.cos(arrowAngle - Math.PI / 6)
-        const arrowY1 = endY - arrowLength * Math.sin(arrowAngle - Math.PI / 6)
-        const arrowX2 = endX - arrowLength * Math.cos(arrowAngle + Math.PI / 6)
-        const arrowY2 = endY - arrowLength * Math.sin(arrowAngle + Math.PI / 6)
+        // Create elbow path
+        const path = `M ${startX} ${startY} 
+                     L ${midX} ${startY}
+                     L ${midX} ${endY}
+                     L ${endX} ${endY}`
+
+        // Create arrow at the end
+        const arrowSize = 5
+        const arrowPath = `M ${endX - arrowSize} ${endY - arrowSize}
+                          L ${endX} ${endY}
+                          L ${endX - arrowSize} ${endY + arrowSize}`
 
         return (
           <g key={`${prereqId}-${tech.id}`}>
             <path
-              d={`M ${startX} ${startY} 
-                  C ${controlPoint1X} ${controlPoint1Y}, 
-                    ${controlPoint2X} ${controlPoint2Y}, 
-                    ${endX} ${endY}`}
-              className={className}
+              d={path}
+              className={isVisible ? 'visible' : ''}
             />
             <path
-              d={`M ${arrowX1} ${arrowY1} L ${endX} ${endY} L ${arrowX2} ${arrowY2}`}
-              fill="none"
-              stroke={className.includes('completed') ? '#4caf50' : 
-                      className.includes('active') ? '#ffd700' : 
-                      className.includes('connected') ? '#2196f3' : 
-                      'rgba(255, 255, 255, 0.3)'}
-              strokeWidth="6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={className}
+              d={arrowPath}
+              className={isVisible ? 'visible' : ''}
             />
           </g>
         )
       })
     })
-  }, [nodePositions, techStatuses, hoveredTech])
+  }, [nodePositions, hoveredTech])
 
   const containerStyle = useMemo(() => ({
     transform: `translate3d(${position.x}px, ${position.y}px, 0) scale(${scale})`,
@@ -330,6 +329,7 @@ const TechTree: React.FC = () => {
                   tech={tech}
                   status={techStatuses[tech.id]}
                   isAvailable={isAvailable(tech)}
+                  faded={hoveredTech !== null && !getConnectedNodes(hoveredTech).includes(tech.id)}
                   onClick={() => handleTechClick(tech.id)}
                   onMouseEnter={() => setHoveredTech(tech.id)}
                   onMouseLeave={() => setHoveredTech(null)}
