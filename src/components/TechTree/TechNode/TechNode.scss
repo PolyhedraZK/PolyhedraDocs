@@ -1,16 +1,20 @@
 .tech-node {
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  border: 1px solid rgba(20, 20, 19, 0.2);
   border-radius: 4px;
   padding: 15px 16px;
   color: #141413;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: #ffffff;
+    border-color: rgba(20, 20, 19, 1);
+  }
   
   &.faded {
     opacity: 0.5;
   }
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  width: 226px;
+  width: var(--tech-node-width);
   min-height: 54px;
   display: flex;
   flex-direction: column;
@@ -121,7 +125,7 @@
     position: fixed;
     z-index: 9999;
     pointer-events: none;
-    width: 226px;
+    width: var(--tech-node-width);
 
     .tech-details {
       background: #fff;

@@ -1,9 +1,13 @@
 .tech-tree {
-  padding: 0px;
   min-height: 100vh;
   background: #F5F5F5;
   font-family: 'Poppins', sans-serif;
   position: relative;
+
+  .tech-container {
+    margin: 0 32px 60px;
+    position: relative;
+  }
 
   .tech-nodes {
     display: flex;
@@ -34,5 +38,9 @@
       }
     }
   }
+}
 
+.tech-tree-wrapper {
+  width: 100%;
+  margin: 60px 0;
 }

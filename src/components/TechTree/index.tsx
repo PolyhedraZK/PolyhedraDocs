@@ -38,11 +38,7 @@ const TechTreeWrapper: React.FC = () => {
           document.body.appendChild(portalRoot);
         }
 
-        return (
-          <div className="tech-tree-wrapper" style={{ margin: '20px 0' }}>
-            <TechTree />
-          </div>
-        );
+        return <TechTree />;
       }}
     </BrowserOnly>
   );

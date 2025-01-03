@@ -16,12 +16,13 @@ interface NodePosition {
   height: number
 }
 
-const BASE_WIDTH = 200
-const BASE_HEIGHT = 120
-const LEVEL_WIDTH = 62  // Horizontal spacing between eras
-const CURVE_WIDTH = 80  // Increased for more balanced spacing
-const INITIAL_OFFSET = { x: -15, y: 0 }  // Add 32px left margin
-
+const BASE_WIDTH = 226  // Fixed width from TechNode component
+const BASE_HEIGHT = 120  // Base height for size calculation
+const LEVEL_WIDTH = 62  // Horizontal spacing between eras and columns
+const VERTICAL_GAP = 25  // Vertical spacing between nodes
+const CURVE_WIDTH = 80  // Extra spacing for connection curves
+const ARROW_MIDPOINT_WIDTH = LEVEL_WIDTH/2  // Connection line offset
+const INITIAL_OFFSET = { x: 0, y: 100 }
 const TechTree: React.FC = () => {
   const [techStatuses, setTechStatuses] = useState<Record<string, TechStatus>>({
     "expander": "Researched",
@@ -57,7 +58,6 @@ const TechTree: React.FC = () => {
   const svgRef = useRef<SVGSVGElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
-
   const calculateNodeSize = useCallback((tech: TechData) => {
     const contentLength = (
       tech.name.length + 
@@ -81,19 +81,28 @@ const TechTree: React.FC = () => {
     let maxY = 0
 
     // Calculate era widths and positions
-    const eraInfo: { [key: string]: { startLevel: number; width: number; x: number } } = {}
+    const eraInfo: { [key: string]: { startLevel: number; width: number; x: number; hasSecondColumn: boolean } } = {}
     let currentX = 0
 
     // First pass: Calculate era widths
     Object.entries(techTreeData).forEach(([era, techs]) => {
       const startLevel = Math.min(...techs.map(t => t.level))
       const endLevel = Math.max(...techs.map(t => t.level))
-      const width = (endLevel - startLevel + 1) * BASE_WIDTH
+      
+      // Check if this era needs a second column
+      const hasSecondColumn = techs.some(tech => 
+        tech.prerequisites.some(prereq => techs.find(t => t.id === prereq))
+      );
+      
+      // Add extra width if era has a second column
+      const width = ((endLevel - startLevel + 1) * BASE_WIDTH) + 
+        (hasSecondColumn ? BASE_WIDTH + LEVEL_WIDTH : 0);
       
       eraInfo[era] = {
         startLevel,
         width,
-        x: currentX
+        x: currentX,
+        hasSecondColumn
       }
 
       // Add gap between eras
@@ -101,54 +110,108 @@ const TechTree: React.FC = () => {
     })
 
     // Track vertical positions by era
-    const eraBottomEdges: { [key: string]: number } = {}
+    interface EraBottomEdges {
+      firstColumn: number;
+      secondColumn: number;
+    }
+    const eraBottomEdges: { [key: string]: EraBottomEdges } = {}
 
     // Second pass: Position nodes
     Object.entries(techTreeData).forEach(([era, techs]) => {
       const { startLevel, x: eraX } = eraInfo[era]
 
-      // Sort techs by position first, then by level
+      // Sort techs by level first, then by position
       const sortedTechs = [...techs].sort((a, b) => {
-        if (a.position !== b.position) {
-          return a.position - b.position
+        if (a.level !== b.level) {
+          return a.level - b.level;
         }
-        return a.level - b.level
-      })
+        return a.position - b.position;
+      });
 
-      // Process each tech in this era
+      // Group techs by level
+      const techsByLevel: { [key: number]: TechData[] } = {};
       sortedTechs.forEach(tech => {
-        const { width, height } = calculateNodeSize(tech)
-        // Position node relative to era start
-        const x = eraX + (tech.level - startLevel) * BASE_WIDTH
-        
-        // Get last bottom edge for this era
-        const lastBottom = eraBottomEdges[era] || 0
-        // Calculate y position with exact 25px gap from last node in this era
-        const y = lastBottom === 0 ? 0 : lastBottom + 25
-
-        positions.push({
-          id: tech.id,
-          x,
-          y,
-          level: tech.level,
-          column: tech.position,
-          width,
-          height
-        })
-
-        // Update bottom edge for this era
-        eraBottomEdges[era] = y + height
-        maxY = Math.max(maxY, y + height)
-
-        // Set era label position at center of first node
-        if (!eraYPositions[era]) {
-          eraYPositions[era] = x + width / 2
+        if (!techsByLevel[tech.level]) {
+          techsByLevel[tech.level] = [];
         }
-      })
+        techsByLevel[tech.level].push(tech);
+      });
+
+      // Process each level
+      Object.entries(techsByLevel).forEach(([level, levelTechs]) => {
+        let firstColumnBottom = eraBottomEdges[era]?.firstColumn || 0;
+        let secondColumnBottom = eraBottomEdges[era]?.secondColumn || 0;
+        
+        // Split techs into two columns
+        const firstColumnTechs = levelTechs.filter(tech => 
+          !tech.prerequisites.some(prereq => techs.find(t => t.id === prereq))
+        );
+        const secondColumnTechs = levelTechs.filter(tech => 
+          tech.prerequisites.some(prereq => techs.find(t => t.id === prereq))
+        );
+        
+        // Process first column
+        firstColumnTechs.forEach(tech => {
+          const { width, height } = calculateNodeSize(tech);
+          const levelWidth = eraInfo[era].hasSecondColumn ? (BASE_WIDTH * 2 + LEVEL_WIDTH) : BASE_WIDTH;
+          const x = eraX + (parseInt(level) - startLevel) * levelWidth;
+          
+          const y = firstColumnBottom === 0 ? 0 : firstColumnBottom + VERTICAL_GAP;
+          firstColumnBottom = y + height;
+
+          positions.push({
+            id: tech.id,
+            x,
+            y,
+            level: parseInt(level),
+            column: 0,
+            width,
+            height
+          });
+        });
+
+        // Process second column
+        secondColumnTechs.forEach(tech => {
+          const { width, height } = calculateNodeSize(tech);
+          const levelWidth = eraInfo[era].hasSecondColumn ? (BASE_WIDTH * 2 + LEVEL_WIDTH) : BASE_WIDTH;
+          const x = eraX + (parseInt(level) - startLevel) * levelWidth + BASE_WIDTH + LEVEL_WIDTH;
+          
+          const y = secondColumnBottom === 0 ? 0 : secondColumnBottom + VERTICAL_GAP;
+          secondColumnBottom = y + height;
+
+          positions.push({
+            id: tech.id,
+            x,
+            y,
+            level: parseInt(level),
+            column: 1,
+            width,
+            height
+          });
+        });
+
+        // Update era bottom edges
+        if (!eraBottomEdges[era]) {
+          eraBottomEdges[era] = { firstColumn: 0, secondColumn: 0 };
+        }
+        eraBottomEdges[era].firstColumn = Math.max(eraBottomEdges[era].firstColumn, firstColumnBottom);
+        eraBottomEdges[era].secondColumn = Math.max(eraBottomEdges[era].secondColumn, secondColumnBottom);
+        maxY = Math.max(maxY, firstColumnBottom, secondColumnBottom);
+      });
+
+      // Set era label position
+      if (!eraYPositions[era]) {
+        const firstTech = sortedTechs[0];
+        if (firstTech) {
+          const levelWidth = eraInfo[era].hasSecondColumn ? (BASE_WIDTH * 2 + LEVEL_WIDTH) : BASE_WIDTH;
+          const x = eraX + (firstTech.level - startLevel) * levelWidth;
+          eraYPositions[era] = x + levelWidth / 2;
+        }
+      }
     })
 
-    // Calculate total width including gaps
-    const width = currentX - LEVEL_WIDTH + CURVE_WIDTH * 2
+    // Calculate total width including gaps and second columns
+    const width = currentX + (BASE_WIDTH + LEVEL_WIDTH) + CURVE_WIDTH * 2 // Add width for second column plus spacing
     const height = maxY + 50 // Add some padding at the bottom
 
     setNodePositions(positions)
@@ -236,14 +299,14 @@ const TechTree: React.FC = () => {
         const midY = startY + (endY - startY) / 2
 
         // Create elbow path with fixed spacing
-        const horizontalOffset = 40  // Fixed distance from nodes
+        const horizontalOffset = ARROW_MIDPOINT_WIDTH  // Use consistent spacing
         const path = `M ${startX} ${startY} 
                      L ${startX + horizontalOffset} ${startY}
                      L ${startX + horizontalOffset} ${endY}
                      L ${endX} ${endY}`
 
         // Create arrow at the end
-        const arrowSize = 5
+        const arrowSize = 2
         const arrowPath = `M ${endX - arrowSize} ${endY - arrowSize}
                           L ${endX} ${endY}
                           L ${endX - arrowSize} ${endY + arrowSize}`
@@ -264,65 +327,61 @@ const TechTree: React.FC = () => {
     })
   }, [nodePositions, hoveredTech])
 
-  const containerStyle = useMemo(() => ({
-    transform: `translate3d(${INITIAL_OFFSET.x}px, ${INITIAL_OFFSET.y}px, 0)`,
-    width: svgSize.width,
-    height: svgSize.height,
-    padding: '32px'
-  }), [svgSize.width, svgSize.height])
-
   return (
-    <>
-      <div 
-        ref={containerRef}
-        className="tech-tree"
-      >
-        <div
-          className="tech-container"
-          style={containerStyle}
-        >
-          <svg 
-            ref={svgRef} 
-            className="connections"
-            width={svgSize.width}
-            height={svgSize.height}
-            viewBox={`0 0 ${svgSize.width} ${svgSize.height}`}
-            preserveAspectRatio="none"
-            style={{ zIndex: 1 }}
-          >
-            {renderConnections}
-          </svg>
-          {renderEraLabels}
-          {nodePositions.map(position => {
-            const tech = Object.values(techTreeData).flat().find(t => t.id === position.id)!
-            return (
-              <div
-                key={tech.id}
-                style={{
-                  position: 'absolute',
-                  left: position.x,
-                  top: position.y,
-                  width: position.width,
-                  height: position.height,
-                  zIndex: 10,
-                  willChange: 'transform'
-                }}
-              >
-                <TechNode
-                  tech={tech}
-                  status={techStatuses[tech.id]}
-                  isAvailable={isAvailable(tech)}
-                  faded={hoveredTech !== null && !getConnectedNodes(hoveredTech).includes(tech.id)}
-                  onClick={() => {}}
-                  onMouseEnter={() => setHoveredTech(tech.id)}
-                  onMouseLeave={() => setHoveredTech(null)}
-                />
-              </div>
-            )
-          })}
-        </div>
+    <div ref={containerRef} className="tech-tree">
+      <div style={{
+        marginTop: '60px',
+        textAlign: 'center',
+        marginBottom: '60px'
+      }}>
+        <h1 style={{ margin: 0, fontSize: '40px' }}>Interactive Technology Tree</h1>
       </div>
-    </>
+      <div className="tech-container" style={{ 
+        width: svgSize.width, 
+        height: svgSize.height, 
+        transform: `translate3d(${INITIAL_OFFSET.x}px, ${INITIAL_OFFSET.y}px, 0)`
+      }}>
+        <svg 
+          ref={svgRef} 
+          className="connections"
+          width={svgSize.width}
+          height={svgSize.height}
+          viewBox={`0 0 ${svgSize.width} ${svgSize.height}`}
+          preserveAspectRatio="none"
+          style={{ zIndex: 1 }}
+        >
+          {renderConnections}
+        </svg>
+        {renderEraLabels}
+        {nodePositions.map(position => {
+          const tech = Object.values(techTreeData).flat().find(t => t.id === position.id)!
+          return (
+            <div
+              key={tech.id}
+              style={{
+                position: 'absolute',
+                left: position.x,
+                top: position.y,
+                width: position.width,
+                height: position.height,
+                zIndex: 10,
+                willChange: 'transform'
+              }}
+            >
+              <TechNode
+                tech={tech}
+                status={techStatuses[tech.id]}
+                isAvailable={isAvailable(tech)}
+                faded={hoveredTech !== null && !getConnectedNodes(hoveredTech).includes(tech.id)}
+                onClick={() => {}}
+                onMouseEnter={() => setHoveredTech(tech.id)}
+                onMouseLeave={() => setHoveredTech(null)}
+              />
+            </div>
+          )
+        })}
+      </div>
+    </div>
   )
 }
 

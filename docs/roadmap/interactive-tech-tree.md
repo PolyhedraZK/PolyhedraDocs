@@ -1,25 +1,19 @@
 ---
 hide_title: true
+hide_table_of_contents: true
 ---
 
 import TechTree from '@site/src/components/TechTree';
 
 <div style={{
   position: 'fixed',
-  top: '60px',
+  top: 0,
   left: 0,
   right: 0,
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '80px',
+  bottom: 0,
+  paddingTop: '60px',
   backgroundColor: 'var(--token-primary-bg-c)',
-  zIndex: 100,
-  borderBottom: '1px solid var(--ifm-navbar-shadow)'
+  overflow: 'auto'
 }}>
-  <h1 style={{ margin: 0, fontSize: '2rem' }}>Interactive Technology Tree</h1>
-</div>
-
-<div style={{ marginTop: '200px' }}>
   <TechTree />
 </div>
