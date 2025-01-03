@@ -81,7 +81,7 @@ const TechTree: React.FC = () => {
     let maxY = 0
 
     // Calculate era widths and positions
-    const eraInfo: { [key: string]: { startLevel: number; width: number; x: number; hasSecondColumn: boolean } } = {}
+    const eraInfo: { [key: string]: { startLevel: number; width: number; x: number; maxColumns: number } } = {}
     let currentX = 0
 
     // First pass: Calculate era widths
@@ -89,20 +89,55 @@ const TechTree: React.FC = () => {
       const startLevel = Math.min(...techs.map(t => t.level))
       const endLevel = Math.max(...techs.map(t => t.level))
       
-      // Check if this era needs a second column
-      const hasSecondColumn = techs.some(tech => 
-        tech.prerequisites.some(prereq => techs.find(t => t.id === prereq))
-      );
+      // Calculate max columns needed for each level
+      const maxColumnsByLevel = new Map<number, number>();
       
-      // Add extra width if era has a second column
+      for (let level = startLevel; level <= endLevel; level++) {
+        const levelTechs = techs.filter(t => t.level === level);
+        const columnAssignments = new Map<string, number>();
+        const processedNodes = new Set<string>();
+
+        // Helper function to get max column of prerequisites
+        const getMaxPrereqColumn = (tech: TechData): number => {
+          const prereqColumns = tech.prerequisites
+            .filter(prereq => techs.find(t => t.id === prereq))
+            .map(prereq => columnAssignments.get(prereq) || 0);
+          return Math.max(-1, ...prereqColumns);
+        };
+
+        // Assign columns for this level
+        const assignColumns = (tech: TechData) => {
+          if (processedNodes.has(tech.id)) return;
+          
+          tech.prerequisites
+            .filter(prereq => techs.find(t => t.id === prereq))
+            .forEach(prereq => {
+              const prereqTech = techs.find(t => t.id === prereq)!;
+              assignColumns(prereqTech);
+            });
+
+          const column = getMaxPrereqColumn(tech) + 1;
+          columnAssignments.set(tech.id, column);
+          processedNodes.add(tech.id);
+        };
+
+        levelTechs.forEach(tech => assignColumns(tech));
+        
+        // Store max columns needed for this level
+        const columnsNeeded = Math.max(0, ...Array.from(columnAssignments.values())) + 1;
+        maxColumnsByLevel.set(level, columnsNeeded);
+      }
+
+      // Calculate era width based on max columns needed
+      const maxColumns = Math.max(...Array.from(maxColumnsByLevel.values()));
       const width = ((endLevel - startLevel + 1) * BASE_WIDTH) + 
-        (hasSecondColumn ? BASE_WIDTH + LEVEL_WIDTH : 0);
+        ((maxColumns - 1) * (BASE_WIDTH + LEVEL_WIDTH));
       
       eraInfo[era] = {
         startLevel,
         width,
         x: currentX,
-        hasSecondColumn
+        maxColumns
       }
 
       // Add gap between eras
@@ -139,72 +174,123 @@ const TechTree: React.FC = () => {
 
       // Process each level
       Object.entries(techsByLevel).forEach(([level, levelTechs]) => {
-        let firstColumnBottom = eraBottomEdges[era]?.firstColumn || 0;
-        let secondColumnBottom = eraBottomEdges[era]?.secondColumn || 0;
-        
-        // Split techs into two columns
-        const firstColumnTechs = levelTechs.filter(tech => 
-          !tech.prerequisites.some(prereq => techs.find(t => t.id === prereq))
-        );
-        const secondColumnTechs = levelTechs.filter(tech => 
-          tech.prerequisites.some(prereq => techs.find(t => t.id === prereq))
-        );
-        
-        // Process first column
-        firstColumnTechs.forEach(tech => {
-          const { width, height } = calculateNodeSize(tech);
-          const levelWidth = eraInfo[era].hasSecondColumn ? (BASE_WIDTH * 2 + LEVEL_WIDTH) : BASE_WIDTH;
-          const x = eraX + (parseInt(level) - startLevel) * levelWidth;
-          
-          const y = firstColumnBottom === 0 ? 0 : firstColumnBottom + VERTICAL_GAP;
-          firstColumnBottom = y + height;
+        // Calculate column assignments based on dependencies
+      const columnAssignments = new Map<string, number>();
+      const processedNodes = new Set<string>();
 
-          positions.push({
-            id: tech.id,
-            x,
-            y,
-            level: parseInt(level),
-            column: 0,
-            width,
-            height
+      // Helper function to get max column of prerequisites
+      const getMaxPrereqColumn = (tech: TechData): number => {
+        const prereqColumns = tech.prerequisites
+          .filter(prereq => techs.find(t => t.id === prereq))
+          .map(prereq => columnAssignments.get(prereq) || 0);
+        return Math.max(-1, ...prereqColumns);
+      };
+
+      // Assign columns
+      const assignColumns = (tech: TechData) => {
+        if (processedNodes.has(tech.id)) return;
+        
+        // Process prerequisites first
+        tech.prerequisites
+          .filter(prereq => techs.find(t => t.id === prereq))
+          .forEach(prereq => {
+            const prereqTech = techs.find(t => t.id === prereq)!;
+            assignColumns(prereqTech);
           });
+
+        // Assign column after prerequisites
+        const column = getMaxPrereqColumn(tech) + 1;
+        columnAssignments.set(tech.id, column);
+        processedNodes.add(tech.id);
+      };
+
+      // Assign columns to all techs in this level
+      levelTechs.forEach(tech => assignColumns(tech));
+
+      // Get number of columns needed for this level
+      const columnsNeeded = Math.max(0, ...Array.from(columnAssignments.values())) + 1;
+      
+      // Calculate level width based on number of columns
+      const levelWidth = BASE_WIDTH * columnsNeeded + (columnsNeeded - 1) * LEVEL_WIDTH;
+
+      // Process nodes with assigned columns
+      const columnBottoms = new Array(columnsNeeded).fill(0);
+      
+      levelTechs.forEach(tech => {
+        const { width, height } = calculateNodeSize(tech);
+        const column = columnAssignments.get(tech.id)!;
+        const x = eraX + (parseInt(level) - startLevel) * levelWidth + column * (BASE_WIDTH + LEVEL_WIDTH);
+        
+        const y = columnBottoms[column] === 0 ? 0 : columnBottoms[column] + VERTICAL_GAP;
+        columnBottoms[column] = y + height;
+
+        positions.push({
+          id: tech.id,
+          x,
+          y,
+          level: parseInt(level),
+          column,
+          width,
+          height
         });
 
-        // Process second column
-        secondColumnTechs.forEach(tech => {
-          const { width, height } = calculateNodeSize(tech);
-          const levelWidth = eraInfo[era].hasSecondColumn ? (BASE_WIDTH * 2 + LEVEL_WIDTH) : BASE_WIDTH;
-          const x = eraX + (parseInt(level) - startLevel) * levelWidth + BASE_WIDTH + LEVEL_WIDTH;
-          
-          const y = secondColumnBottom === 0 ? 0 : secondColumnBottom + VERTICAL_GAP;
-          secondColumnBottom = y + height;
-
-          positions.push({
-            id: tech.id,
-            x,
-            y,
-            level: parseInt(level),
-            column: 1,
-            width,
-            height
-          });
-        });
+        maxY = Math.max(maxY, y + height);
+      });
 
         // Update era bottom edges
         if (!eraBottomEdges[era]) {
           eraBottomEdges[era] = { firstColumn: 0, secondColumn: 0 };
         }
-        eraBottomEdges[era].firstColumn = Math.max(eraBottomEdges[era].firstColumn, firstColumnBottom);
-        eraBottomEdges[era].secondColumn = Math.max(eraBottomEdges[era].secondColumn, secondColumnBottom);
-        maxY = Math.max(maxY, firstColumnBottom, secondColumnBottom);
+        // Update bottom edges for all columns
+        columnBottoms.forEach((bottom, idx) => {
+          if (idx === 0) {
+            eraBottomEdges[era].firstColumn = Math.max(eraBottomEdges[era].firstColumn, bottom);
+          } else if (idx === 1) {
+            eraBottomEdges[era].secondColumn = Math.max(eraBottomEdges[era].secondColumn, bottom);
+          }
+          maxY = Math.max(maxY, bottom);
+        });
       });
 
       // Set era label position
       if (!eraYPositions[era]) {
         const firstTech = sortedTechs[0];
         if (firstTech) {
-          const levelWidth = eraInfo[era].hasSecondColumn ? (BASE_WIDTH * 2 + LEVEL_WIDTH) : BASE_WIDTH;
-          const x = eraX + (firstTech.level - startLevel) * levelWidth;
+          const level = firstTech.level;
+          const levelTechs = techs.filter(t => t.level === level);
+          const columnAssignments = new Map<string, number>();
+          const processedNodes = new Set<string>();
+
+          // Helper function to get max column of prerequisites
+          const getMaxPrereqColumn = (tech: TechData): number => {
+            const prereqColumns = tech.prerequisites
+              .filter(prereq => techs.find(t => t.id === prereq))
+              .map(prereq => columnAssignments.get(prereq) || 0);
+            return Math.max(-1, ...prereqColumns);
+          };
+
+          // Assign columns for this level
+          const assignColumns = (tech: TechData) => {
+            if (processedNodes.has(tech.id)) return;
+            
+            tech.prerequisites
+              .filter(prereq => techs.find(t => t.id === prereq))
+              .forEach(prereq => {
+                const prereqTech = techs.find(t => t.id === prereq)!;
+                assignColumns(prereqTech);
+              });
+
+            const column = getMaxPrereqColumn(tech) + 1;
+            columnAssignments.set(tech.id, column);
+            processedNodes.add(tech.id);
+          };
+
+          levelTechs.forEach(tech => assignColumns(tech));
+          
+          // Calculate level width based on columns needed
+          const columnsNeeded = Math.max(0, ...Array.from(columnAssignments.values())) + 1;
+          const levelWidth = BASE_WIDTH * columnsNeeded + (columnsNeeded - 1) * LEVEL_WIDTH;
+          const x = eraX + (level - startLevel) * levelWidth;
           eraYPositions[era] = x + levelWidth / 2;
         }
       }
@@ -376,6 +462,10 @@ const TechTree: React.FC = () => {
                 onClick={() => {}}
                 onMouseEnter={() => setHoveredTech(tech.id)}
                 onMouseLeave={() => setHoveredTech(null)}
+                getTechTitle={(id) => {
+                  const tech = Object.values(techTreeData).flat().find(t => t.id === id);
+                  return tech?.name || id;
+                }}
               />
             </div>
           )

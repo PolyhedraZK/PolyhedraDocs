@@ -11,6 +11,7 @@ interface TechNodeProps {
   onClick: () => void
   onMouseEnter: () => void
   onMouseLeave: () => void
+  getTechTitle: (id: string) => string
 }
 
 const TechNode: React.FC<TechNodeProps> = React.memo(({
@@ -20,7 +21,8 @@ const TechNode: React.FC<TechNodeProps> = React.memo(({
   faded,
   onClick,
   onMouseEnter,
-  onMouseLeave
+  onMouseLeave,
+  getTechTitle
 }) => {
   const nodeRef = useRef<HTMLDivElement>(null);
   const detailsRef = useRef<HTMLDivElement>(null);
@@ -157,7 +159,7 @@ const TechNode: React.FC<TechNodeProps> = React.memo(({
               <h4>Prerequisites</h4>
               <ul>
                 {tech.prerequisites.map((prereq, index) => (
-                  <li key={index}>{prereq}</li>
+                  <li key={index}>{getTechTitle(prereq)}</li>
                 ))}
               </ul>
             </div>
