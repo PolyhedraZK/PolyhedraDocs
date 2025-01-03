@@ -16,10 +16,9 @@ interface NodePosition {
 
 const BASE_WIDTH = 200
 const BASE_HEIGHT = 120
-const LEVEL_HEIGHT = 100
-const PADDING = 50
-const CURVE_HEIGHT = 30
-const INITIAL_OFFSET = { x: 150, y: 100 }
+const LEVEL_WIDTH = 62  // Horizontal spacing between eras
+const CURVE_WIDTH = 30
+const INITIAL_OFFSET = { x: 50, y: 100 }  // Adjusted for better initial view
 
 const TechTree: React.FC = () => {
   const [techStatuses, setTechStatuses] = useState<Record<string, TechStatus>>({
@@ -138,45 +137,82 @@ const TechTree: React.FC = () => {
   useEffect(() => {
     const positions: NodePosition[] = []
     const eraYPositions: Record<string, number> = {}
-    let maxColumnWidths: number[] = []
-    
-    Object.entries(techTreeData).forEach(([_, techs]) => {
-      techs.forEach(tech => {
-        const { width } = calculateNodeSize(tech)
-        const column = tech.position
-        maxColumnWidths[column] = Math.max(maxColumnWidths[column] || 0, width)
-      })
+    let maxY = 0
+
+    // Calculate era widths and positions
+    const eraInfo: { [key: string]: { startLevel: number; width: number; x: number } } = {}
+    let currentX = 0
+
+    // First pass: Calculate era widths
+    Object.entries(techTreeData).forEach(([era, techs]) => {
+      const startLevel = Math.min(...techs.map(t => t.level))
+      const endLevel = Math.max(...techs.map(t => t.level))
+      const width = (endLevel - startLevel + 1) * BASE_WIDTH
+      
+      eraInfo[era] = {
+        startLevel,
+        width,
+        x: currentX
+      }
+
+      // Add gap between eras
+      currentX += width + LEVEL_WIDTH
     })
 
+    // Track vertical positions by era
+    const eraBottomEdges: { [key: string]: number } = {}
+
+    // Second pass: Position nodes
     Object.entries(techTreeData).forEach(([era, techs]) => {
-      const firstTech = techs[0]
-      eraYPositions[era] = firstTech.level * LEVEL_HEIGHT
-      
-      techs.forEach(tech => {
+      const { startLevel, x: eraX } = eraInfo[era]
+
+      // Sort techs by position first, then by level
+      const sortedTechs = [...techs].sort((a, b) => {
+        if (a.position !== b.position) {
+          return a.position - b.position
+        }
+        return a.level - b.level
+      })
+
+      // Process each tech in this era
+      sortedTechs.forEach(tech => {
         const { width, height } = calculateNodeSize(tech)
-        const x = tech.position === 0 ? 0 : 
-          maxColumnWidths.slice(0, tech.position).reduce((sum, w) => sum + w + PADDING, 0)
+        // Position node relative to era start
+        const x = eraX + (tech.level - startLevel) * BASE_WIDTH
         
+        // Get last bottom edge for this era
+        const lastBottom = eraBottomEdges[era] || 0
+        // Calculate y position with exact 25px gap from last node in this era
+        const y = lastBottom === 0 ? 0 : lastBottom + 25
+
         positions.push({
           id: tech.id,
           x,
-          y: tech.level * LEVEL_HEIGHT,
+          y,
           level: tech.level,
           column: tech.position,
           width,
           height
         })
+
+        // Update bottom edge for this era
+        eraBottomEdges[era] = y + height
+        maxY = Math.max(maxY, y + height)
+
+        // Set era label position at center of first node
+        if (!eraYPositions[era]) {
+          eraYPositions[era] = x + width / 2
+        }
       })
     })
 
-    const allTechs = Object.values(techTreeData).flat()
-    const maxLevel = Math.max(...allTechs.map(t => t.level))
-    const totalWidth = maxColumnWidths.reduce((sum, width) => sum + width + PADDING, 0)
-    const height = (maxLevel + 1) * LEVEL_HEIGHT + CURVE_HEIGHT * 2
+    // Calculate total width including gaps
+    const width = currentX - LEVEL_WIDTH + CURVE_WIDTH * 2
+    const height = maxY + 50 // Add some padding at the bottom
 
     setNodePositions(positions)
     setEraPositions(eraYPositions)
-    setSvgSize({ width: totalWidth, height })
+    setSvgSize({ width, height })
   }, [calculateNodeSize])
 
   const handleTechClick = useCallback((techId: string) => {
@@ -203,9 +239,12 @@ const TechTree: React.FC = () => {
         key={era}
         className="era-label"
         style={{
-          left: -120,
-          top: yPosition + 10,
-          transform: 'translateY(-50%)'
+          left: yPosition,
+          top: -35,
+          transform: 'translateX(-50%)',
+          whiteSpace: 'nowrap',
+          color: '#141413',
+          fontSize: '14px'
         }}
       >
         {era}
@@ -237,22 +276,24 @@ const TechTree: React.FC = () => {
         const endNode = nodePositions.find(p => p.id === tech.id)
         if (!startNode || !endNode) return null
 
-        const startX = startNode.x + startNode.width / 2
+        const startX = startNode.x + startNode.width
         const startY = startNode.y + startNode.height / 2
-        const endX = endNode.x + endNode.width / 2
+        const endX = endNode.x
         const endY = endNode.y + endNode.height / 2
 
         // Only show edge if the target node is hovered (showing its prerequisites)
         const isVisible = hoveredTech === tech.id
 
         // Calculate midpoint for elbow
-        const midX = startX + (endX - startX) / 2
+        const midY = startY + (endY - startY) / 2
 
-        // Create elbow path
+        // Create curved path
+        const controlPoint1X = startX + CURVE_WIDTH
+        const controlPoint2X = endX - CURVE_WIDTH
         const path = `M ${startX} ${startY} 
-                     L ${midX} ${startY}
-                     L ${midX} ${endY}
-                     L ${endX} ${endY}`
+                     C ${controlPoint1X} ${startY},
+                       ${controlPoint2X} ${endY},
+                       ${endX} ${endY}`
 
         // Create arrow at the end
         const arrowSize = 5
