@@ -6,8 +6,6 @@
 //overrides
 #__docusaurus {
   [class^="tableOfContents_"] {
-    position: static;
-    top: initial;
     overflow: hidden;
 
     max-height: initial;
@@ -20,13 +18,18 @@
 
   .toc-wrapper {
     overflow: auto;
-    position: sticky;
-    top: calc(var(--ifm-navbar-height) + 60px);
-    max-height: calc(100vh - var(--ifm-navbar-height) - 76px);
+    position: fixed;
+    margin-top: calc(var(--ifm-navbar-height));
+    right: 0;  // Keep TOC visible on the right side
+    width: 240px;
+    max-height: calc(100vh - var(--ifm-navbar-height) - 48px);
+    z-index: 4;
+    pointer-events: auto;
+    padding: 16px;
 
 
     h2 {
-      color: #141413;
+      color: var(--ifm-heading-color);
       font-family: Poppins;
       font-size: 0.875rem;
       font-style: normal;

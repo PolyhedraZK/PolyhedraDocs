@@ -23,6 +23,7 @@ const VERTICAL_GAP = 25  // Vertical spacing between nodes
 const CURVE_WIDTH = 80  // Extra spacing for connection curves
 const ARROW_MIDPOINT_WIDTH = LEVEL_WIDTH/2  // Connection line offset
 const INITIAL_OFFSET = { x: 0, y: 200 }
+
 const TechTree: React.FC = () => {
   const [techStatuses, setTechStatuses] = useState<Record<string, TechStatus>>({
     "expander": "Researched",
@@ -384,7 +385,9 @@ const TechTree: React.FC = () => {
           y1={0}
           x2={midPoint}
           y2={svgSize.height}
-          className="era-divider"
+          stroke="#ddd"
+          strokeWidth="2"
+          strokeDasharray="6"
         />
       );
     });
@@ -406,9 +409,6 @@ const TechTree: React.FC = () => {
         // Show edge if both nodes are in the prerequisite chain
         const isVisible = hoveredTech !== null && 
           getConnectedNodes(hoveredTech).includes(tech.id)
-
-        // Calculate midpoint for elbow
-        const midY = startY + (endY - startY) / 2
 
         // Calculate path based on vertical difference
         const horizontalOffset = ARROW_MIDPOINT_WIDTH
@@ -452,23 +452,27 @@ const TechTree: React.FC = () => {
         )
       })
     })
-  }, [nodePositions, hoveredTech])
+  }, [nodePositions, hoveredTech, getConnectedNodes])
 
   return (
     <div ref={containerRef} className="tech-tree">
       <div className="tech-container" style={{ 
         width: svgSize.width, 
-        height: svgSize.height, 
+        height: svgSize.height,
+        position: 'relative',
         transform: `translate3d(${INITIAL_OFFSET.x}px, ${INITIAL_OFFSET.y}px, 0)`
       }}>
         <svg 
-          ref={svgRef} 
           className="connections"
           width={svgSize.width}
           height={svgSize.height}
-          viewBox={`0 0 ${svgSize.width} ${svgSize.height}`}
-          preserveAspectRatio="none"
-          style={{ zIndex: 1 }}
+          style={{ 
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            zIndex: 1,
+            pointerEvents: 'none'
+          }}
         >
           {renderEraDividers}
           {renderConnections}

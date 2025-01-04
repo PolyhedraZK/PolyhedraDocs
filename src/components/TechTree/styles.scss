@@ -8,6 +8,7 @@
     margin: 0 32px 60px;
     position: relative;
     max-width: 100%;
+    overflow: visible;
 
     @media (max-width: 996px) {
       margin: 0 16px 60px;
@@ -28,21 +29,18 @@
   }
 
   .connections {
-    position: absolute;
-    top: 0;
-    left: 0;
     pointer-events: none;
-    z-index: 1;
+    overflow: visible;
 
     line.era-divider {
       stroke: #E0E0E0;
-      stroke-width: 1;
+      stroke-width: 2;
       stroke-dasharray: 5,5;
     }
 
     path {
       stroke: #141413;
-      stroke-width: 1;
+      stroke-width: 2;
       fill: none;
       stroke-linecap: round;
       stroke-linejoin: round;
