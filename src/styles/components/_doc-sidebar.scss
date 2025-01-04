@@ -1,18 +1,9 @@
-html[data-theme="light"] {
+:root {
   --sidebar-category-c: var(--c-gray-100);
   --sidebar-border-c: rgba(20, 20, 19, 0.1);
   --sidebar-text-hover-c: rgba(20, 20, 19);
   --ifm-menu-color-background-active: rgba(20, 20, 19, 0.06);
   --ifm-menu-color: rgba(20, 20, 19, 0.7);
-}
-
-html[data-theme="dark"] {
-  --sidebar-category-c: var(--c-gray-0);
-  --sidebar-border-c: var(--c-gray-90);
-  --ifm-menu-color: var(--c-gray-20);
-}
-
-:root {
   --doc-sidebar-width: 17.5rem;
 
   --dropdown-icon-width: 0.625rem;
@@ -34,13 +25,14 @@ html[data-theme="dark"] {
     background: var(--token-primary-bg-c);
 
     position: sticky;
-    top: 0;
+    top: var(--ifm-navbar-height);
     margin-block-start: 0;
     will-change: initial;
 
-    height: 100vh;
+    height: calc(100vh - var(--ifm-navbar-height));
 
-    border-inline-end: 1px solid var(--sidebar-border-c);
+    border-inline-end: 1px solid var(--doc-border-color);
+    box-shadow: var(--doc-shadow);
 
     [class^="sidebarViewport"] {
       // Targets the logo
@@ -63,7 +55,6 @@ html[data-theme="dark"] {
 
     padding-inline-start: var(--sidebar-spacing-horizontal);
     padding-inline-end: var(--sidebar-spacing-horizontal);
-    padding-block-start: 3.75rem;
 
     > .menu {
       overflow-x: initial;

@@ -1,26 +1,18 @@
-  html[data-theme="light"] {
+  :root {
   --token-primary-c: rgba(20, 20, 19);
   --navbar-link-c: rgba(20, 20, 19, 0.7);
   --navbar-link-hover-c: rgba(20, 20, 19);
   --navbar-separator-bg-c: var(--c-indigo-40);
   --ifm-dropdown-background-color: var(--token-secondary-bg-c);
   --navbar-icon-link-c: var(--c-indigo-60);
-}
-
-html[data-theme="dark"] {
-  --navbar-link-c: var(--c-gray-0);
-  --navbar-separator-bg-c: var(--c-carbon-80);
-  --navbar-icon-link-c: var(--c-white);
-}
-
-:root {
   --navbar-dropdown-icon: var(--ifm-menu-link-sublist-icon);
 }
 
 //overrides
 #__docusaurus {
   .navbar {
-    border-bottom: 1px solid rgba(20, 20, 19, 0.1);
+    border-bottom: 1px solid var(--doc-border-color);
+    box-shadow: var(--doc-shadow);
     width: 100vw;
     padding: 0;
     margin: 0;
@@ -29,7 +21,7 @@ html[data-theme="dark"] {
     left: 0;
     right: 0;
     background-color: var(--token-primary-bg-c);
-    z-index: 100;
+    z-index: var(--z-navbar);
 
     .container {
       max-width: none;

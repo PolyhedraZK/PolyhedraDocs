@@ -2,16 +2,15 @@
 #__docusaurus {
   [class^="docMainContainer_"] {
     max-width: initial;
+    padding-top: var(--ifm-navbar-height);
 
     > .container {
       max-width: initial;
+      padding: 0;
 
       > .row {
         flex-wrap: nowrap;
       }
-    }
-    > .padding-top--md {
-      padding-top: 0px !important;
     }
   }
 

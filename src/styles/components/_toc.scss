@@ -1,14 +1,6 @@
-html[data-theme="light"] {
+:root {
   --toc-separator-c: var(--c-indigo-20);
   --ifm-toc-link-color: var(--c-indigo-80);
-}
-
-html[data-theme="dark"] {
-  --toc-separator-c: var(--c-carbon-90);
-  --ifm-toc-link-color: var(--c-carbon-0);
-}
-
-:root {
 }
 
 //overrides
@@ -21,7 +13,6 @@ html[data-theme="dark"] {
     max-height: initial;
 
     // padding-block-end: 1.25rem;
-
     // border-block-end: 1px solid var(--toc-separator-c);
 
     line-height: 1.4;
@@ -30,12 +21,9 @@ html[data-theme="dark"] {
   .toc-wrapper {
     overflow: auto;
     position: sticky;
-    top: calc(var(--ifm-navbar-height) + 16px);
+    top: var(--ifm-navbar-height);
     max-height: calc(100vh - var(--ifm-navbar-height) - 16px);
 
-    margin-block-start: 3.75rem;
-
-    padding-block-end: 2rem;
 
     h2 {
       color: #141413;
