@@ -26,10 +26,32 @@ html[data-theme="dark"] {
 #__docusaurus {
   .navbar {
     border-bottom: 1px solid rgba(20, 20, 19, 0.1);
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--token-primary-bg-c);
+    z-index: 100;
+
+    .container {
+      max-width: none;
+      padding: 0;
+      margin: 0;
+      background-color: var(--token-primary-bg-c);
+    }
+
     &__inner {
-      width: initial;
+      width: 100%;
       flex-grow: 1;
       flex-wrap: nowrap;
+      padding: 0 2rem;
+      margin: 0;
+      justify-content: space-between;
+      background-color: var(--token-primary-bg-c);
+      min-height: var(--ifm-navbar-height);
     }
 
     &__items {
@@ -37,9 +59,12 @@ html[data-theme="dark"] {
       align-self: stretch;
       align-items: center;
       position: relative;
-      gap: 1rem;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+      
       @media (max-width: 996px) {
-        gap: 0px;
+        gap: 1rem;
       }
       &:not(.navbar__items--right) {
         .navbar__link {
@@ -132,7 +157,9 @@ html[data-theme="dark"] {
       }
 
       &--right {
-        flex-grow: 1;
+        flex-grow: 0;
+        margin-left: auto;
+        justify-content: flex-end;
 
         .icon-link,
         [class*="toggle_"] {
@@ -301,11 +328,39 @@ html[data-theme="dark"] {
     }
 
     &__brand {
-      display: none;
+      display: flex;
+      align-items: center;
+      margin-right: 3rem;
+      height: var(--ifm-navbar-height);
+
+      @media (max-width: 996px) {
+        display: none;
+      }
     }
 
     &__logo {
-      display: none;
+      display: block;
+      height: 30px;
+      @media (max-width: 996px) {
+        display: none;
+      }
+    }
+
+    .logo {
+      @media (max-width: 996px) {
+        display: none;
+      }
+    }
+
+    &__items--left {
+      flex: 1 1 auto;
+      justify-content: flex-start;
+      margin-right: auto;
+    }
+
+    &__items--right {
+      flex: 0 0 auto;
+      gap: 1rem;
     }
 
     .separator {

@@ -384,12 +384,27 @@ const TechTree: React.FC = () => {
         // Calculate midpoint for elbow
         const midY = startY + (endY - startY) / 2
 
-        // Create elbow path with fixed spacing
-        const horizontalOffset = ARROW_MIDPOINT_WIDTH  // Use consistent spacing
-        const path = `M ${startX} ${startY} 
-                     L ${startX + horizontalOffset} ${startY}
-                     L ${startX + horizontalOffset} ${endY}
-                     L ${endX} ${endY}`
+        // Calculate path based on vertical difference
+        const horizontalOffset = ARROW_MIDPOINT_WIDTH
+        const verticalDiff = endY - startY
+        const isVertical = Math.abs(verticalDiff) > 1  // Small threshold for floating point comparison
+        const curveRadius = 15  // Reduced radius for tighter curves
+        const direction = verticalDiff >= 0 ? 1 : -1
+        
+        // Generate path based on whether it's vertical or horizontal
+        const path = isVertical 
+          ? `M ${startX} ${startY} 
+             L ${startX + horizontalOffset - curveRadius} ${startY}
+             C ${startX + horizontalOffset} ${startY} 
+               ${startX + horizontalOffset} ${startY} 
+               ${startX + horizontalOffset} ${startY + direction * curveRadius}
+             L ${startX + horizontalOffset} ${endY - direction * curveRadius}
+             C ${startX + horizontalOffset} ${endY}
+               ${startX + horizontalOffset} ${endY}
+               ${startX + horizontalOffset + curveRadius} ${endY}
+             L ${endX} ${endY}`
+          : `M ${startX} ${startY}
+             L ${endX} ${endY}`
 
         // Create arrow at the end
         const arrowSize = 2
@@ -459,6 +474,7 @@ const TechTree: React.FC = () => {
                 status={techStatuses[tech.id]}
                 isAvailable={isAvailable(tech)}
                 faded={hoveredTech !== null && !getConnectedNodes(hoveredTech).includes(tech.id)}
+                default={hoveredTech === null}
                 onClick={() => {}}
                 onMouseEnter={() => setHoveredTech(tech.id)}
                 onMouseLeave={() => setHoveredTech(null)}

@@ -8,6 +8,7 @@ interface TechNodeProps {
   status: TechStatus | undefined
   isAvailable: boolean
   faded: boolean
+  default?: boolean
   onClick: () => void
   onMouseEnter: () => void
   onMouseLeave: () => void
@@ -19,6 +20,7 @@ const TechNode: React.FC<TechNodeProps> = React.memo(({
   status,
   isAvailable,
   faded,
+  default: isDefault,
   onClick,
   onMouseEnter,
   onMouseLeave,
@@ -174,7 +176,7 @@ const TechNode: React.FC<TechNodeProps> = React.memo(({
   return (
     <div
       ref={nodeRef}
-      className={`tech-node ${currentStatus} ${isAvailable ? 'available' : ''} ${faded ? 'faded' : ''}`}
+      className={`tech-node ${currentStatus} ${isAvailable ? 'available' : ''} ${faded ? 'faded' : ''} ${isDefault ? 'default' : ''}`}
       onClick={onClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -200,7 +202,8 @@ const TechNode: React.FC<TechNodeProps> = React.memo(({
   return prevProps.status === nextProps.status &&
          prevProps.isAvailable === nextProps.isAvailable &&
          prevProps.tech === nextProps.tech &&
-         prevProps.faded === nextProps.faded;
+         prevProps.faded === nextProps.faded &&
+         prevProps.default === nextProps.default;
 })
 
 export default TechNode
