@@ -53,7 +53,7 @@ export default function DocItemLayout({ children, ...props }: Props) {
           <DocItemPaginator />
         </div>
       </div>
-      <div className="col col--3">{docTOC.desktop && docTOC.desktop}</div>
+      {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
     </div>
   );
 }

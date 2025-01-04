@@ -1,10 +1,9 @@
 //overrides
 #__docusaurus {
   [class^="docMainContainer_"] {
-    max-width: initial;
     padding-top: var(--ifm-navbar-height);
-      padding-bottom: 60px;
-      margin-left: 64px;
+    padding-bottom: 60px;
+    margin-left: var(--doc-sidebar-width);
 
     > .container {
       max-width: initial;
@@ -13,9 +12,33 @@
       > .row {
         flex-wrap: nowrap;
         padding: 0 24px;
+        width: calc(100%); /* Space for TOC */
 
         @media (max-width: 996px) {
           padding: 0 16px;
+          width: 100%; /* Full width when sidebars are hidden */
+          margin: 0;
+        }
+      }
+    }
+
+    @media (max-width: 996px) {
+      margin-left: 0; /* Remove left margin when sidebar is hidden */
+    }
+  }
+
+  // Special handling for roadmap pages
+  [class*="docs-doc-id-roadmap"] & {
+    [class^="docMainContainer_"] {
+      margin-left: 0;
+      width: 100%;
+
+      > .container {
+        width: 100%;
+
+        > .row {
+          width: 100%;
+          padding: 0;
         }
       }
     }
