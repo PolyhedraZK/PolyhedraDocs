@@ -124,6 +124,12 @@ const config: Config = {
           position: "left",
           label: "Expander",
         },
+        {
+          type: "docSidebar",
+          sidebarId: "roadmapSidebar",
+          position: "left",
+          label: "Roadmap",
+        },
         // 分割线
         // {
         //   type: "html",

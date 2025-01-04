@@ -22,7 +22,7 @@ const LEVEL_WIDTH = 62  // Horizontal spacing between eras and columns
 const VERTICAL_GAP = 25  // Vertical spacing between nodes
 const CURVE_WIDTH = 80  // Extra spacing for connection curves
 const ARROW_MIDPOINT_WIDTH = LEVEL_WIDTH/2  // Connection line offset
-const INITIAL_OFFSET = { x: 0, y: 100 }
+const INITIAL_OFFSET = { x: 0, y: 200 }
 const TechTree: React.FC = () => {
   const [techStatuses, setTechStatuses] = useState<Record<string, TechStatus>>({
     "expander": "Researched",
@@ -456,13 +456,6 @@ const TechTree: React.FC = () => {
 
   return (
     <div ref={containerRef} className="tech-tree">
-      <div style={{
-        marginTop: '60px',
-        textAlign: 'center',
-        marginBottom: '60px'
-      }}>
-        <h1 style={{ margin: 0, fontSize: '40px' }}>Interactive Technology Tree</h1>
-      </div>
       <div className="tech-container" style={{ 
         width: svgSize.width, 
         height: svgSize.height, 
