@@ -8,13 +8,14 @@
     > .container {
       max-width: initial;
       padding: 0;
-      
-      @media (max-width: 996px) {
-        padding: 0 16px;
-      }
 
       > .row {
         flex-wrap: nowrap;
+        padding: 0 24px;
+
+        @media (max-width: 996px) {
+          padding: 0 16px;
+        }
       }
     }
   }

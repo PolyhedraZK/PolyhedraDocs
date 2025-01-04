@@ -82,6 +82,7 @@ html[data-theme="dark"] {
   h5,
   h6 {
     font-weight: 500;
+    scroll-margin-top: calc(var(--ifm-navbar-height) - 40px);
     > a {
       color: inherit;
     }
