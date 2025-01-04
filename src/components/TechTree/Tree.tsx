@@ -52,6 +52,7 @@ const TechTree: React.FC = () => {
   })
   const [nodePositions, setNodePositions] = useState<NodePosition[]>([])
   const [eraPositions, setEraPositions] = useState<Record<string, number>>({})
+  const [eraInfo, setEraInfo] = useState<{ [key: string]: { startLevel: number; width: number; x: number; maxColumns: number } }>({})
   const scale = 1  // Fixed scale, no zooming
   const [svgSize, setSvgSize] = useState({ width: 0, height: 0 })
   const [hoveredTech, setHoveredTech] = useState<string | null>(null)
@@ -81,7 +82,7 @@ const TechTree: React.FC = () => {
     let maxY = 0
 
     // Calculate era widths and positions
-    const eraInfo: { [key: string]: { startLevel: number; width: number; x: number; maxColumns: number } } = {}
+    const newEraInfo: { [key: string]: { startLevel: number; width: number; x: number; maxColumns: number } } = {}
     let currentX = 0
 
     // First pass: Calculate era widths
@@ -133,7 +134,7 @@ const TechTree: React.FC = () => {
       const width = ((endLevel - startLevel + 1) * BASE_WIDTH) + 
         ((maxColumns - 1) * (BASE_WIDTH + LEVEL_WIDTH));
       
-      eraInfo[era] = {
+      newEraInfo[era] = {
         startLevel,
         width,
         x: currentX,
@@ -153,7 +154,7 @@ const TechTree: React.FC = () => {
 
     // Second pass: Position nodes
     Object.entries(techTreeData).forEach(([era, techs]) => {
-      const { startLevel, x: eraX } = eraInfo[era]
+      const { startLevel, x: eraX } = newEraInfo[era]
 
       // Sort techs by level first, then by position
       const sortedTechs = [...techs].sort((a, b) => {
@@ -302,6 +303,7 @@ const TechTree: React.FC = () => {
 
     setNodePositions(positions)
     setEraPositions(eraYPositions)
+    setEraInfo(newEraInfo)
     setSvgSize({ width, height })
   }, [calculateNodeSize])
 
@@ -363,6 +365,30 @@ const TechTree: React.FC = () => {
     
     return Array.from(connectedNodes)
   }, [])
+
+  const renderEraDividers = useMemo(() => {
+    const eras = Object.keys(techTreeData);
+    return eras.slice(0, -1).map((era, index) => {
+      const currentEraInfo = eraInfo[era];
+      const nextEraInfo = eraInfo[eras[index + 1]];
+      if (!currentEraInfo || !nextEraInfo) return null;
+
+      const currentEraEnd = currentEraInfo.x + currentEraInfo.width;
+      const nextEraStart = nextEraInfo.x;
+      const midPoint = currentEraEnd + (nextEraStart - currentEraEnd) / 2;
+
+      return (
+        <line
+          key={`era-divider-${index}`}
+          x1={midPoint}
+          y1={0}
+          x2={midPoint}
+          y2={svgSize.height}
+          className="era-divider"
+        />
+      );
+    });
+  }, [eraInfo, svgSize.height]);
 
   const renderConnections = useMemo(() => {
     const allTechs = Object.values(techTreeData).flat()
@@ -451,6 +477,7 @@ const TechTree: React.FC = () => {
           preserveAspectRatio="none"
           style={{ zIndex: 1 }}
         >
+          {renderEraDividers}
           {renderConnections}
         </svg>
         {renderEraLabels}

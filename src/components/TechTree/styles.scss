@@ -24,6 +24,12 @@
     pointer-events: none;
     z-index: 1;
 
+    line.era-divider {
+      stroke: #E0E0E0;
+      stroke-width: 1;
+      stroke-dasharray: 5,5;
+    }
+
     path {
       stroke: #141413;
       stroke-width: 1;
