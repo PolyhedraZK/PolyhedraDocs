@@ -21,8 +21,8 @@
   .toc-wrapper {
     overflow: auto;
     position: sticky;
-    top: var(--ifm-navbar-height);
-    max-height: calc(100vh - var(--ifm-navbar-height) - 16px);
+    top: calc(var(--ifm-navbar-height) + 60px);
+    max-height: calc(100vh - var(--ifm-navbar-height) - 76px);
 
 
     h2 {

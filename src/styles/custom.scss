@@ -97,8 +97,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-smoothing: antialiased;
-
   scroll-padding-top: calc(var(--ifm-navbar-height) + 16px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 *,
@@ -273,16 +278,12 @@ iframe {
 }
 
 .full-width-container {
-  width: 100vw;
+  width: 100%;
   max-width: none;
   margin: 0;
   padding: 0;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   background-color: var(--token-primary-bg-c);
+  position: relative;
 
   article {
     max-width: none;
@@ -293,14 +294,17 @@ iframe {
 
 // Override docusaurus default container styles
 .main-wrapper {
+  overflow: hidden;
   > .container {
     .full-width-container {
-      width: 100vw;
+      width: 100%;
       padding: 0;
-      margin-left: calc(-50vw + 50%);
-      margin-right: calc(-50vw + 50%);
     }
   }
+}
+
+#__docusaurus {
+  overflow: hidden;
 }
 
 // Override docusaurus utility classes

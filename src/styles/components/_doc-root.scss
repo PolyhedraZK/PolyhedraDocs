@@ -3,10 +3,15 @@
   [class^="docMainContainer_"] {
     max-width: initial;
     padding-top: var(--ifm-navbar-height);
+    padding-bottom: 60px;
 
     > .container {
       max-width: initial;
       padding: 0;
+      
+      @media (max-width: 996px) {
+        padding: 0 16px;
+      }
 
       > .row {
         flex-wrap: nowrap;

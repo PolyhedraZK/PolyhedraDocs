@@ -37,6 +37,11 @@
   display: flex;
   flex-direction: column;
   overflow: visible;
+  box-sizing: border-box;
+  
+  @media (max-width: 996px) {
+    padding: 12px;
+  }
   -webkit-font-smoothing: antialiased;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
@@ -144,6 +149,7 @@
     z-index: 9999;
     pointer-events: none;
     width: var(--tech-node-width);
+    max-width: calc(100vw - 32px);
 
     .tech-details {
       background: #fff;
