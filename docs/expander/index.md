@@ -1,7 +1,15 @@
 ---
 sidebar_position: 1
 ---
+import SEOHead from "@site/src/components/global/SEOHead";
 
+<SEOHead
+  title="Expander | Polyhedra Network"
+  description="Expander is the fastest ZK proof system to date invented by Polyhedra Network."
+  url="https://docs.polyhedra.network/expander"
+  siteName="Expander"
+  image="/img/seo/empty.png"
+/>
 # Overview
 
 Expander is a proof generation backend for the Polyhedra Network. The ExpanderCompilerCollection is a component of the Expander proof system. It transforms circuits written in high-level languages into layered circuit. This layered circuit can later be used by the [Expander prover](https://github.com/PolyhedraZK/Expander) to generate proofs.
