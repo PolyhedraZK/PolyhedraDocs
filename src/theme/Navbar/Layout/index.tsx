@@ -15,8 +15,6 @@ import {
 import { translate } from "@docusaurus/Translate";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import type { Props } from "@theme/Navbar/Layout";
-import Logo from "@theme-original/Logo";
-
 import styles from "./styles.module.css";
 
 function NavbarBackdrop(props: ComponentProps<"div">) {
