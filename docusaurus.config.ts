@@ -54,20 +54,20 @@ const config: Config = {
       type: "text/css",
     },
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      type: 'text/css',
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      type: "text/css",
       integrity:
-        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      crossorigin: 'anonymous',
+        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+      crossorigin: "anonymous",
     },
   ],
   themeConfig: {
     // Custom CSS variables for specific pages
     customCss: {
       vars: {
-        '--doc-item-container-width': '100%',
-        '--ifm-container-width-xl': '100%'
-      }
+        "--doc-item-container-width": "100%",
+        "--ifm-container-width-xl": "100%",
+      },
     },
     metadata: [
       {
@@ -90,7 +90,7 @@ const config: Config = {
       },
     ],
     colorMode: {
-      disableSwitch: true,
+      disableSwitch: false,
       defaultMode: "light",
       respectPrefersColorScheme: false,
     },
@@ -99,11 +99,12 @@ const config: Config = {
       logo: {
         alt: "Site Logo",
         src: `/logos/polyhedra-docs-light.svg`,
-        srcDark: `/logos/polyhedra-docs-light.svg`,
+        srcDark: "none",
         href: "/",
         target: "_self",
         width: 179,
         height: 30,
+        className: "navbar-logo-single",
       },
       items: [
         {
