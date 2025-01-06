@@ -39,7 +39,7 @@ const config: Config = {
         theme: {
           customCss: [
             require.resolve(
-              "./node_modules/modern-normalize/modern-normalize.css"
+              "./node_modules/modern-normalize/modern-normalize.css",
             ),
             require.resolve("./src/styles/tokens.css"),
             require.resolve("./src/styles/custom.scss"),
@@ -54,20 +54,20 @@ const config: Config = {
       type: "text/css",
     },
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      type: 'text/css',
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      type: "text/css",
       integrity:
-        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      crossorigin: 'anonymous',
+        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+      crossorigin: "anonymous",
     },
   ],
   themeConfig: {
     // Custom CSS variables for specific pages
     customCss: {
       vars: {
-        '--doc-item-container-width': '100%',
-        '--ifm-container-width-xl': '100%'
-      }
+        "--doc-item-container-width": "100%",
+        "--ifm-container-width-xl": "100%",
+      },
     },
     metadata: [
       {
@@ -174,9 +174,7 @@ const config: Config = {
   plugins: ["docusaurus-plugin-sass"],
   customFields: {},
   themes: [],
-  clientModules: [
-    require.resolve('./src/utils/pretheme.js'),
-  ],
+  clientModules: [require.resolve("./src/utils/pretheme.js")],
 };
 
 export default config;

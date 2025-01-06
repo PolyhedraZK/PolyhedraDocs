@@ -325,7 +325,7 @@
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: 
+        transition:
           opacity 0.2s ease-out,
           visibility 0s linear 0.2s;
         will-change: opacity, visibility;
@@ -336,7 +336,7 @@
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
-            transition: 
+            transition:
               opacity 0.2s ease-out,
               visibility 0s linear;
             z-index: 2;
@@ -348,7 +348,7 @@
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
-            transition: 
+            transition:
               opacity 0.2s ease-out,
               visibility 0s linear;
             z-index: 2;
