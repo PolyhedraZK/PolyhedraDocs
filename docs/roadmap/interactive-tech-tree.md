@@ -13,7 +13,7 @@ import SEOHead from "@site/src/components/global/SEOHead";
   description="Explore our Roadmap building trust in AI with zero-knowledge powered technology that brings verifiability, efficiency, data privacy and security to AI."
   url="https://roadmap.polyhedra.network/"
   siteName="Roadmap"
-  image="/img/seo/roadmap-seo.png"
+  image="/img/seo/roadmap-seo.jpg"
 />
 
 <div style={{
