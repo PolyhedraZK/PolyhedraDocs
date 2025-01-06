@@ -29,7 +29,7 @@ export const techTreeData: Record<string, TechData[]> = {
     },
     {
       id: "expchain-testnet",
-      name: "ExpChain Testnet",
+      name: "EXPchain Testnet",
       description: "Consensus Protocol",
       developmentCost: "High",
       unlocks: [
@@ -104,7 +104,7 @@ export const techTreeData: Record<string, TechData[]> = {
     {
       id: "poi",
       name: "Proof of Intelligence (POI)",
-      description: "ExpChain with ML capability",
+      description: "EXPchain with ML capability",
       developmentCost: "Medium",
       unlocks: ["On-Chain zkML"],
       prerequisites: ["zkpytorch", "expchain-testnet"],
@@ -239,10 +239,10 @@ export const techTreeData: Record<string, TechData[]> = {
     },
     {
       id: "single-slot-finality",
-      name: "Single Slot Finality (SSF) for ExpChain",
+      name: "Single Slot Finality (SSF) for EXPchain",
       description: "Reach consensus in one slot",
       developmentCost: "High",
-      unlocks: ["Faster Ethereum and ExpChain"],
+      unlocks: ["Faster Ethereum and EXPchain"],
       prerequisites: ["proof-of-consensus"],
       level: 6,
       position: 3,
@@ -274,8 +274,8 @@ export const techTreeData: Record<string, TechData[]> = {
     },
     {
       id: "full-decentralization",
-      name: "Full Decentralization of ExpChain",
-      description: "More Validators for ExpChain",
+      name: "Full Decentralization of EXPchain",
+      description: "More Validators for EXPchain",
       developmentCost: "High",
       unlocks: ["Scalable Blockchain"],
       prerequisites: ["single-slot-finality"],

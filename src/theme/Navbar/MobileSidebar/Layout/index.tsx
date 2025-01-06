@@ -25,7 +25,7 @@ export default function NavbarMobileSidebarLayout({
       <div
         className={clsx("navbar-sidebar__items", {
           "navbar-sidebar__items--show-secondary":
-            secondaryMenuShown && !(currentPath === "/litepaper/"),
+            secondaryMenuShown && !(currentPath === "/litepaper/") && !(currentPath === "/roadmap/interactive-tech-tree"),
         })}
       >
         <div className="navbar-sidebar__item menu">{primaryMenu}</div>

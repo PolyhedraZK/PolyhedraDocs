@@ -1,6 +1,8 @@
 ---
 hide_title: true
 hide_table_of_contents: true
+sidebar_position: 1
+toc_max_heading_level: 2
 ---
 
 import TechTree from '@site/src/components/TechTree';
@@ -8,10 +10,10 @@ import SEOHead from "@site/src/components/global/SEOHead";
 
 <SEOHead
   title="Roadmap | Polyhedra Network"
-  description="Explore our Roadmap building trust between AI and real world applications with scalable, secure, decentralized infrastructure."
+  description="Explore our Roadmap building trust in AI with zero-knowledge powered technology that brings verifiability, efficiency, data privacy and security to AI."
   url="https://roadmap.polyhedra.network/"
   siteName="Roadmap"
-  image="/img/seo/empty.png"
+  image="/img/seo/roadmap-seo.png"
 />
 
 <div style={{
