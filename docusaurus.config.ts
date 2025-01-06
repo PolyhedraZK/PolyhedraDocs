@@ -90,7 +90,7 @@ const config: Config = {
       },
     ],
     colorMode: {
-      disableSwitch: false,
+      disableSwitch: true,
       defaultMode: "light",
       respectPrefersColorScheme: false,
     },
