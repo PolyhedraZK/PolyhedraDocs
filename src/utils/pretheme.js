@@ -1,5 +1,7 @@
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+
 // Prevent flash of wrong theme during page refresh
-(function () {
+if (ExecutionEnvironment.canUseDOM) {
   try {
     const theme = localStorage.getItem("theme") || "light";
     document.documentElement.setAttribute("data-theme", theme);
@@ -9,4 +11,4 @@
     document.documentElement.setAttribute("data-theme", "light");
     document.documentElement.dataset.theme = "light";
   }
-})();
+}
