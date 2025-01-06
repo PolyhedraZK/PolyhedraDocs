@@ -319,9 +319,6 @@
       .navbar__logo {
         display: block;
         height: auto;
-        opacity: 1;
-        visibility: visible;
-        transition: opacity 0.2s ease-out;
 
         img {
           display: block;
@@ -336,11 +333,7 @@
     }
 
     > .logo {
-      display: none !important;
-      visibility: hidden;
-      opacity: 0;
-      position: absolute;
-      pointer-events: none;
+      display: none;
     }
 
     &__items--left {
