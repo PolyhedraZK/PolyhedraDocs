@@ -2,14 +2,16 @@ const express = require('express');
 const fetch = require('node-fetch');
 const app = express();
 
+// Special handling for root path
+app.get('/', (req, res) => {
+  res.redirect('/roadmap/interactive-tech-tree');
+});
+
+// Handle all other paths
 app.use(async (req, res) => {
   try {
     const url = new URL(req.url, `https://${req.headers.host}`);
     url.hostname = 'polyhedradocs.pages.dev';
-
-    if (url.pathname === '/') {
-      url.pathname = '/roadmap/interactive-tech-tree';
-    }
 
     const headers = { ...req.headers };
     delete headers.host;
@@ -25,13 +27,11 @@ app.use(async (req, res) => {
       redirect: 'follow'
     });
 
-    // If target returns 404 or other error, forward it
     if (!response.ok) {
       res.status(response.status).send(await response.text());
       return;
     }
 
-    // Forward content-type and other important headers
     ['content-type', 'cache-control', 'etag', 'last-modified'].forEach(header => {
       const value = response.headers.get(header);
       if (value) res.setHeader(header, value);
