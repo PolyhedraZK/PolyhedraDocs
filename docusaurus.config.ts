@@ -174,7 +174,6 @@ const config: Config = {
   plugins: ["docusaurus-plugin-sass"],
   customFields: {},
   themes: [],
-  clientModules: [require.resolve("./src/utils/pretheme.js")],
 };
 
 export default config;
