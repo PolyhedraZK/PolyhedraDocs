@@ -7,8 +7,13 @@ app.get('/', (req, res) => {
   res.redirect('/roadmap/interactive-tech-tree');
 });
 
-// Handle all other paths
+// Handle all paths
 app.use(async (req, res) => {
+  // Redirect non-roadmap paths to docs.polyhedra.network
+  if (!req.path.startsWith('/roadmap')) {
+    return res.redirect(`https://docs.polyhedra.network${req.path}`);
+  }
+
   try {
     const url = new URL(req.url, `https://${req.headers.host}`);
     url.hostname = 'polyhedradocs.pages.dev';
