@@ -18,28 +18,31 @@ app.use(async (req, res) => {
     delete headers['x-forwarded-host'];
     delete headers['accept-encoding'];
 
-    console.log('Fetching:', url.toString());
+    console.log('Proxying request to:', url.toString());
     const response = await fetch(new URL(url), {
       method: req.method,
       headers: headers,
       redirect: 'follow'
     });
 
-    const buffer = await response.buffer();
-    console.log('Response size:', buffer.length);
+    // If target returns 404 or other error, forward it
+    if (!response.ok) {
+      res.status(response.status).send(await response.text());
+      return;
+    }
 
-    // Forward response headers
-    Object.entries(response.headers.raw()).forEach(([key, value]) => {
-      if (key.toLowerCase() !== 'content-encoding') {
-        res.setHeader(key, value);
-      }
+    // Forward content-type and other important headers
+    ['content-type', 'cache-control', 'etag', 'last-modified'].forEach(header => {
+      const value = response.headers.get(header);
+      if (value) res.setHeader(header, value);
     });
 
-    res.status(response.status);
-    res.send(buffer);
+    const buffer = await response.buffer();
+    res.status(response.status).send(buffer);
+
   } catch (error) {
-    console.error('Error:', error);
-    res.status(500).send('Internal Server Error');
+    console.error('Proxy error:', error);
+    res.status(502).send('Bad Gateway');
   }
 });
 
