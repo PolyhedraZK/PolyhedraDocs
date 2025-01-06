@@ -1,58 +1,42 @@
-html[data-theme="light"] {
+:root {
   --toc-separator-c: var(--c-indigo-20);
   --ifm-toc-link-color: var(--c-indigo-80);
-}
-
-html[data-theme="dark"] {
-  --toc-separator-c: var(--c-carbon-90);
-  --ifm-toc-link-color: var(--c-carbon-0);
-}
-
-:root {
 }
 
 //overrides
 #__docusaurus {
   [class^="tableOfContents_"] {
-    position: static;
-    top: initial;
     overflow: hidden;
-
     max-height: initial;
-
-    // padding-block-end: 1.25rem;
-
-    // border-block-end: 1px solid var(--toc-separator-c);
-
     line-height: 1.4;
   }
 
   .toc-wrapper {
     overflow: auto;
-    position: sticky;
-    top: calc(var(--ifm-navbar-height) + 16px);
-    max-height: calc(100vh - var(--ifm-navbar-height) - 16px);
-
-    margin-block-start: 3.75rem;
-
-    padding-block-end: 2rem;
+    position: fixed;
+    margin-top: calc(var(--ifm-navbar-height));
+    right: 0;
+    width: var(--doc-sidebar-width);
+    max-height: calc(100vh - var(--ifm-navbar-height));
+    z-index: 4;
+    pointer-events: auto;
+    background: var(--token-primary-bg-c);
+    border-left: 1px solid var(--doc-border-color);
 
     h2 {
-      color: #141413;
+      color: var(--ifm-heading-color);
       font-family: Poppins;
       font-size: 0.875rem;
       font-style: normal;
       font-weight: 500;
-      line-height: 18px; /* 128.571% */
+      line-height: 18px;
       letter-spacing: -0.14px;
       padding: 8px 14px;
-      margin: 0px;
+      margin: 0;
     }
 
     .table-of-contents {
-      padding: 0;
-      margin-inline-start: calc(-1 * var(--ifm-toc-padding-horizontal));
-      margin-inline-end: calc(-1 * var(--ifm-toc-padding-horizontal));
+      padding: 0 14px;
 
       > li:first-of-type {
         margin-block-start: 0;
@@ -61,11 +45,16 @@ html[data-theme="dark"] {
       > li:last-of-type {
         margin-block-end: 0;
       }
+
+      a {
+        display: block;
+        padding: 4px 0;
+      }
     }
 
     .theme-edit-this-page {
       --edit-this-page-c: var(--ifm-heading-color);
-      padding-inline: 14px;
+      padding: 0 14px;
       font-weight: 600;
       font-size: 0.875rem;
       margin-top: 16px;
@@ -74,7 +63,6 @@ html[data-theme="dark"] {
 
   .internal-ad {
     cursor: pointer;
-
     max-width: 148px;
     display: block;
     margin: 48px 0 0;
@@ -84,7 +72,6 @@ html[data-theme="dark"] {
       line-height: 19px;
       font-weight: 400;
       letter-spacing: 0.02em;
-
       color: var(--ifm-font-color-base);
       transition: 0.2s color;
     }

@@ -62,6 +62,13 @@ const config: Config = {
     },
   ],
   themeConfig: {
+    // Custom CSS variables for specific pages
+    customCss: {
+      vars: {
+        '--doc-item-container-width': '100%',
+        '--ifm-container-width-xl': '100%'
+      }
+    },
     metadata: [
       {
         name: "og:site_name",
@@ -116,6 +123,12 @@ const config: Config = {
           sidebarId: "expanderSidebar",
           position: "left",
           label: "Expander",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "roadmapSidebar",
+          position: "left",
+          label: "Roadmap",
         },
         // 分割线
         // {

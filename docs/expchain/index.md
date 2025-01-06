@@ -1,7 +1,15 @@
 ---
 sidebar_position: 0
 ---
+import SEOHead from "@site/src/components/global/SEOHead";
 
+<SEOHead
+  title="EXPchain | Polyhedra Network"
+  description="EXPchain is a blockchain protocol designed for scalable, verifiable, and privacy-preserving Al applications, powered by Polyhedra innovations including Expander and zkBridge for high performance ZkML."
+  url="https://docs.polyhedra.network/expchain"
+  siteName="EXPchain"
+  image="/img/seo/empty.png"
+/>
 # About EXPchain
 
 EXPchain, developed by the Polyhedra Network, is a groundbreaking blockchain designed to redefine the intersection of artificial intelligence (AI) and decentralized technologies. As the foundation of Polyhedra's vision for a trustworthy AI ecosystem, EXPchain integrates advanced zero-knowledge machine learning (zkML) technology and an innovative Proof of Intelligence (PoI) framework. This unique combination ensures that AI applications built on EXPchain are not only scalable and efficient but also privacy-preserving and verifiable.

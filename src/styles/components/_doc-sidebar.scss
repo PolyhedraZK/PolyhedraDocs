@@ -1,18 +1,9 @@
-html[data-theme="light"] {
+:root {
   --sidebar-category-c: var(--c-gray-100);
   --sidebar-border-c: rgba(20, 20, 19, 0.1);
   --sidebar-text-hover-c: rgba(20, 20, 19);
   --ifm-menu-color-background-active: rgba(20, 20, 19, 0.06);
   --ifm-menu-color: rgba(20, 20, 19, 0.7);
-}
-
-html[data-theme="dark"] {
-  --sidebar-category-c: var(--c-gray-0);
-  --sidebar-border-c: var(--c-gray-90);
-  --ifm-menu-color: var(--c-gray-20);
-}
-
-:root {
   --doc-sidebar-width: 17.5rem;
 
   --dropdown-icon-width: 0.625rem;
@@ -30,17 +21,28 @@ html[data-theme="dark"] {
 
 //overrides
 #__docusaurus {
+  // Hide sidebar for roadmap pages
+  [class*="docs-doc-id-roadmap"] & {
+    .theme-doc-sidebar-container {
+      display: none;
+    }
+    
+    [class^="docMainContainer_"] {
+      margin-left: 0;
+    }
+  }
+
   .theme-doc-sidebar-container {
     background: var(--token-primary-bg-c);
+    margin-top: var(--ifm-navbar-height);
 
-    position: sticky;
-    top: 0;
-    margin-block-start: 0;
-    will-change: initial;
-
-    height: 100vh;
-
-    border-inline-end: 1px solid var(--sidebar-border-c);
+    position: fixed;
+    left: 0;
+    width: var(--doc-sidebar-width);
+    height: calc(100vh - var(--ifm-navbar-height));
+    border-inline-end: 1px solid var(--doc-border-color);
+    box-shadow: var(--doc-shadow);
+    z-index: 100;
 
     [class^="sidebarViewport"] {
       // Targets the logo
@@ -56,14 +58,11 @@ html[data-theme="dark"] {
   }
 
   [class^="sidebar_"] {
-    max-height: calc(100vh - var(--ifm-navbar-height));
-    position: static;
-
+    height: calc(100vh - var(--ifm-navbar-height));
     overflow-y: auto;
 
     padding-inline-start: var(--sidebar-spacing-horizontal);
     padding-inline-end: var(--sidebar-spacing-horizontal);
-    padding-block-start: 3.75rem;
 
     > .menu {
       overflow-x: initial;

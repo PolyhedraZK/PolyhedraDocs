@@ -8,6 +8,8 @@
   [class*="docItemCol_"] {
     max-width: initial;
     min-width: 0;
+    flex-basis: 0;
+    flex-grow: 1;
 
     @media (min-width: 997px) {
       max-width: initial !important;
@@ -15,8 +17,7 @@
   }
 
   [class*="docItemContainer_"] {
-    max-width: var(--doc-item-container-width);
-    flex-grow: 1;
+    max-width: 100%;
     min-width: 0;
   }
 
@@ -29,9 +30,7 @@
       .doc-demo {
         position: sticky;
         top: calc(var(--ifm-navbar-height));
-
         padding-block-end: 32px;
-
         margin-block-start: 5rem;
         overflow-y: auto;
         max-height: calc(100vh - var(--ifm-navbar-height));
@@ -41,23 +40,19 @@
     > .container {
       > .row {
         > .col {
-          display: flex;
-          justify-content: center;
           min-width: 0;
 
           // Docs Demo
           &.col--4 {
             @media (max-width: 1364px) {
-              // The docs demo is hidden on mobile and tablet.
-              // Since the docs demo is the only thing in the right column,
-              // the column should be hidden as well.
-              // Otherwise, it will be a blank column, making it
-              // look like there is a lot of empty space.
               display: none;
             }
           }
           &.col--3 {
-            @media (max-width: 977px) {
+            flex: 0 0 var(--doc-sidebar-width);
+            max-width: var(--doc-sidebar-width);
+            
+            @media (max-width: 996px) {
               display: none;
             }
           }
@@ -74,9 +69,12 @@
     }
   }
 
-  [class^="docItemCol_"] {
-    margin-inline-start: auto;
-    margin-inline-end: auto;
+  // Special handling for roadmap pages
+  [class*="docs-doc-id-roadmap"] {
+    [class^="docItemCol_"] {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
   //#endregion
 }
