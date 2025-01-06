@@ -1,4 +1,4 @@
-  :root {
+:root {
   --token-primary-c: rgba(20, 20, 19);
   --navbar-link-c: rgba(20, 20, 19, 0.7);
   --navbar-link-hover-c: rgba(20, 20, 19);
@@ -53,7 +53,7 @@
       gap: 2rem;
       margin: 0;
       padding: 0;
-      
+
       @media (max-width: 996px) {
         gap: 0;
       }
@@ -319,12 +319,15 @@
       .navbar__logo {
         display: block;
         height: auto;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.2s ease-out;
 
         img {
           display: block;
           height: 30px;
           width: auto;
-          
+
           @media (max-width: 996px) {
             height: 30px;
           }
@@ -333,7 +336,11 @@
     }
 
     > .logo {
-      display: none;
+      display: none !important;
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      pointer-events: none;
     }
 
     &__items--left {
