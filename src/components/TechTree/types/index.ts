@@ -12,6 +12,7 @@ export interface TechData {
   status?: TechStatus;
   level: number;  // Vertical position (0, 1, 2, etc.)
   position: number;  // Horizontal position within level (0, 1, 2, etc.)
+  iconSrc?: string;  // Optional path to GIF or SVG icon
 }
 
 export interface TechTreeData {

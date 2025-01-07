@@ -31,6 +31,7 @@ const TechNode: React.FC<TechNodeProps> = React.memo(({
   const currentStatus = status || 'Pending';
   const [showDetails, setShowDetails] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isIconLoading, setIsIconLoading] = useState(true);
 
   const updateDetailsPosition = useCallback(() => {
     if (nodeRef.current) {
@@ -183,6 +184,22 @@ const TechNode: React.FC<TechNodeProps> = React.memo(({
     >
       <div className="tech-content">
         <div className="tech-header">
+          {tech.iconSrc && (
+            <div className="tech-icon-box">
+              <img 
+                src={tech.iconSrc} 
+                alt={`${tech.name} icon`} 
+                style={{ display: isIconLoading ? 'none' : 'block' }}
+                onLoad={() => setIsIconLoading(false)}
+                onError={() => setIsIconLoading(false)}
+              />
+              {isIconLoading && (
+                <div className="icon-loading">
+                  <div className="loading-spinner"></div>
+                </div>
+              )}
+            </div>
+          )}
           <h3>{tech.name}</h3>
         </div>
         <div className="tech-badges">

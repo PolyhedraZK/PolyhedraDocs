@@ -58,6 +58,7 @@
   --space-192: 12.00rem;
   --space-224: 14.00rem;
   --space-256: 16.00rem;
+  --tech-icon-size: 24px;  /* Size of optional icon box in tech tree nodes */
   --breakpoint-0: 40em;
   --breakpoint-1: 48em;
   --breakpoint-2: 64em;
