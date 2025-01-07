@@ -14,7 +14,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: [],
       level: 0,
       position: 0,
-      era: "Ancient Era"
+      era: "Ancient Era",
+      iconSrc: "/icons/code-branch.svg"
     },
     {
       id: "circuit-compiler",
