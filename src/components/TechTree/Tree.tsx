@@ -299,7 +299,8 @@ const TechTree: React.FC = () => {
     })
 
     // Calculate total width including gaps and second columns
-    const width = currentX + (BASE_WIDTH + LEVEL_WIDTH) + CURVE_WIDTH * 2 // Add width for second column plus spacing
+    // const width = currentX + (BASE_WIDTH + LEVEL_WIDTH) + CURVE_WIDTH * 2 // Add width for second column plus spacing
+    const width = currentX
     const height = maxY + 50 // Add some padding at the bottom
 
     setNodePositions(positions)
