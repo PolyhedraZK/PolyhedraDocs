@@ -15,7 +15,7 @@ export const techTreeData: Record<string, TechData[]> = {
       level: 0,
       position: 0,
       era: "Ancient Era",
-      iconSrc: "/icons/code-branch.svg"
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "circuit-compiler",
@@ -26,7 +26,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: [],
       level: 0,
       position: 1,
-      era: "Ancient Era"
+      era: "Ancient Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "expchain-testnet",
@@ -40,7 +41,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: [],
       level: 0,
       position: 2,
-      era: "Ancient Era"
+      era: "Ancient Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "zkbridge",
@@ -54,7 +56,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: [],
       level: 0,
       position: 3,
-      era: "Ancient Era"
+      era: "Ancient Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     }
   ],
   "2025 Q1, Expansion Era": [
@@ -67,7 +70,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["expander", "circuit-compiler"],
       level: 2,
       position: 0,
-      era: "2025 Q1, Expansion Era"
+      era: "2025 Q1, Expansion Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "optimized-verifier",
@@ -78,7 +82,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["expander", "circuit-compiler"],
       level: 2,
       position: 1,
-      era: "2025 Q1, Expansion Era"
+      era: "2025 Q1, Expansion Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "zkcuda",
@@ -89,7 +94,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["expander", "circuit-compiler"],
       level: 2,
       position: 2,
-      era: "2025 Q1, Expansion Era"
+      era: "2025 Q1, Expansion Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "zkpytorch",
@@ -100,7 +106,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["zkcuda", "optimized-verifier"],
       level: 2,
       position: 3,
-      era: "2025 Q1, Expansion Era"
+      era: "2025 Q1, Expansion Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "poi",
@@ -111,7 +118,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["zkpytorch", "expchain-testnet"],
       level: 2,
       position: 4,
-      era: "2025 Q1, Expansion Era"
+      era: "2025 Q1, Expansion Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "on-chain-app",
@@ -122,7 +130,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["expchain-testnet"],
       level: 2,
       position: 5,
-      era: "2025 Q1, Expansion Era"
+      era: "2025 Q1, Expansion Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "expos",
@@ -133,7 +142,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["expchain-testnet", "zkbridge"],
       level: 2,
       position: 6,
-      era: "2025 Q1, Expansion Era"
+      era: "2025 Q1, Expansion Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "scale-dev-ecosystem",
@@ -144,7 +154,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["poi", "expos", "on-chain-app"],
       level: 2,
       position: 7,
-      era: "2025 Q1, Expansion Era"
+      era: "2025 Q1, Expansion Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     }
   ],
   "2025 Q2, Enhancement Era": [
@@ -157,7 +168,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["virgo++", "zkcuda"],
       level: 4,
       position: 0,
-      era: "2025 Q2, Enhancement Era"
+      era: "2025 Q2, Enhancement Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "log-space-uniform-verifier",
@@ -168,7 +180,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["zkcuda"],
       level: 4,
       position: 1,
-      era: "2025 Q2, Enhancement Era"
+      era: "2025 Q2, Enhancement Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "data-market",
@@ -179,7 +192,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["poi"],
       level: 4,
       position: 2,
-      era: "2025 Q2, Enhancement Era"
+      era: "2025 Q2, Enhancement Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "zkml-showcase-app",
@@ -190,7 +204,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["poi"],
       level: 4,
       position: 3,
-      era: "2025 Q2, Enhancement Era"
+      era: "2025 Q2, Enhancement Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "proof-of-consensus",
@@ -201,7 +216,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["expander", "zkcuda"],
       level: 4,
       position: 4,
-      era: "2025 Q2, Enhancement Era"
+      era: "2025 Q2, Enhancement Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     }
   ],
   "2025 Q3, Innovation Era": [
@@ -214,7 +230,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["gpu-expander"],
       level: 6,
       position: 0,
-      era: "2025 Q3, Innovation Era"
+      era: "2025 Q3, Innovation Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "zk-friendly-quantization",
@@ -225,7 +242,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["poi"],
       level: 6,
       position: 1,
-      era: "2025 Q3, Innovation Era"
+      era: "2025 Q3, Innovation Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "scale-dev-ecosystem-2",
@@ -236,7 +254,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["scale-dev-ecosystem"],
       level: 6,
       position: 2,
-      era: "2025 Q3, Innovation Era"
+      era: "2025 Q3, Innovation Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "single-slot-finality",
@@ -247,7 +266,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["proof-of-consensus"],
       level: 6,
       position: 3,
-      era: "2025 Q3, Innovation Era"
+      era: "2025 Q3, Innovation Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "zkbridge-ssf",
@@ -258,7 +278,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["single-slot-finality"],
       level: 6,
       position: 4,
-      era: "2025 Q3, Innovation Era"
+      era: "2025 Q3, Innovation Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     }
   ],
   "2025 Q4-2026 Q1, Future Era": [
@@ -271,7 +292,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["zk-friendly-quantization"],
       level: 8,
       position: 0,
-      era: "2025 Q4-2026 Q1, Future Era"
+      era: "2025 Q4-2026 Q1, Future Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     },
     {
       id: "full-decentralization",
@@ -282,7 +304,8 @@ export const techTreeData: Record<string, TechData[]> = {
       prerequisites: ["single-slot-finality"],
       level: 8,
       position: 1,
-      era: "2025 Q4-2026 Q1, Future Era"
+      era: "2025 Q4-2026 Q1, Future Era",
+      iconSrc: "https://raw.githubusercontent.com/PolyhedraZK/VisualAsset/refs/heads/main/EXPchain/EXPchain%20Symbol_Black%20on%20White.svg"
     }
   ]
 }
