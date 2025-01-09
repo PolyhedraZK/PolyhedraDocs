@@ -68,10 +68,10 @@ with the scattering phase.
 
 ## Complexity Analysis
 
-The proving time is linear to the circuit size for the 
-original GKR protocol. In our modified protocol, the proving 
-time is still linear. To see this, we need to analyze the two 
-phases we use.
+The proving time is linear to the circuit size in the 
+original GKR protocol, and it's still linear in the modified
+protocol. To see this, we need to analyze the two phases 
+separately.
 
 * **Scattering**. In the scattering phase, the prover 
 will additionally prepare the values of 
@@ -86,3 +86,6 @@ prover needs to prepare the values of
 $(1 + \sum_{l=j+2}^d \alpha_l \mathsf{Gath}_{l, j} (r_{z_l}, x))$,
 on all binary $x$, which is solely contributed by the relay 
 gates.
+
+In short, the additional cost is linear to the number of relay
+gates in the circuit, and thus the total cost is still linear.
