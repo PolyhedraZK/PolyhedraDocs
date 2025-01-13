@@ -1,6 +1,6 @@
 # Quick Guide
 
-If you’re a developer interested in building applications on the EXPchain, this document provides all the essential information you’ll need
+If you're a developer interested in building applications on the EXPchain, this document provides all the essential information you'll need
 
 ## Getting Started
 
@@ -24,7 +24,7 @@ ZKJ is the native utility token of EXPchain and is used to pay transaction fees.
 
 ## JSON-RPC API
 
-Interacting with EXPchain requires sending requests to specific JSON-RPC API methods. EXPchain’s APIs are compatible with Geth. - [JSON-RPC API](002-rpc.md)
+Interacting with EXPchain requires sending requests to specific JSON-RPC API methods. EXPchain's APIs are compatible with Geth. - [JSON-RPC API](002-rpc.md)
 
 ## Developer Tools
 

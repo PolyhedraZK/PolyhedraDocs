@@ -9,7 +9,7 @@
 1. Visit [Google Chrome official website](https://www.google.com/chrome/)
 2. Download the installer file for Google Chrome
 3. Run the installer for Google Chrome and install it with default settings
-4. After the complete of the installation, you can find the Google Chrome's icon on your Desktop.
+4. After completing the installation, you can find the Google Chrome's icon on your Desktop.
 
 ## Install Metamask
 
@@ -18,14 +18,14 @@
 </video>
 
 1. Run the Google Chrome
-2. Visit the [chrome webstore](https://chromewebstore.google.com/) by the Chrome's menu > Extention > Visit Chrome Web Store.
+2. Visit the [chrome webstore](https://chromewebstore.google.com/) by the Chrome's menu > Extension > Visit Chrome Web Store.
 3. On the Chrome Web Store, type in **Metamask** in the search bar and enter.
 4. Select the **Metamask** in the search result
-5. One the new page, select **Add to Chrome**. Then select **Add extension** on the pop-up
+5. On the new page, select **Add to Chrome**. Then select **Add extension** on the pop-up
 6. Chrome will download and install the Metamask
 7. Select the **Metamask** shown on your extension toolbar
 8. You will be redirected to the Metamask initial setup page
-9. Follow the instruction on the initial setup page to **Create a new wallet**
+9. Follow the instructions on the initial setup page to **Create a new wallet**
 
 ## Add Networks to Metamask
 
@@ -56,7 +56,7 @@
 8. After the **tZKJ** token requests above, select **Sepolia** in the **Metamask** network list.
 9. In the **Tokens** tab on **Metamask**, click **Import Tokens** from the menu.
 10. Copy and Paste the tZKJ contract address on Sepolia: `0x465C15e9e2F3837472B0B204e955c5205270CA9E`. Then click **Next** button.
-11. Keep the default setings and **Import** the token
+11. Keep the default settings and **Import** the token
 12. Switch the network to **BNB Smart Chain Testnet** in the Metamask.
 13. Same as the step 10, and paste the tZKJ's contract address on BNB Smart Chain Testnet: `0xbbf8f565995c3fdf890120e6abc48c4f818b03c2`
 14. Same as Step 11, and **Import** the tZKJ token for the BNB Smart Chain Testnet

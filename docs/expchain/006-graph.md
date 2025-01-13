@@ -2,7 +2,7 @@
 
 ## Important Note
 
-The Graph nodes provided by EXPchain is only a sandbox. The Graph admin endpoint is made public to allow anyone to be able to use it for testing. Projects should run their own Graph instances in production and avoid exposing the admin endpoint.
+The Graph nodes provided by EXPchain are only a sandbox. The Graph admin endpoint is made public to allow anyone to be able to use it for testing. Projects should run their own Graph instances in production and avoid exposing the admin endpoint.
 
 ## EXPchain Testnet Sandbox
 
@@ -40,7 +40,7 @@ graph create <subgraph-name> --node https://thegraph-jsonrpc-testnet.expchain.ai
 graph deploy <subgraph-name> --debug --ipfs https://thegraph-ipfs-testnet.expchain.ai --node https://thegraph-jsonrpc-testnet.expchain.ai
 ```
 
-Once deployed, your graph should now be deployed and accessible via the GraphQL Server. It can be access at:
+Once deployed, your graph should now be deployed and accessible via the GraphQL Server. It can be accessed at:
 
 ```
 https://thegraph-subgraphs-testnet.expchain.ai/subgraphs/name/YOUR_SUBGRAPH_NAME/graphql

@@ -5,7 +5,7 @@ You will need the [SendApi interface](#izkbridgesol) and [ReceiveApi interface](
 ## Send Chain
 
 To send a message, call the zkBridge send() function.
-here is an simple example
+Here is a simple example:
 
 ```solidity
 // perform a zkBridge send() in a solidity smart contract function

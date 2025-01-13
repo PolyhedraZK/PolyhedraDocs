@@ -21,7 +21,7 @@
 
 ## Reference - How to configure Metamask
 
-After you install the metamask in your browser, you can go to settings -> networks -> add network page. Select add manual network and enter the network information.
+After you install the Metamask in your browser, you can go to Settings → Networks → Add Network page. Select add manual network and enter the network information.
 
 ![Configure](https://storage.googleapis.com/polyhedra-img/images/prod/Configure.png)
 
