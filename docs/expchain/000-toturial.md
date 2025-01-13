@@ -8,7 +8,7 @@
 
 1. Visit [Google Chrome official website](https://www.google.com/chrome/)
 2. Download the installer file for Google Chrome
-3. Run the installer for Google Chrome and intall it with default settings
+3. Run the installer for Google Chrome and install it with default settings
 4. After the complete of the installation, you can find the Google Chrome's icon on your Desktop.
 
 ## Install Metamask
@@ -19,8 +19,8 @@
 
 1. Run the Google Chrome
 2. Visit the [chrome webstore](https://chromewebstore.google.com/) by the Chrome's menu > Extention > Visit Chrome Web Store.
-3. On the Chrome Web Store, type in **Metamask** in the serch bar and enter.
-4. Select the **Metamask** in the serch result
+3. On the Chrome Web Store, type in **Metamask** in the search bar and enter.
+4. Select the **Metamask** in the search result
 5. One the new page, select **Add to Chrome**. Then select **Add extension** on the pop-up
 6. Chrome will download and install the Metamask
 7. Select the **Metamask** shown on your extension toolbar
@@ -46,11 +46,11 @@
     <source src="https://vitrual-assets.polyhedra.network/EXPchain/tutorial_video/04. Faucet Guide.mp4" type="video/mp4" />
 </video>
 
-1. Visit [EXPchain faucet](faucet.expchain.ai) for requesting tZKJ tokens
+1. Visit [EXPchain faucet](https://faucet.expchain.ai) for requesting tZKJ tokens
 2. Select the **EXPchain Testnet** in the **Network** on page
 3. Copy your wallet address from the Metamask
 4. Paste your wallet address in the **Wallet Address** box
-5. Check the box for hunman verification
+5. Check the box for human verification
 6. Then click **Request** button
 7. Repeat the step 3 to step 5 above for **Sepolia Testnet** and **BSC Testnet**
 8. After the **tZKJ** token requests above, select **Sepolia** in the **Metamask** network list.
@@ -62,7 +62,7 @@
 14. Same as Step 11, and **Import** the tZKJ token for the BNB Smart Chain Testnet
 15. Visit the [Alchemy Faucet](https://www.alchemy.com/faucets/ethereum-sepolia) for the Sepolia gas token
 16. Follow the instructions on the page for login or signup on Alchemy
-17. After login, copy and paste your wallet address on the Alcheme Faucet.
+17. After login, copy and paste your wallet address on the Alchemy Faucet.
 18. Finish the CAPTCHA and click **Send Me ETH**
 19. Visit [BNB Faucet](https://www.bnbchain.org/en/testnet-faucet) for BNB Smart Chain Testnet's gas token
 20. Copy and paste your wallet address from Metamask, then click **Send 0.3 BNB** button
@@ -74,9 +74,9 @@
 </video>
 
 1. Visit [EXPchain Bridge](https://bridge.expchain.ai/bridge)
-2. Click the **Connect Wallet** on the page, and then selct **Metamask** from the list
+2. Click the **Connect Wallet** on the page, and then select **Metamask** from the list
 3. On the Metamask's popup, click **Connect** button and then **Confirm** in the next page.
 4. Select or switch the network to **BSC testnet** or **Sepolia**
 5. Input the amount of tZKJ you want to bridge to the EXPchain testnet.
 6. Click the **Approve** button and then confirm on the Metamask's popup
-7. Click the **Transfer** button and confirm this trasaction on the Metamask's popup.
+7. Click the **Transfer** button and confirm this transaction on the Metamask's popup.
