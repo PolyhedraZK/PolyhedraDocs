@@ -1,22 +1,34 @@
-Frontend Engineer
+Senior Frontend Engineer
 
-Required Qualifications:
+Requirements:
 
-1. Bachelor's degree or higher in Computer Science or related field from a top-tier university
-2. Proficient in using AI tools for daily development:
-   - Ability to write accurate prompts to obtain desired code output
-   - Skilled at using AI tools to efficiently complete programming tasks
-   - Capable of performing AI-assisted code review and optimization
-3. Basic understanding of HTML/CSS/JavaScript
+1. Educational Background:
 
-Preferred Competition Experience (meeting any of the following):
+   - Bachelor's degree or higher in Computer Science, Software Engineering, or related field from a top-tier university
+   - Strong foundation in computer science fundamentals
 
-- ACM-ICPC Regional Contest medal winner
-- USACO (USA Computing Olympiad) award recipient
-- Other algorithmic competition awards
+2. Technical Expertise:
+
+   - Mastery of modern frontend technologies (React, TypeScript, Web3.js, etc.)
+   - Familiarity with blockchain and zero-knowledge proof technologies
+   - Excellence in code architecture and engineering practices
+
+3. AI Development Skills:
+   - Advanced proficiency with AI-assisted development tools
+   - Expert-level prompt engineering for high-quality code generation
+   - Professional competence in AI-driven code review and performance optimization
+
+Additional Qualifications (any of the following):
+
+- ACM-ICPC Regional or World Finals medalist
+- USACO (USA Computing Olympiad) Gold/Platinum award
+- Top-tier algorithmic competition achievements
+- Significant open-source project contributions
 
 We Offer:
 
-- Competitive compensation package
-- Flexible working hours
-- Premium work environment
+- Industry-competitive compensation package
+- Flexible work arrangements
+- State-of-the-art work environment
+- Continuous technical training and growth opportunities
+- Involvement in cutting-edge blockchain projects
