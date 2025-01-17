@@ -1,13 +1,13 @@
 .tech-tree {
   min-height: 100vh;
-  background: #F5F5F5;
-  font-family: 'Poppins', sans-serif;
+  background: #f5f5f5;
+  font-family: "Poppins", sans-serif;
   position: relative;
 
   .tech-container {
     margin: 0 32px 60px;
     position: relative;
-    max-width: 100%;
+    // max-width: 100%;
     overflow: visible;
 
     @media (max-width: 996px) {
@@ -22,7 +22,7 @@
     margin-bottom: 40px;
     position: relative;
     max-width: 100%;
-    
+
     @media (max-width: 996px) {
       gap: 12px;
     }
@@ -33,9 +33,9 @@
     overflow: visible;
 
     line.era-divider {
-      stroke: #E0E0E0;
+      stroke: #e0e0e0;
       stroke-width: 2;
-      stroke-dasharray: 5,5;
+      stroke-dasharray: 5, 5;
     }
 
     path {
