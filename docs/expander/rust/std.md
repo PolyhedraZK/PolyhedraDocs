@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Std
+# Standard Circuits
 
 We're supporting some standard circuits in our std library, all of which will implement the following trait:
 

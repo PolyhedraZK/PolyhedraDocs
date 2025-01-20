@@ -2,7 +2,52 @@
 sidebar_position: 5
 ---
 
-# How to Implement Hints
+# Hints
+
+The use of hints is divided into two parts: within the circuit and during witness solving. Unlike in gnark, you need to maintain your own `HintRegistry` that includes the hints you need and provide it during witness solving.
+
+## Using Hints in the Circuit
+
+```rust
+fn to_binary<C: Config>(api: &mut API<C>, x: Variable, n_bits: usize) -> Vec<Variable> {
+    api.new_hint("myhint.tobinary", &vec![x], n_bits)
+}
+```
+
+This code uses a hint `myhint.tobinary` to convert a variable to its binary representation. Note that the compiler does not know the specific meaning of this hint at this point; you need to ensure that the hint name, parameter types, and quantities are correct.
+
+## Witness Solving
+
+```rust
+fn to_binary_hint(x: &[M31], y: &mut [M31]) -> Result<(), Error> {
+    let t = x[0].to_u256();
+    for (i, k) in y.iter_mut().enumerate() {
+        *k = M31::from_u256(t >> i as u32 & 1);
+    }
+    Ok(())
+}
+
+fn main() {
+    let mut hint_registry = HintRegistry::<M31>::new();
+    hint_registry.register("myhint.tobinary", to_binary_hint);
+    // ...
+    let witness = compile_result
+        .witness_solver
+        .solve_witness_with_hints(&assignment, &mut hint_registry)
+        .unwrap();
+    // ...
+}
+```
+
+Here we define a function and register it in the `HintRegistry`, associating it with `myhint.tobinary`. You need to wisely allocate each hint identifier, ensuring they are unique and have clear meanings.
+
+## Full Example
+
+A complete example can be found in [to_binary_hint](https://github.com/PolyhedraZK/ExpanderCompilerCollection/blob/dev/expander_compiler/tests/to_binary_hint.rs).
+
+# Alternative Approach
+
+Below is an alternative approach that does not rely on hints but achieves a similar effect, but it's not recommended now.
 
 Sometimes, it is difficult to compute a value within a circuit, and we can only compute it externally and then verify its correctness within the circuit. Common scenarios include calculating division or breaking a number down into the sum of its bits.
 

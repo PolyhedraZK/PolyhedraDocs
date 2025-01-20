@@ -10,6 +10,8 @@ We are thrilled to introduce our new Rust frontend for the ExpanderCompilerColle
 
 To get started with the Rust frontend, you can refer to the basic example provided in [Example](./example). This example will guide you through the process of writing a simple circuit in Rust and compiling it using the ExpanderCompilerCollection.
 
+The Rust frontend involves some fundamental concepts related to templates and traits in Rust. Additionally, if you plan to write complex circuits, it might be helpful to understand Rust's borrowing rules. We recommend familiarizing yourself with these concepts.
+
 ## Additional Examples
 
 We have also provided several additional examples to demonstrate more complex use cases:

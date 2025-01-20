@@ -15,15 +15,15 @@ declare_circuit!(Circuit {
     y: Variable,
 });
 
-impl Define<M31Config> for Circuit<Variable> {
-    fn define(&self, builder: &mut API<M31Config>) {
+impl GenericDefine<M31Config> for Circuit<Variable> {
+    fn define<Builder: RootAPI<M31Config>>(&self, builder: &mut Builder) {
         builder.assert_is_equal(self.x, self.y);
     }
 }
 
 #[test]
 fn example_full() {
-    let compile_result = compile(&Circuit::default()).unwrap();
+    let compile_result = compile_generic(&Circuit::default(), CompileOptions::default()).unwrap();
     let assignment = Circuit::<M31> {
         x: M31::from(123),
         y: M31::from(123),
@@ -71,20 +71,22 @@ In this example, we demonstrate how to define a simple circuit, compile it using
    });
    ```
 
+   You can also define an array, as detailed in [Declaring a Circuit](./apis#declaring-a-circuit).
+
 2. **Implement the Circuit Logic**:
 
    ```rust
-   impl Define<M31Config> for Circuit<Variable> {
-       fn define(&self, builder: &mut API<M31Config>) {
-           builder.assert_is_equal(self.x, self.y);
-       }
-   }
+    impl GenericDefine<M31Config> for Circuit<Variable> {
+        fn define<Builder: RootAPI<M31Config>>(&self, builder: &mut Builder) {
+            builder.assert_is_equal(self.x, self.y);
+        }
+    }
    ```
 
 3. **Compile and Solve the Witness**:
 
    ```rust
-   let compile_result = compile(&Circuit::default()).unwrap();
+   let compile_result = compile_generic(&Circuit::default(), CompileOptions::default()).unwrap();
    let assignment = Circuit::<M31> {
        x: M31::from(123),
        y: M31::from(123),
@@ -94,6 +96,8 @@ In this example, we demonstrate how to define a simple circuit, compile it using
        .solve_witness(&assignment)
        .unwrap();
    ```
+
+   For more information on `Define` and `compile`, see [Define trait](./apis#define-trait).
 
 4. **Run and Verify the Circuit**:
 

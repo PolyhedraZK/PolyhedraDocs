@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+title: Expander
 ---
 import SEOHead from "@site/src/components/global/SEOHead";
 
@@ -22,7 +23,7 @@ In a typical workflow:
 2. Use [ExpanderCompilerCollection](https://github.com/PolyhedraZK/ExpanderCompilerCollection) to compiler the circuit into layered circuit.
 3. Use [Expander prover](https://github.com/PolyhedraZK/Expander) to generate and verify proofs. You may also use integrated prover inside the compiler.
 
-## Using this Library
+## Using the Compiler
 
 Currently we provide Go and Rust APIs. You can find examples and other informations in [Go Walkthrough](go/intro) and [Rust Walkthrough](rust/intro), we are also working on a novel API interface based on Rust, it's called [zkCuda](cuda/cuda_like_frontend), which provides a CUDA-like programming experience.
 
@@ -30,11 +31,17 @@ We also have an experimental [Circom](https://github.com/iden3/circom) preproces
 
 Our Go frontend language is compatible with [gnark](https://github.com/ConsenSys/gnark)'s frontend, and existing circuits could be directly used in our compiler.
 
+## Using the Prover
+
+The primary usage of the prover, which is to prove a single circuit, is described in [Expander](https://github.com/PolyhedraZK/Expander).
+
 ## Deeper Dive in to the tech
 
 For a more technical overview of the overall architecture, visit our [Compiler Internals](internal/intro) document.
 
 For a detailed explanation of the primary compilation artifacts - the layered circuit and the input solver, as well as their respective serialization formats, refer to [Artifact and Serialization](internal/artifact_and_serialization).
+
+For the internal implementation of the prover, refer to [Prover Internals](prover_internals/input_chunks).
 
 ## Acknowledgement
 
