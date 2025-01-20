@@ -52,10 +52,9 @@ We're seeking an exceptional Compiler Engineer with expertise in Zero-Knowledge 
 ## What We Offer
 - Opportunity to work on cutting-edge zkML technology
 - Competitive compensation package
-- Remote-friendly work environment
 - Professional development opportunities
 - Collaboration with leading researchers in ZK and ML
 - Impact on the future of privacy-preserving computation
 
 ## Location
-Remote or San Francisco Bay Area
+San Francisco Bay Area

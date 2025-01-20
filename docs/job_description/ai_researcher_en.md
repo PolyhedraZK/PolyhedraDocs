@@ -70,4 +70,4 @@ We're seeking an AI Researcher to advance the state-of-the-art in AI systems whi
 - Professional development opportunities
 
 ## Location
-Remote or San Francisco Bay Area
+San Francisco Bay Area

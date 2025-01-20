@@ -70,8 +70,7 @@ We're seeking a High Performance Computing Engineer with deep expertise in paral
 - Competitive compensation package
 - Professional development opportunities
 - Collaboration with leading researchers
-- Remote work options
 - Health and retirement benefits
 
 ## Location
-Remote or San Francisco Bay Area
+San Francisco Bay Area

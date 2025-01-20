@@ -58,4 +58,4 @@ We're seeking a Senior Frontend Engineer to lead the development of our zero-kno
 - Opportunity to work on cutting-edge blockchain technology
 
 ## Location
-Remote or San Francisco Bay Area
+San Francisco Bay Area

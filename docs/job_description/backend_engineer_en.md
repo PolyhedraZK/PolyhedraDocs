@@ -69,11 +69,10 @@ We're seeking an Advanced Backend Engineer who can architect and implement highl
 ## What We Offer
 - Work on challenging technical problems
 - Competitive compensation package
-- Remote work options
 - Professional development budget
 - Latest development tools and resources
 - Health and retirement benefits
 - Flexible working hours
 
 ## Location
-Remote or San Francisco Bay Area
+San Francisco Bay Area
