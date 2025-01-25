@@ -19,12 +19,13 @@ Here are some resources to help you get connected to the EXPchain network:
 - [Network Information and RPC Providers](002-rpc.md)
 - [Wallet Configuration](003-wallet.md)
 
-## Obtain Testnet Tokens
+## Obtain Tokens
 
 ZKJ is the native utility token of EXPchain and is used to pay transaction fees.
 
 - [EXPchain Testnet Faucet](https://faucet.expchain.ai)
-- For the mainnet, you can withdraw tokens directly from a centralized exchange (CEX) that supports the EXPchain network (e.g., OKX).
+- [EXPchain Devnet Faucet](https://faucet-devnet.expchain.ai/)
+- For the Mainnet, you can withdraw tokens directly from a centralized exchange (CEX) that supports the EXPchain network (e.g., OKX).
 
 ## JSON-RPC API
 
@@ -34,12 +35,14 @@ Interacting with EXPchain requires sending requests to specific JSON-RPC API met
 
 - Explorer
   - Testnet: [EXPchain Testnet Explorer](https://blockscout-testnet.expchain.ai)
+  - Devnet: [EXPchain Testnet Explorer](https://blockscout-devnet.expchain.ai/)
 - Beacon Explorer
   - Testnet: [EXPchain Testnet Beacon Explorer](https://beacon-explorer-testnet.expchain.ai)
 - Bridge
   - Testnet: [EXPchain Testnet Bridge](https://bridge.expchain.ai)
 - Faucet
   - [EXPchain Testnet Faucet](https://faucet.expchain.ai)
+  - [EXPchain Devnet Faucet](https://faucet-devnet.expchain.ai/)
 - SDK. If you are only using the SDK for Ethereum-compatible functions, then all Ethereum SDKs should work with EXPchain.
   - [ethers.js](https://docs.ethers.org/v6/getting-started/)
   - [web3.js](https://web3js.readthedocs.io/en/v1.10.0/getting-started.html)
