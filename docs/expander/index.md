@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+title: Overview
 ---
 import SEOHead from "@site/src/components/global/SEOHead";
 

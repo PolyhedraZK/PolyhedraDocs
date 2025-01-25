@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Wallet Configuration
 
     Any Ethereum-compatible wallet can be used with the EXPchain. For example, the following section provides instructions on setting up MetaMask for EXPchain, which is the recommended wallet.
@@ -18,6 +22,15 @@
 - tZKJ on BSC Testnet: 0xbBF8F565995c3fDF890120e6AbC48c4f818b03c2
 
 > 🌟To use test tokens acquired from Sepolia or BSC Testnet, they must be bridged to the EXPchain Testnet.
+
+## Devnet:
+
+- Network Name: EXPchain Devnet
+- RPC URL:
+  - [https://rpc-devnet.expachain.ai](https://rpc-devnet.expachain.ai)
+- ChainID: 28880
+- Symbol: tZKJ
+- Explorer: [https://blockscout-devnet.expchain.ai/](https://blockscout-devnet.expchain.ai/)
 
 ## Reference - How to configure Metamask
 
