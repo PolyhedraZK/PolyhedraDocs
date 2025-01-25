@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Quick Guide
 
 If you're a developer interested in building applications on the EXPchain, this document provides all the essential information you'll need

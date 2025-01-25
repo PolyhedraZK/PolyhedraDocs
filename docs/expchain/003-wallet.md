@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Wallet Configuration
 
     Any Ethereum-compatible wallet can be used with the EXPchain. For example, the following section provides instructions on setting up MetaMask for EXPchain, which is the recommended wallet.

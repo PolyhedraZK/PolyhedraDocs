@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Testnet Faucet
 
 To get Test tokens on EXPchain Testnet, faucets are available on EXPchain Testnet, ETH Sepolia and BSC Testnet at [https://faucet.expchain.ai](https://faucet.expchain.ai)

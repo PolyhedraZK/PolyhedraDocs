@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # Bridge
 
 Users can transfer their ZKJ tokens from Ethereum or BNB Chain to the EXPchain.
