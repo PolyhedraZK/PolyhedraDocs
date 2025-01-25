@@ -7,7 +7,7 @@ sidebar_position: 1
 ## Install Google Chrome
 
 <video width="100%" muted controls>
-    <source src="https://vitrual-assets.polyhedra.network/EXPchain/tutorial_video/01. Download Google Chrome.mp4" type="video/mp4" />
+    <source src="https://visual-asset.polyhedra.network/EXPchain/tutorial_video/01. Download Google Chrome.mp4" type="video/mp4" />
 </video>
 
 1. Visit [Google Chrome official website](https://www.google.com/chrome/)
@@ -18,7 +18,7 @@ sidebar_position: 1
 ## Install Metamask
 
 <video width="100%" muted controls>
-    <source src="https://vitrual-assets.polyhedra.network/EXPchain/tutorial_video/02. Install Metamask.mp4" type="video/mp4" />
+    <source src="https://visual-asset.polyhedra.network/EXPchain/tutorial_video/02. Install Metamask.mp4" type="video/mp4" />
 </video>
 
 1. Run the Google Chrome
@@ -34,7 +34,7 @@ sidebar_position: 1
 ## Add Networks to Metamask
 
 <video width="100%" muted controls>
-    <source src="https://vitrual-assets.polyhedra.network/EXPchain/tutorial_video/03. Wallet Network Configuration.mp4" type="video/mp4" />
+    <source src="https://visual-asset.polyhedra.network/EXPchain/tutorial_video/03. Wallet Network Configuration.mp4" type="video/mp4" />
 </video>
 
 1. Visit the [EXPchain Testnet on the Chainlist](https://chainlist.org/chain/18880)
@@ -47,7 +47,7 @@ sidebar_position: 1
 ## Faucet Guide
 
 <video width="100%" muted controls>
-    <source src="https://vitrual-assets.polyhedra.network/EXPchain/tutorial_video/04. Faucet Guide.mp4" type="video/mp4" />
+    <source src="https://visual-asset.polyhedra.network/EXPchain/tutorial_video/04. Faucet Guide.mp4" type="video/mp4" />
 </video>
 
 1. Visit [EXPchain faucet](https://faucet.expchain.ai) for requesting tZKJ tokens
@@ -74,7 +74,7 @@ sidebar_position: 1
 ## Bridge Guide
 
 <video width="100%" muted controls>
-    <source src="https://vitrual-assets.polyhedra.network/EXPchain/tutorial_video/05. Bridge Guide.mp4" type="video/mp4" />
+    <source src="https://visual-asset.polyhedra.network/EXPchain/tutorial_video/05. Bridge Guide.mp4" type="video/mp4" />
 </video>
 
 1. Visit [EXPchain Bridge](https://bridge.expchain.ai/bridge)
