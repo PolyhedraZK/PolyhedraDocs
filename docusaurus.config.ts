@@ -48,6 +48,7 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+  
   stylesheets: [
     {
       href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap",
@@ -59,6 +60,16 @@ const config: Config = {
       integrity:
         "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
       crossorigin: "anonymous",
+    },
+  ],
+  scripts: [
+    {
+    src: "https://dashboard.letmeexplain.ai/embed/lme_chatbot_widget.js", // LetMeExplain embed script
+    async: false,
+    },
+    {
+      src: "/js/enable_lme_chatbot.js", // Custom initialization script
+      defer: true,
     },
   ],
   themeConfig: {
