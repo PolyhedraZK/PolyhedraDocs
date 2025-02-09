@@ -27,7 +27,7 @@ sidebar_position: 4
 
 - Network Name: EXPchain Devnet
 - RPC URL:
-  - [https://rpc-devnet.expachain.ai](https://rpc-devnet.expachain.ai)
+  - [https://rpc-devnet.expchain.ai](https://rpc-devnet.expchain.ai)
 - ChainID: 28880
 - Symbol: tZKJ
 - Explorer: [https://blockscout-devnet.expchain.ai/](https://blockscout-devnet.expchain.ai/)
