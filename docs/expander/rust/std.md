@@ -19,7 +19,7 @@ pub trait StdCircuit<C: Config>: Clone + Define<C> + DumpLoadTwoVariables<Variab
 
 - `Params` refers to the parameters used to define a circuit. For example, to build a Merkle Tree circuit, we need to know what's the depth of the tree, and which hash function to use.
 - `Assignment` refers to the assignment of the private and public input, represented as field elements. In the Merkle Tree example, if we're checking the membership of a leaf, the assignment will consist of the root hash, the leaf hash, and the Merkle path.
-- `new_circuit` will return a circuit according to `params`. Note that there are no concrete values in the returned circuit, all variables are placeholders, faciliting the compilation of the circuit structure.
+- `new_circuit` will return a circuit according to `params`. Note that there are no concrete values in the returned circuit, all variables are placeholders, facilitating the compilation of the circuit structure.
 - `new_assignment`, as the name suggests, returns a group of **correct** assignment.
 
 ## Example usage
