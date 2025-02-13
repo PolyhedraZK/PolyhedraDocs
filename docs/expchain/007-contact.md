@@ -1,5 +1,6 @@
 ---
 slug: /contract
+sidebar_position: 8
 ---
 
 # Usage Example: Deploy ERC20 using Remix

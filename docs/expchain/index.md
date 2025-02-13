@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+title: About EXPchain
 ---
 import SEOHead from "@site/src/components/global/SEOHead";
 

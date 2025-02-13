@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Expander
+title: Overview
 ---
 import SEOHead from "@site/src/components/global/SEOHead";
 

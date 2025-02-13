@@ -1,3 +1,7 @@
+---
+sidebar_position: 9
+---
+
 # zkBridge Cross-Chain Messaging
 
 You will need the [SendApi interface](#izkbridgesol) and [ReceiveApi interface](#izkbridgereceiversol).
