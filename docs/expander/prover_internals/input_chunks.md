@@ -7,10 +7,10 @@ sidebar_position: 3
 ## Background
 In a typical GKR protocol, the prover commits the input, which is interpreted as a multi-linear polynomial, first, proceeds with several rounds of sumchecks, and finally open the polynomial at a random challenge. While this protocol is simple and well-known, it does not consider the case that many circuits may share partially or all of their inputs, leading to two major inefficiencies.
 
-1. The same input is commited multiple times, adding the cost of commiting a polynomial.
+1. The same input is committed multiple times, adding the cost of committing a polynomial.
 2. It is hard for the prover to justify that different circuits are using the private input, introducing extra cost.
 
-We adopt a slightly different workflow in our protocol where the same input will only be commited once, which serves as the digest of that input across all circuits. 
+We adopt a slightly different workflow in our protocol where the same input will only be committed once, which serves as the digest of that input across all circuits. 
 
 ## Example
 We consider a simple case first where there are three circuits $A, B, C$. The input of $A$ has a length of $2N$, while the the input of $B$ and $C$ has a length of $N$. For simplicity, we assume $N$ is a power of 2, and $n = \log_2(N)$. The prover would like to prove the following claim:
@@ -29,16 +29,16 @@ Open((I_1, I_2), r_A) = (1 - {r_A}_{[n]}) \cdot Open(I_1, {r_A}_{[:n]}) + {r_A}_
 $$
 
 ## A more general definition
-The input of a circuit can be chunked into arbitrary continous pieces $P_1, P_2, ... P_m$, but with the following limitations:
+The input of a circuit can be chunked into arbitrary continuous pieces $P_1, P_2, ... P_m$, but with the following limitations:
 
 1. The size $T_k=|P_k|, \forall k\in[m]$ must be a power of 2.
 2. If a piece has a size of $T_k$, then its starting position must be a multiple of $T$.
 3. $\cup_{k\in[m]} P_k = I$, where $I$ is the whole input.
 4. $P_{k_1} \cap P_{k_2} = \emptyset, \forall k_1 \in [m], k_2 \in [m], k_1 \neq k_2$.
 
-The prover would take the description of this chunking, along with the commitment of each chunk (and potentially some extra information facilating the opening), and proceed with the similar steps as descriped in the previous example.
+The prover would take the description of this chunking, along with the commitment of each chunk (and potentially some extra information facilitating the opening), and proceed with the similar steps as described in the previous example.
 
 ## Use the output of other circuits 
 In the proving of a groups of circuits, it may also happen that the output of a circuit, either public or private, is used as the input of many following circuits. 
 
-We can adopt a similar approach as described above by commiting the output first and then use that as the signature of all following usages.
+We can adopt a similar approach as described above by committing the output first and then use that as the signature of all following usages.

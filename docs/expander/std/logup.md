@@ -37,7 +37,7 @@ declare_circuit!(_LogUpCircuit {
     query_keys: [[Variable]],
     query_results: [[Variable]],
 
-    // counting the number of occurences for each row of the table
+    // counting the number of occurrences for each row of the table
     query_count: [Variable],
 });
 
@@ -52,7 +52,7 @@ We fully parameterized this, allowing arbitrary `key_len`, `value_len`, `n_table
 3. The second dimension will be reduced to a single value with randomness.
 4. At this point, we have a list of $t_i$ and $q_j$ now, and we proceed with the LogUp argument.
 
-Thanks to the [Expander](https://github.com/PolyhedraZK/Expander) prover, we're able to use random gate in the construction of the ciruict, whose value will be filled via fiat-shamir hash in proving.
+Thanks to the [Expander](https://github.com/PolyhedraZK/Expander) prover, we're able to use random gate in the construction of the circuit, whose value will be filled via fiat-shamir hash in proving.
 
 ## Test
 
