@@ -11,15 +11,13 @@ This document describes the current interface of the zkCuda demo. The related co
 An example of a kernel function is as follows:
 
 ```rust
-fn add_2<C: Config>(api: &mut API<C>, inputs: &mut Vec<Vec<Variable>>) {
-    let a = inputs[0][0];
-    let b = inputs[0][1];
-    let sum = api.add(a, b);
-    inputs[1][0] = sum;
+#[kernel]
+fn add_2_macro<C: Config>(api: &mut API<C>, a: &[InputVariable; 2], b: &mut OutputVariable) {
+    *b = api.add(a[0], a[1]);
 }
 ```
 
-This function is similar to the ones used in `memorized_simple_call` in the standard compiler, but the input array is a two-dimensional array. The array `inputs` serves not only as input but also as output.
+This function is similar to the sub-circuit function in the Go frontend.
 
 It is roughly equivalent to the following Cuda function:
 
@@ -33,34 +31,26 @@ __global__ void add_2_kernel(int* input, int* output, int n) {
 }
 ```
 
+The macro `#[kernel]` rewrites your function's parameter section and generates a function for compiling the kernel. The definition above will compile to the following two functions:
+
+```rust
+fn add_2_macro<C: Config>(api: &mut API<C>, a: &Vec<InputVariable>, b: &mut OutputVariable) {
+    // implementation
+}
+fn compile_add_2_macro<C: Config>() {
+    // implementation
+}
+```
+
 ### Compilation
 
 Before using the kernel, it needs to be compiled. The example kernel above can be compiled as follows:
 
 ```rust
-let kernel_add_2: Kernel<M31Config> = compile_with_spec(
-    add_2,
-    &[
-        IOVecSpec {
-            len: 2,
-            is_input: true,
-            is_output: false,
-        },
-        IOVecSpec {
-            len: 1,
-            is_input: false,
-            is_output: true,
-        },
-    ],
-)
-.unwrap();
+let kernel_add_2: Kernel<M31Config> = compile_add_2_macro().unwrap();
 ```
 
-Here, some `IOVecSpec` are introduced. They indicate the length required for each input array in a zk thread, as well as whether they are inputs or outputs.
-
-For instance, the first parameter has a length of 2, is an input, and is not an output. When calling this kernel, the user needs to provide an array of length 2 for this parameter. After the kernel runs, the user will not get any output from this parameter.
-
-Note that this syntax is somewhat verbose, but it is only in the current demo version. We plan to use a more concise definition method in the future.
+The macro `#[kernel]` has done almost all the work for you; you just need to call the function with the `compile_` prefix.
 
 ## Context
 
@@ -111,3 +101,5 @@ The compiler APIs that can be used inside a kernel are the same as those used in
 Here's an example of how to use this CUDA-like circuit frontend:
 
 See [zkcuda_1.rs](https://github.com/PolyhedraZK/ExpanderCompilerCollection/blob/zkcuda/expander_compiler/tests/zkcuda_1.rs).
+
+This example also introduces a method that does not rely on `#[kernel]` for definition, which is more cumbersome. In fact, `#[kernel]` is just syntactic sugar for this method.
