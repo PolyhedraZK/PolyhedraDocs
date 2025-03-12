@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Wallet Configuration
@@ -15,9 +15,6 @@ sidebar_position: 4
 - ChainID: 18880
 - Symbol: tZKJ
 - Explorer: [https://blockscout-testnet.expchain.ai](https://blockscout-testnet.expchain.ai)
-- tendermint-sidechain: [https://tendermint-sidechain-testnet.expchain.ai](https://tendermint-sidechain-testnet.expchain.ai)
-- abci-sidechain: [https://abci-sidechain-testnet.expchain.ai](https://abci-sidechain-testnet.expchain.ai)
-- Multicall: 0xa966BDF2e0088eb921A39d6ff684b60388Fc277e
 - tZKJ on Sepolia: 0x465C15e9e2F3837472B0B204e955c5205270CA9E
 - tZKJ on BSC Testnet: 0xbBF8F565995c3fDF890120e6AbC48c4f818b03c2
 
