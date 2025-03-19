@@ -7,7 +7,7 @@ We'll illustrate how the proving works with the following example.
 
 ![example computation](example_computation.png "Example Computation")
 
-Assuming we're given such a computation graph with four copies of `Cir-1` in the first layer, and two copies of `Cir-2` in the second one. While it's possible to treat the entire computation graph as a whole big circuit, it is more sometimes more efficient to separate them apart, and exploit the potential of parallel execution of the underlying proving system.
+Assuming we're given such a computation graph with four copies of `Cir-1` in the first layer, and two copies of `Cir-2` in the second one. While it's possible to treat the entire computation graph as a whole big circuit, it is sometimes more efficient to separate them apart, and exploit the potential of parallel execution of the underlying proving system.
 
 ## ZKCuda with Expander
 When using ZKCuda with Expander, the entire proving can be divided into the following steps:
