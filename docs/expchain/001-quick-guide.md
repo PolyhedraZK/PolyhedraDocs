@@ -59,4 +59,5 @@ Interacting with EXPchain requires sending requests to specific JSON-RPC API met
   - [Foundry](https://github.com/foundry-rs/foundry/)
 - Useful Smart Contracts
   - Multicall: `0xDA6ddA9e9d2bDE5D83E76FC21FA00602Cb3bc781`
+  - Multicall3: `0x6b9A7AFcD8f6e20a5DEaCC0656a31516bFBd0F77`
   - WZKJ: `0xAfF9b70ea121071Deb9540e3675486b3A465e223`
