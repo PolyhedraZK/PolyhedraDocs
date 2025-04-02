@@ -5,7 +5,7 @@ title: Faucet
 
 # Testnet Faucet
 
-To get Test tokens on EXPchain Testnet, faucets are available on EXPchain Testnet, ETH Sepolia and BSC Testnet at [https://faucet.expchain.ai](https://faucet.expchain.ai)
+To get Test tokens on EXPchain Testnet, faucets are available on EXPchain Testnet, ETH Sepolia and BSC Testnet at [https://expchain.polyhedra.network/faucet](https://expchain.polyhedra.network/faucet)
 
 - Select a Network: Choose from EXPchain Testnet, ETH Sepolia, or BSC Testnet.
 - Input your address to claim the test token.
