@@ -50,7 +50,7 @@ sidebar_position: 1
     <source src="https://visual-asset.polyhedra.network/EXPchain/tutorial_video/04. Faucet Guide.mp4" type="video/mp4" />
 </video>
 
-1. Visit [EXPchain faucet](https://faucet.expchain.ai) for requesting tZKJ tokens
+1. Visit [EXPchain faucet](https://expchain.polyhedra.network/faucet) for requesting tZKJ tokens
 2. Select the **EXPchain Testnet** in the **Network** on page
 3. Copy your wallet address from the Metamask
 4. Paste your wallet address in the **Wallet Address** box
@@ -77,7 +77,7 @@ sidebar_position: 1
     <source src="https://visual-asset.polyhedra.network/EXPchain/tutorial_video/05. Bridge Guide.mp4" type="video/mp4" />
 </video>
 
-1. Visit [EXPchain Bridge](https://bridge.expchain.ai/bridge)
+1. Visit [EXPchain Bridge](https://expchain.polyhedra.network/bridge)
 2. Click the **Connect Wallet** on the page, and then select **Metamask** from the list
 3. On the Metamask's popup, click **Connect** button and then **Confirm** in the next page.
 4. Select or switch the network to **BSC testnet** or **Sepolia**
