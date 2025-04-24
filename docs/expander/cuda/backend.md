@@ -34,12 +34,18 @@ Here there is a standalone `Cir-3` with a different circuit structure, and even 
 (Requires familarity with GKR and Sumcheck from here on.)
 
 ### First Attempt 
-A first attempt is to distribute three `Cir-1`s to the first three cores, and `Cir-3` to the fourth. The low-degree polynomial in each round of sumcheck can be aggregated from the low-degree polynomial of each sub-sumcheck, and the fiat-shamir challenge can then be computed and broadcasted. However, there might be some problems for this solution.
+A first attempt is to distribute three `Cir-1`s to the first three cores, and `Cir-3` to the fourth. The sumcheck bits can be divided into 2 parts, i.e. $a$ and $b$:
 
-1. If `Cir-3` is significantly larger than `Cir-1` in width, say 1000x, trivially implementing the folding in sumcheck will nearly double the cost of proving them independently due to the alignment to the power of 2 in sumcheck. 
+$$
+(a_0, a_1, ..., a_n, b_0, b_1, ..., b_m)
+$$
 
-2. If `Cir-1` is significantly larger than `Cir-3` in width, say 1000x and there are 4 instead of 3 `Cir-1`, adding a standalone `Cir-3` will double the sumcheck cost due to the same alignment issue. 
+where $a$ index into the gates in a sub-circuit, and $b$ refers to which sub-circuit it is. Note that $n$ will be logarithmic value of the largest sub-circuit, and $m$ will be the logarithmic value of the number of sub-circuits. The low-degree polynomial in each round of sumcheck can be aggregated from the low-degree polynomial of each sub-sumcheck, and the fiat-shamir challenge can then be computed and broadcasted. However, there might be some problems for this solution.
+
+1. If `Cir-3` is significantly larger than `Cir-1` in width, say 1000x, trivially implementing the folding in sumcheck will increase the cost of proving each `Cir-1` independently due to the alignment to the largest sub-circuit. (Quick thoughts: not a big problem though when carefully handled?)
+
+2. If `Cir-1` is significantly larger than `Cir-3` in width, say 1000x and there are 4 instead of 3 `Cir-1`, adding a standalone `Cir-3` will double the sumcheck cost due to the alignment issue. (The case $m' = m + 1$. Quick thoughts: Doesn't seem to be a big problem? This only doubles the $m$ part.) 
 
 3. If `Cir-1` and `Cir-3` differs a lot in depth, then either some cores will be idle or we'll have to write sophisticated scheduler of workloads.
 
-4. In practice, we may not have enough cores to take care of all the sub-circuit, we may have 16 cores, but there are 32 copies of `Cir-1` and a single `Cir-3`, and we want syncronization of fiat-shamir across all the 33 circuits.
+4. In practice, we may not have enough cores to take care of all the sub-circuit, we may have 16 cores, but there are 32 copies of `Cir-1` and a single `Cir-3`, and we want syncronization of fiat-shamir across all the 33 circuits. (Quick thoughts: still careful engineering work here.)
