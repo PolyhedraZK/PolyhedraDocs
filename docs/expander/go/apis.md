@@ -46,7 +46,7 @@ type SubCircuitAPI interface {
 }
 ```
 
-`SubCircuitFunc` is designed to accommodate any function that takes simple types and `frontend.Variable` as inputs and returns `frontend.Variable` as output.
+`SubCircuitSimpleFunc` is designed to accommodate any function that takes simple types and `frontend.Variable` as inputs and returns `frontend.Variable` as output.
 
 For example, a function with the signature `func(frontend.API, int, uint8, [][]frontend.Variable, string, ...[]frontend.Variable) [][][]frontend.Variable` would be considered a valid `SubCircuitFunc`.
 
