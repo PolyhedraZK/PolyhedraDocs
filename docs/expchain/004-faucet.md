@@ -15,13 +15,3 @@ To get Test tokens on EXPchain Testnet, faucets are available on EXPchain Testne
 ![Faucet](https://storage.googleapis.com/polyhedra-img/images/prod/Faucet_04.png)
 
 > 🌟To use test tokens acquired from Sepolia or BSC Testnet, they must be bridged to the EXPchain Testnet.
-
-# Devnet Faucet
-
-To get Test tokens on EXPchain Devnet, visit the EXPchain Devnet faucet at [https://faucet-devnet.expchain.ai/](https://faucet-devnet.expchain.ai/)
-
-- Input your address to start the token mining.
-![Faucet](../../static/img/expchain/devnet/devnet_pow_faucet.png)
-- When you've collected enough tZKJ, stop mining and claim your rewards.
-![Mining](../../static/img/expchain/devnet/devnet_faucet_mining.png)
-
