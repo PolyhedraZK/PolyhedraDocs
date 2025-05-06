@@ -20,15 +20,6 @@ sidebar_position: 3
 
 > 🌟To use test tokens acquired from Sepolia or BSC Testnet, they must be bridged to the EXPchain Testnet.
 
-## Devnet:
-
-- Network Name: EXPchain Devnet
-- RPC URL:
-  - [https://rpc-devnet.expchain.ai](https://rpc-devnet.expchain.ai)
-- ChainID: 28880
-- Symbol: tZKJ
-- Explorer: [https://blockscout-devnet.expchain.ai/](https://blockscout-devnet.expchain.ai/)
-
 ## Reference - How to configure Metamask
 
 After you install the Metamask in your browser, you can go to Settings → Networks → Add Network page. Select add manual network and enter the network information.
