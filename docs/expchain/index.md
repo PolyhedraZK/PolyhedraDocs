@@ -6,7 +6,7 @@ import SEOHead from "@site/src/components/global/SEOHead";
 
 <SEOHead
   title="EXPchain | Polyhedra Network"
-  description="EXPchain is a blockchain protocol designed for scalable, verifiable, and privacy-preserving Al applications, powered by Polyhedra innovations including Expander and zkBridge for high performance ZkML."
+  description="EXPchain is a blockchain protocol designed for scalable and verifiable Al applications, powered by Polyhedra innovations including Expander and zkBridge for high performance ZkML."
   url="https://docs.polyhedra.network/expchain"
   siteName="EXPchain"
   image="/img/seo/empty.png"
